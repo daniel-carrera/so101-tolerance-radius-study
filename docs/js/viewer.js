@@ -419,7 +419,7 @@
     fact(dl, "Block", `${t.block}: ${D.blocks[t.block] || ""}`);
 
     const note = html("p", { class: "note" }, panel);
-    html("small", {}, note, "Scorer's note, as typed at the rig");
+    html("small", {}, note, "Scorer's note from the rig, spelling corrected");
     note.appendChild(document.createTextNode(t.notes ? t.notes : "No note."));
 
     if (t.pair_id) {

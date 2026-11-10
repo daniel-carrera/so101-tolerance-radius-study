@@ -29,8 +29,9 @@
     "sha256": "3be5452452fce112cdee571b422dc0a5e8dffaa0a962b8167f8197d731e8a4a7"
    }
   },
-  "written_by": "viewer-public/export_data.py",
-  "lengths": "millimetres in the table frame of the AprilTags; positions are the cube's measured centre"
+  "written_by": "scripts/export_data.py",
+  "lengths": "millimetres in the table frame of the AprilTags; positions are the cube's measured centre",
+  "notes": "the scorer's notes from the rig, with spelling corrected (NOTE_SPELLING in the script); the trial log keeps them as typed"
  },
  "table": {
   "cols": 5,
@@ -1802,7 +1803,7 @@
    "outcome": "success",
    "failure": null,
    "subgoal": 5,
-   "notes": "correctly placed it but clipped the basket agian.",
+   "notes": "correctly placed it but clipped the basket again.",
    "ts_start": "2026-10-08T14:04:08-07:00",
    "clip": null
   },
@@ -1832,7 +1833,7 @@
    "outcome": "failure",
    "failure": "grasp",
    "subgoal": 2,
-   "notes": "missed the grasp by a little but, tried again, then got stuck",
+   "notes": "missed the grasp by a little bit, tried again, then got stuck",
    "ts_start": "2026-10-08T14:08:11-07:00",
    "clip": null
   },
@@ -2072,7 +2073,7 @@
    "outcome": "failure",
    "failure": "grasp",
    "subgoal": 2,
-   "notes": "grasped but slipped and it nudged the cube, didn't try to pick it up again, it just did the regular procedure a if the cube was placed correctly",
+   "notes": "grasped but slipped and it nudged the cube, didn't try to pick it up again, it just did the regular procedure as if the cube was placed correctly",
    "ts_start": "2026-10-08T14:19:17-07:00",
    "clip": null
   },
@@ -2492,7 +2493,7 @@
    "outcome": "success",
    "failure": null,
    "subgoal": 5,
-   "notes": "god",
+   "notes": "good",
    "ts_start": "2026-10-08T14:37:11-07:00",
    "clip": null
   },
@@ -3272,7 +3273,7 @@
    "outcome": "failure",
    "failure": "grasp",
    "subgoal": 2,
-   "notes": "grasped in front of the cube too far in y, almost got it but missed, then tried to regrasp to the left and front diagonal cell, tthen got stuck",
+   "notes": "grasped in front of the cube too far in y, almost got it but missed, then tried to regrasp to the left and front diagonal cell, then got stuck",
    "ts_start": "2026-10-08T15:54:31-07:00",
    "clip": null
   },
@@ -3302,7 +3303,7 @@
    "outcome": "failure",
    "failure": "grasp",
    "subgoal": 2,
-   "notes": "missed the cube, went to low in y axis, tried to regrab it several times in the same spot, didn't get stuck",
+   "notes": "missed the cube, went too low in y axis, tried to regrab it several times in the same spot, didn't get stuck",
    "ts_start": "2026-10-08T16:05:10-07:00",
    "clip": null
   },
@@ -3632,7 +3633,7 @@
    "outcome": "success",
    "failure": null,
    "subgoal": 5,
-   "notes": "missed the first time, nudging it, then the second attempt it grabed it by the bottom edge. success.",
+   "notes": "missed the first time, nudging it, then the second attempt it grabbed it by the bottom edge. success.",
    "ts_start": "2026-10-08T16:19:14-07:00",
    "clip": null
   },
@@ -3722,7 +3723,7 @@
    "outcome": "success",
    "failure": null,
    "subgoal": 5,
-   "notes": "it kept missing and nuging it, until at last it grasped it correctly.",
+   "notes": "it kept missing and nudging it, until at last it grasped it correctly.",
    "ts_start": "2026-10-08T16:22:46-07:00",
    "clip": null
   },
@@ -3782,7 +3783,7 @@
    "outcome": "success",
    "failure": null,
    "subgoal": 5,
-   "notes": "it missed a few times, nudging it, until it grabed it by the very edge. success",
+   "notes": "it missed a few times, nudging it, until it grabbed it by the very edge. success",
    "ts_start": "2026-10-08T16:25:16-07:00",
    "clip": null
   },
@@ -3902,7 +3903,7 @@
    "outcome": "failure",
    "failure": "grasp",
    "subgoal": 2,
-   "notes": "it nudged the cube and then it began trying to re grasp it in a far front left diagonal cell, then it got stuck mid air",
+   "notes": "it nudged the cube and then it began trying to regrasp it in a far front left diagonal cell, then it got stuck mid air",
    "ts_start": "2026-10-08T16:29:30-07:00",
    "clip": null
   },
@@ -3962,7 +3963,7 @@
    "outcome": "failure",
    "failure": "grasp",
    "subgoal": 2,
-   "notes": "it kept nudging after each failed re grasp, until the timer ran out",
+   "notes": "it kept nudging after each failed regrasp, until the timer ran out",
    "ts_start": "2026-10-08T16:31:54-07:00",
    "clip": null
   },
@@ -4112,7 +4113,7 @@
    "outcome": "success",
    "failure": null,
    "subgoal": 5,
-   "notes": "god",
+   "notes": "good",
    "ts_start": "2026-10-08T16:36:58-07:00",
    "clip": null
   },
@@ -4382,7 +4383,7 @@
    "outcome": "failure",
    "failure": "grasp",
    "subgoal": 2,
-   "notes": "nuged it several times almost grasping it but finally pushing it away, then regrasping right below it. failed.",
+   "notes": "nudged it several times almost grasping it but finally pushing it away, then regrasping right below it. failed.",
    "ts_start": "2026-10-08T16:44:14-07:00",
    "clip": null
   },

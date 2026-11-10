@@ -60,6 +60,37 @@ APPROVED_CLIPS = {
     "T1b-008": "arm-replay-own-start",
 }
 
+#: Spelling corrections to the scorer's notes, for the page only. The trial log keeps each note as it was typed at
+#: the rig; here a word is corrected, nothing is reworded. Each pair is (as typed, as shown), and the export stops if
+#: the typed text is not in that trial's note.
+NOTE_SPELLING = {
+    "T1a-013": [("agian", "again")],
+    "T1a-014": [("by a little but,", "by a little bit,")],
+    "T1b-012": [("procedure a if", "procedure as if")],
+    "T1b-018": [("god", "good")],
+    "T2-012": [("tthen", "then")],
+    "T2-013": [("went to low", "went too low")],
+    "T2-024": [("grabed", "grabbed")],
+    "T2-027": [("nuging", "nudging")],
+    "T2-029": [("grabed", "grabbed")],
+    "T2-033": [("re grasp", "regrasp")],
+    "T2-035": [("re grasp", "regrasp")],
+    "T2-040": [("god", "good")],
+    "T2-049": [("nuged", "nudged")],
+}
+
+
+def shown_note(trial_id: str, typed: str, problems: list[str]) -> str:
+    """The scorer's note as the page shows it: as typed, with the listed spelling corrections applied."""
+    note = typed or ""
+    for wrong, right in NOTE_SPELLING.get(trial_id, []):
+        if wrong not in note:
+            problems.append(f"note of {trial_id}: {wrong!r} is not in it")
+            continue
+        note = note.replace(wrong, right)
+    return note
+
+
 #: How far a logged distance may sit from the one recomputed here before the export stops.
 DISTANCE_CHECK_MM = 1e-6
 
@@ -137,7 +168,7 @@ def main() -> None:
             "outcome": record["outcome"],
             "failure": record["failure"],
             "subgoal": record["subgoal"],
-            "notes": record["notes"],
+            "notes": shown_note(planned["trial_id"], record["notes"], problems),
             "ts_start": record["ts_start"],
             "clip": APPROVED_CLIPS.get(planned["trial_id"]),
         })
@@ -171,6 +202,8 @@ def main() -> None:
             },
             "written_by": "scripts/export_data.py",
             "lengths": "millimetres in the table frame of the AprilTags; positions are the cube's measured centre",
+            "notes": "the scorer's notes from the rig, with spelling corrected (NOTE_SPELLING in the script); "
+                     "the trial log keeps them as typed",
         },
         "table": {
             "cols": grid.cols,
