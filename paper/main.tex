@@ -1,0 +1,88 @@
+% main.tex: the four-page workshop paper. IEEEtran in conference mode, which the call allows (docs/venue.md, section 3).
+%
+% Rules of this folder (README.md has the detail):
+%   1. No result is typed into a section. Results are macros from generated/numbers.tex, protocol constants are
+%      macros from generated/protocol.tex, and settings copied by hand are macros in numbers_by_hand.tex.
+%      A quantity that is already measured, or quoted from a cited paper, is typed with "% src: ..." on its line.
+%   2. Double blind: no names, institutions, usernames, repository or hub names, home paths, thanks.
+%   3. python3 check_paper.py passes before every upload, and with --final before the submission.
+%
+% Built with tectonic 0.17.0 since 2026-10-08 (README.md, "Building"). Standard packages only.
+
+\documentclass[conference]{IEEEtran}
+
+% Fonts. IEEEtran asks for Times by its old name (ptm), which exists for pdfLaTeX only. Under XeTeX, which tectonic
+% runs, that name is undefined: every shape fell back to one upright default font, so nothing in the paper was bold,
+% italic or in small capitals (the build log had about 40 "Font shape TU/ptm/... undefined"; seen by the author in
+% the built PDF on 2026-10-09). TeX Gyre Termes, Heros and Cursor are the free equivalents of Times, Helvetica and
+% Courier and have every shape. With pdfLaTeX (Overleaf's default) the class's own fonts are used as before.
+\usepackage{iftex}
+\ifPDFTeX\else
+  \usepackage{fontspec}
+  % named by file, so that the fonts come from the TeX distribution and not from whatever the computer has installed
+  \setmainfont{texgyretermes}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold, ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+  \setsansfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold, ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+  \setmonofont{texgyrecursor}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold, ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\fi
+
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl} % lets a long link in the references break at any character: one ran into the next column
+\hypersetup{pdfauthor={Anonymous}, pdftitle={}, pdfsubject={}, pdfkeywords={}}
+
+% --- Draft marks ------------------------------------------------------------------------------------------------------
+% \pending{...} printed a bold tag in front of a sentence whose wording still depended on a result. Every IF block was
+% settled from the counted report on 2026-10-08 and no tag is left; check_paper.py --final fails if one comes back or
+% if the switch below is turned on again.
+\newif\ifdraftmarks
+\draftmarksfalse
+\newcommand{\pending}[1]{\ifdraftmarks\textbf{[#1]}\ \fi}
+
+% --- Figures ----------------------------------------------------------------------------------------------------------
+% \figureorbox{file}{height}{what the figure will show}: the figure if its file exists, a framed box of the planned
+% height if not, so the page budget holds before the figures are drawn. File names: letters, digits, hyphens only.
+\newcommand{\figureorbox}[3]{%
+  \IfFileExists{#1}{\includegraphics[width=\columnwidth]{#1}}{%
+    \fbox{\parbox[c][#2][c]{0.94\columnwidth}{\centering\footnotesize\textbf{Figure not drawn yet.} #3}}}}
+
+% --- Numbers ----------------------------------------------------------------------------------------------------------
+% A radius is a block fit (\radiusClusteredThreshold, \radiusReplay) unless the text says "pooled" (\radiusClustered,
+% \radiusSpread): README.md, "Which radius is which".
+\input{generated/protocol}
+\input{generated/numbers}
+\input{numbers_by_hand}
+
+\title{Measuring the Reset Distribution: A Tolerance Radius, Referenced to Open-Loop Replay}
+
+\author{\IEEEauthorblockN{Anonymous Authors}
+\IEEEauthorblockA{Affiliation withheld for double-blind review}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\input{sections/intro}
+\input{sections/related}
+\input{sections/method}
+\input{sections/results}
+\input{sections/checklist}
+\input{sections/limits}
+% The main text ends here and must end on page 4 or before. The next line writes the page to the build log. It is a
+% deferred \write, which TeX carries with the last line of the Limits and expands when that line's page is shipped: a
+% \typeout here gave the page on which the last paragraph began, and on 2026-10-08 said 4 for a text that ended on 5.
+\write-1{== MAIN TEXT ENDS ON PAGE \thepage\space (the limit is 4) ==}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\appendices
+\input{sections/appendix}
+
+\end{document}

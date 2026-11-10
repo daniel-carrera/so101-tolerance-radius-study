@@ -1,0 +1,613 @@
+{
+  "dataset": "clustered",
+  "episodes": [
+    {
+      "cell": "C2",
+      "dataset": "clustered",
+      "episode_index": 0,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "D1",
+      "dataset": "clustered",
+      "episode_index": 1,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 175.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "A3",
+      "dataset": "clustered",
+      "episode_index": 2,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 25.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "C3",
+      "dataset": "clustered",
+      "episode_index": 3,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "E2",
+      "dataset": "clustered",
+      "episode_index": 4,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 225.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "E1",
+      "dataset": "clustered",
+      "episode_index": 5,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 225.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "D3",
+      "dataset": "clustered",
+      "episode_index": 6,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 175.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "B3",
+      "dataset": "clustered",
+      "episode_index": 7,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 75.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "C1",
+      "dataset": "clustered",
+      "episode_index": 8,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "B1",
+      "dataset": "clustered",
+      "episode_index": 9,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 75.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "A2",
+      "dataset": "clustered",
+      "episode_index": 10,
+      "round": 1,
+      "sitting": 1,
+      "target": {
+        "x_mm": 25.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "E1",
+      "dataset": "clustered",
+      "episode_index": 11,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 225.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "C3",
+      "dataset": "clustered",
+      "episode_index": 12,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "A2",
+      "dataset": "clustered",
+      "episode_index": 13,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 25.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "E2",
+      "dataset": "clustered",
+      "episode_index": 14,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 225.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "B1",
+      "dataset": "clustered",
+      "episode_index": 15,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 75.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "C1",
+      "dataset": "clustered",
+      "episode_index": 16,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "D1",
+      "dataset": "clustered",
+      "episode_index": 17,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 175.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "B3",
+      "dataset": "clustered",
+      "episode_index": 18,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 75.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "A3",
+      "dataset": "clustered",
+      "episode_index": 19,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 25.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "D3",
+      "dataset": "clustered",
+      "episode_index": 20,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 175.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "C2",
+      "dataset": "clustered",
+      "episode_index": 21,
+      "round": 2,
+      "sitting": 1,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "E1",
+      "dataset": "clustered",
+      "episode_index": 22,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 225.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "C1",
+      "dataset": "clustered",
+      "episode_index": 23,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "D3",
+      "dataset": "clustered",
+      "episode_index": 24,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 175.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "C3",
+      "dataset": "clustered",
+      "episode_index": 25,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "B1",
+      "dataset": "clustered",
+      "episode_index": 26,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 75.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "C2",
+      "dataset": "clustered",
+      "episode_index": 27,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "E2",
+      "dataset": "clustered",
+      "episode_index": 28,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 225.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "D1",
+      "dataset": "clustered",
+      "episode_index": 29,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 175.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "B3",
+      "dataset": "clustered",
+      "episode_index": 30,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 75.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "A3",
+      "dataset": "clustered",
+      "episode_index": 31,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 25.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "A2",
+      "dataset": "clustered",
+      "episode_index": 32,
+      "round": 3,
+      "sitting": 1,
+      "target": {
+        "x_mm": 25.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "A3",
+      "dataset": "clustered",
+      "episode_index": 33,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 25.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "B3",
+      "dataset": "clustered",
+      "episode_index": 34,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 75.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "D3",
+      "dataset": "clustered",
+      "episode_index": 35,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 175.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "B1",
+      "dataset": "clustered",
+      "episode_index": 36,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 75.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "C3",
+      "dataset": "clustered",
+      "episode_index": 37,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "C1",
+      "dataset": "clustered",
+      "episode_index": 38,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "A2",
+      "dataset": "clustered",
+      "episode_index": 39,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 25.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "C2",
+      "dataset": "clustered",
+      "episode_index": 40,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "D1",
+      "dataset": "clustered",
+      "episode_index": 41,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 175.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "E1",
+      "dataset": "clustered",
+      "episode_index": 42,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 225.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "E2",
+      "dataset": "clustered",
+      "episode_index": 43,
+      "round": 4,
+      "sitting": 4,
+      "target": {
+        "x_mm": 225.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "B1",
+      "dataset": "clustered",
+      "episode_index": 44,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 75.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "E2",
+      "dataset": "clustered",
+      "episode_index": 45,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 225.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "E1",
+      "dataset": "clustered",
+      "episode_index": 46,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 225.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "C3",
+      "dataset": "clustered",
+      "episode_index": 47,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "A3",
+      "dataset": "clustered",
+      "episode_index": 48,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 25.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "C1",
+      "dataset": "clustered",
+      "episode_index": 49,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "D1",
+      "dataset": "clustered",
+      "episode_index": 50,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 175.0,
+        "y_mm": 25.0
+      }
+    },
+    {
+      "cell": "A2",
+      "dataset": "clustered",
+      "episode_index": 51,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 25.0,
+        "y_mm": 75.0
+      }
+    },
+    {
+      "cell": "D3",
+      "dataset": "clustered",
+      "episode_index": 52,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 175.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "B3",
+      "dataset": "clustered",
+      "episode_index": 53,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 75.0,
+        "y_mm": 125.0
+      }
+    },
+    {
+      "cell": "C2",
+      "dataset": "clustered",
+      "episode_index": 54,
+      "round": 5,
+      "sitting": 4,
+      "target": {
+        "x_mm": 125.0,
+        "y_mm": 75.0
+      }
+    }
+  ],
+  "protocol_version": "0.1",
+  "schema_version": 1,
+  "seed": 20261006
+}

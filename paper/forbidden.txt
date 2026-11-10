@@ -1,0 +1,38 @@
+# forbidden.txt: strings that must not appear in the paper. check_paper.py fails on any hit.
+#
+# One entry per line. Matching ignores case. Lines that start with # are comments.
+#   plain text      matched as written, everywhere under paper/ (sources, comments, figures, the submission drafts)
+#   re:PATTERN      a regular expression
+#   pdf:...         in front of either: look only in what goes into the PDF (.tex without comments, .bib, figures)
+#
+# THIS FILE SHIPS WITH GENERIC ENTRIES ONLY, and stays that way: it is committed.
+# The author's own identifying strings go in a SECOND list that is never committed or uploaded:
+#   paper/forbidden.local.txt   (paper/.gitignore keeps it out of git; check_paper.py reads it when it is there), or
+#   any file outside the repository, passed as  --forbidden PATH
+# Put there: every author's name and initials, usernames, e-mail names, the institution and lab, the hub and
+# repository namespaces, the names of the earlier project's repository, datasets and policies, the exact task
+# sentence stored in the datasets, and the name of the room or building if a photograph could show it.
+# Hits from that second list are reported by line number only, so the strings never reach a log.
+# Write full names there: a first name alone also matches the authors of cited papers in references.bib.
+
+# home-directory and machine paths
+/Users/
+/home/
+re:[A-Za-z]:\\Users\\
+re:(^|[\s"'(=:])~/
+
+# e-mail addresses and personal identifiers
+re:[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}
+orcid.org
+
+# thanks, funding and self-reference, in the PDF only (the checklists here use these words on purpose)
+pdf:re:\backnowledg
+pdf:re:\bfunded by\b
+pdf:re:\bgrant (no\.?|number)\b
+pdf:re:\b(we|i) thank\b
+pdf:re:\bour (lab|laboratory|group|institute|university|department|company|team)\b
+pdf:re:\bin our (previous|prior) (work|paper)\b
+
+# links that would lead to the authors: hub pages of datasets, models or spaces; shortened hub links
+pdf:re:huggingface\.co/(datasets|spaces|models)/
+pdf:re:\bhf\.co/

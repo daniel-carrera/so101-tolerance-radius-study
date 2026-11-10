@@ -1,0 +1,125 @@
+{
+  "all": {
+    "agreement": 1.0,
+    "cannot_tell_first": {
+      "failure": 0,
+      "success": 0
+    },
+    "n_agree": 24,
+    "n_cannot_tell": 0,
+    "n_compared": 24,
+    "n_disagree": 0,
+    "n_items": 24,
+    "table": {
+      "failure_failure": 7,
+      "failure_success": 0,
+      "success_failure": 0,
+      "success_success": 17
+    },
+    "wilson_hi": 1.0,
+    "wilson_lo": 0.862023795
+  },
+  "by_kind": {
+    "policy": {
+      "agreement": 1.0,
+      "cannot_tell_first": {
+        "failure": 0,
+        "success": 0
+      },
+      "n_agree": 19,
+      "n_cannot_tell": 0,
+      "n_compared": 19,
+      "n_disagree": 0,
+      "n_items": 19,
+      "table": {
+        "failure_failure": 6,
+        "failure_success": 0,
+        "success_failure": 0,
+        "success_success": 13
+      },
+      "wilson_hi": 1.0,
+      "wilson_lo": 0.831820776
+    },
+    "replay": {
+      "agreement": 1.0,
+      "cannot_tell_first": {
+        "failure": 0,
+        "success": 0
+      },
+      "n_agree": 5,
+      "n_cannot_tell": 0,
+      "n_compared": 5,
+      "n_disagree": 0,
+      "n_items": 5,
+      "table": {
+        "failure_failure": 1,
+        "failure_success": 0,
+        "success_failure": 0,
+        "success_success": 4
+      },
+      "wilson_hi": 1.0,
+      "wilson_lo": 0.565517535
+    }
+  },
+  "cannot_tell": [],
+  "disagreements": [],
+  "interval_level": 0.95,
+  "provenance": {
+    "folder": "data/second_scoring/main",
+    "groups": [
+      {
+        "block": "T1a",
+        "condition": "act_clustered",
+        "n_drawn": 7,
+        "n_scored": 34
+      },
+      {
+        "block": "T1b",
+        "condition": "replay",
+        "n_drawn": 5,
+        "n_scored": 22
+      },
+      {
+        "block": "T2",
+        "condition": "act_clustered",
+        "n_drawn": 6,
+        "n_scored": 26
+      },
+      {
+        "block": "T2",
+        "condition": "act_spread",
+        "n_drawn": 6,
+        "n_scored": 26
+      }
+    ],
+    "logs": [
+      "data/trials/main.jsonl"
+    ],
+    "logs_digest": "dc02a5f49b6672c88c181d4f3abeadc87411b06aa62e3f96fca77b79e72494cc",
+    "n_drawn": 24,
+    "n_scored": 108,
+    "one_in": 5,
+    "passed_over": [],
+    "seed": 20261006,
+    "views": [
+      "front",
+      "wrist"
+    ],
+    "whole_pairs": []
+  },
+  "rehearsal": false,
+  "schema_version": 1,
+  "scorers": {
+    "first": [
+      "op1"
+    ],
+    "n_same_role": 24,
+    "second": [
+      "op1"
+    ]
+  },
+  "watched_again": {
+    "n_items": 0,
+    "total": 0
+  }
+}

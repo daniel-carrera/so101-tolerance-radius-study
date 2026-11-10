@@ -1,0 +1,286 @@
+% numbers_by_hand.tex: settings that no block of trials produces. THE AUTHOR FILLS THIS FILE BY HAND.
+%
+% Each line is one macro. Replace \textbf{??} with the value and keep \xspace after it. Keep one line per macro,
+% in exactly this form, because make_numbers_stub.py and check_paper.py read the file line by line:
+%
+%     \newcommand{\name}{value\xspace} % what it is | copy from: where | copied: by whom (role code), when
+%
+% Rules.
+%   - Copy from the place the line names. Do not fill a value from memory. A "hint" is what this repository's notes
+%     say; it is a lead to check at the source, not a value to paste.
+%   - No names, usernames, hub or repository names, home paths. People are role codes (op1, sc1).
+%   - Text values are plain LaTeX: write 640\,$\times$\,480, 30~Hz, 1e-5 as $10^{-5}$.
+%   - A value that does not exist is written out ("none", "not measured"), not left as ??.
+% check_paper.py --final fails while any ?? remains here.
+%
+% Filled on 2026-10-05 from records only: nothing below was read at the rig.
+% The rig's own entries (arm, servos, gripper, calibration, cameras, light box, basket, start pose) were filled on
+%   2026-10-08 from the operator's answers at the rig, the vendor software's log and the sellers' listings; each line
+%   says which. A "% note:" above one of them is the lead it was checked against, kept as history.
+%   "% src:" above a macro gives the place its value was read. A bare path is in this repository as it stood at
+%       commit 4057263 (2026-10-05); "lerobot-101" is the earlier project at commit 02b3ced; "LeRobot" is the LeRobot
+%       checkout at commit 6adf515. Line numbers hold for those commits: if a file has changed since, search it for
+%       the name that is quoted.
+%   "known:" on a macro's line says how: read (from a file), measured (here, and with what), cited (someone else's
+%       statement), or planned (a setting of a run that has not happened yet).
+%   "CONFIRM:" names the later record that must agree before the paper is submitted. check_paper.py does not count
+%       these marks in this file: search this file for CONFIRM by hand.
+%   "% note:" above a macro that is still ?? says what the records give and what they do not.
+% What is still ?? is collected at the rig with docs/runbook/04-rig-facts.md, or waits for a decision named in its note.
+
+% --- The rig. Copy from: the rig itself, by the person at the rig. -------------------------------------------------
+% Hints come from docs/reference/lerobot101-interfaces.md, which describes the earlier tripod setup, not the light box.
+% The arm and the light box are rebuilt in the week of the study, so nothing August's records say about the hardware
+% is a value here. Where they give a lead, a note says so, and docs/runbook/04-rig-facts.md says how to check it.
+\newcommand{\rigArmBuild}{both built by the operator from one seller's SO-101 kit (WowRobo: printed parts, servos and wrist camera), with no change reported beyond the kit's wrist-camera mount; the follower's base is clamped at the front of the light box, on the box's centre line\xspace} % the arm: which SO-101 kit or print, and any change to it | copy from: the rig | copied: 2026-10-08, from the operator's answers of that day | known: reported by the operator (bought as one kit from that seller, assembled by the operator, mounted on the centre line); nothing was read at the rig | CONFIRM: the operator's word that nothing else on the follower differs from the standard build (asked, not answered in so many words)
+% note: LeRobot's assembly page says the follower takes six STS3215 servos geared 1/345 (LeRobot
+%       docs/source/so101.mdx:35). That is the design, not a reading of this arm's labels; no record that was read
+%       gives the supply voltage.
+\newcommand{\rigServoVariant}{the follower's six are the 12~V variant (labelled STS3215-12V in the seller's pictures; STS3215-C018, geared 1/345, in the kit's listing; the servo's own listings give a stall torque of 30~kg\,cm at 12~V), on a 12~V, 8~A supply (its label); the leader's six are the kit's 7.4~V variants, geared 1/345, 1/191 and 1/147. The labels of this arm's servos were not read\xspace} % servo variant per joint (supply voltage, gear ratio); the protocol names the model, Feetech STS3215 | copy from: the servo labels and the supply | copied: 2026-10-08 | known: 12 V reported by the operator; the supply's output (12 V, 8 A; model G-XHH-1200800, input 100-240 V) read from the operator's photograph of its label, 2026-10-08, not kept in the repository; "STS3215-12V" read from a picture of the seller's that the operator sent, which is not a picture of this arm; the variant codes and gear ratios cited from a reseller's listing of the seller's kit (follower C018 12 V 1/345 x 6; leader C001 1/345 x 1, C044 1/191 x 2, C046 1/147 x 3, all 7.4 V), the torque from retailers' listings of the C018; the operator gave the torque as 35 kg from memory, and no listing that was read says 35 | not known: the leader's supply
+% src (what the code sets): LeRobot src/lerobot/robots/so_follower/config_so_follower.py:44-47 holds the defaults
+%      position_p_coefficient 16, position_i_coefficient 0, position_d_coefficient 32, under the comment "Position-mode
+%      PID gains written to Feetech STS3215 motors at connect time". so_follower.py:159-166: configure() writes them,
+%      with torque off, to the registers P_Coefficient, I_Coefficient and D_Coefficient of every motor on the bus (the
+%      six of so_follower.py:53-60); connect() ends by calling configure() (so_follower.py:108), every time. The
+%      registers are one byte each, at addresses 21 (P), 22 (D) and 23 (I): src/lerobot/motors/feetech/tables.py:59-61.
+%      A write waits for the servo's answer and raises if it fails or is refused
+%      (src/lerobot/motors/motors_bus.py:1067-1125), so a session that connected had all eighteen writes acknowledged.
+%      Nothing reads the registers back.
+% src (under what condition): every follower this study builds takes those defaults, because no caller passes a gain:
+%      src/tolerance_radius/rig/record_layout.py:221-229 and trial_session.py:388-397; lerobot-101
+%      scripts/data/record_session.py:351-359, scripts/policy/rollout_session.py:926-935, and under scripts/session/
+%      practice.py:109-113, check_rig.py:485-488 and align.py:119-123. The tools that open the bus without connect()
+%      write no gain (lerobot-101 scripts/session/home_follower.py:184-186, so101_session.py:355, check_rig.py:200).
+%      The same three values are hard-coded in release 0.6.0 (so_follower.py:164-168 of that release, as installed in
+%      the rig's environment) and are the defaults at the v0.6.1 tag: the answer is the same whichever of the three
+%      drove the arm.
+% src (LeRobot's values or the vendor's defaults): cited, not verified. Release 0.6.0 comments its writes "Set
+%      P_Coefficient to lower value to avoid shakiness (Default is 32)" and "Set I_Coefficient and D_Coefficient to
+%      default value 0 and 32" (so_follower.py:164 and 166 of that release); the pinned commit keeps both comments for
+%      the same servo model in src/lerobot/robots/lekiwi/lekiwi.py:196-198. So P = 16 is LeRobot's choice, half of what
+%      LeRobot calls the servo's default, and I and D are what LeRobot calls the defaults. The vendor's own table was
+%      not read, and the units of the three registers are the vendor's.
+% CONFIRM at the rig (docs/runbook/04-rig-facts.md, the servo step): the three registers of each of the six follower
+%      servos, read after a session has connected. No existing command prints them. Until that is done the value's
+%      last sentence stays; afterwards it becomes "confirmed by reading the registers", with the date.
+\newcommand{\rigServoGains}{P = 16, I = 0, D = 32, in the servo's register units, on all six servos. LeRobot's follower code writes these values, its defaults, each time it connects, and no session of this study overrides them. LeRobot's source gives the servo's own defaults as P = 32, I = 0 and D = 32; according to that source, only P differs from the servo's default. The values were read from the code that drives the arm and were not read back from the servos\xspace} % position-loop gains (P, I, D) of the follower's servos, and whether they are the vendor's defaults | copy from: the servo registers, read at the rig | copied: 2026-10-05, from the code and NOT from the registers | known: read (what the code sets and when); cited (the vendor's defaults, from LeRobot's comments) | CONFIRM: the registers, read at the rig
+\newcommand{\rigGripper}{The kit's standard printed jaws, with nothing added to them; fully open, the jaw tips are 151~mm apart (the operator's ruler)\xspace} % gripper jaws: stock or changed, any pads | copy from: the rig | copied: 2026-10-08, from the operator's answer ("151mm, standard") | known: measured by the operator with a ruler; standard as reported
+% note: the calibration record is LeRobot's file for the follower's id, calibration/robots/so_follower/my_follower.json
+%       under the LeRobot cache of the rig's computer (LeRobot src/lerobot/robots/robot.py:49-53). On 2026-10-05 its
+%       modification date was 2026-07-03 (measured: stat). The arm is rebuilt this week: that date is this study's
+%       calibration only if the file was kept and still matches the servos, which a session's connect checks
+%       (so_follower.py:99-103). How LeRobot calibrates: so_follower.py:115-157.
+\newcommand{\rigCalibration}{calibrated by the operator with LeRobot's procedure (each joint set by hand to the middle of its range, then moved through its whole range), following the kit seller's video guide. The calibration files used throughout were written on 2026-07-03 and not since, no servo was taken off its horn when the arm was moved into the light box, and every session loaded the files without reporting a mismatch with the servos\xspace} % how and when the joints were calibrated | copy from: the calibration record | copied: 2026-10-08 | known: the procedure reported by the operator and read in LeRobot's code (so_follower.py:115-157); the dates measured (stat on 2026-10-05 and again on 2026-10-08: follower 2026-07-03 21:02, leader 21:08); no line of the week's 31 session logs has the mismatch message; no servo off its horn: the operator's answer of 2026-10-08
+% note: lead only. August's rig check names the two USB cameras it expects, "Logitech HD Pro Webcam C920S" in front and
+%       "2MP USB Camera Module for SO-ARM100/101" on the wrist (lerobot-101 scripts/session/check_rig.py:220-225), and
+%       fails when either is not connected. Whether these are the rebuilt rig's cameras is read at the rig.
+\newcommand{\rigFrontCamera}{Logitech HD Pro Webcam C920\xspace} % front camera: model | copy from: the camera | copied: 2026-10-05 | known: read from the computer's own list of cameras ("HD Pro Webcam C920", USB vendor 1133, product 2277); the operator confirmed on 2026-10-08 that it is the camera hanging from the light box's top rear pipe
+\newcommand{\rigWristCamera}{the kit's 2-megapixel USB colour camera on the kit's printed wrist mount (the computer lists it as USB2.0\_CAM1, USB vendor 1443, product 37424; no model name was read from it)\xspace} % wrist camera: model | copy from: the camera | copied: 2026-10-08 | known: bought with the kit, reported by the operator; "2 MP USB RGB camera" cited from a reseller's listing of the kit; the name and the two USB numbers read from the computer's list of cameras and from the vendor software's log (05A3:9230) | CONFIRM: a model printed on the camera or its cable, if there is one
+% src: the August dataset's meta/info.json (in the LeRobot cache of the rig's computer, not in a repository): both
+%      camera features have shape [480, 640, 3] (lines 35-39 and 64-68), "fps" is 30 (line 3) and video.fps is 30
+%      (lines 51 and 80). The August policy's config.json gives its two image inputs as [3, 480, 640]. All of it
+%      follows from one place, lerobot-101 scripts/session/so101_session.py:68-75 (width 640, height 480, fps 30 for
+%      both cameras), which this study's recorder and trial runner pass on unchanged
+%      (src/tolerance_radius/rig/record_layout.py:225 and trial_session.py:392). LeRobot refuses a camera whose driver
+%      does not report the size and the rate asked for (LeRobot src/lerobot/cameras/opencv/camera_opencv.py:247-260
+%      and 283-305). So 30 is the rate asked of each camera and the rate the frames are stamped with: nobody measured
+%      how often a new picture arrived. The hints (640 x 480; 30) are confirmed.
+\newcommand{\rigImageSize}{640\,$\times$\,480\xspace} % image size given to the policy, pixels | copy from: the dataset's metadata | copied: 2026-10-05 | known: read (August's dataset and policy; the camera configuration this week's recorder reuses) | CONFIRM: this week's datasets (verify_dataset.py --expect-resolution 640x480; the training notebook's dataset check)
+\newcommand{\rigCameraRate}{30\xspace} % camera frame rate, Hz | copy from: the dataset's metadata | copied: 2026-10-05 | known: read (the rate asked of each camera and stamped on the frames; not a measured delivery rate) | CONFIRM: this week's datasets (meta/info.json, fps; the training notebook asserts 30)
+\newcommand{\rigCameraMount}{mounted inverted on the light box's top rear pipe, on the box's centre line, its image rotated by 180 degrees in software; held by a printed plate (123\,$\times$\,30\,$\times$\,4~mm) with two snap hooks of the VLA-REPLICA camera mount on the pipe and a 1/4-inch screw with two lock nuts in the camera's tripod thread; lens 674~mm above the floor and 810~mm in a straight line from about the middle of the grid (tape measure), which is a view from about 56 degrees above the floor (derived from the two lengths)\xspace} % where the front camera sits: height above the table and angle | copy from: a measurement at the rig | copied: 2026-10-08, from the operator's answers ("67.4cm above table, 81cm from around middle grid to the lens", upside down, centre line, the plate's description) | known: the two lengths measured by the operator, the second confirmed by the operator as the straight line to the lens; the angle derived, asin(674/810); the rotation read (lerobot-101 scripts/rig.py:26-29)
+% note: lead only. The session code sets each camera's size, rate and rotation and nothing else: no exposure, white
+%       balance or focus (LeRobot src/lerobot/cameras/opencv/camera_opencv.py:198-245; lerobot-101
+%       scripts/session/so101_session.py:68-75). August's notes say that on this computer the focus could not be locked
+%       and the exposure drifted (so101_session.py:52-60; lerobot-101 docs/procedures/act-cube-v1-eval.md:152-153).
+%       Whether anything outside these programs fixes them on the rebuilt rig is answered at the rig.
+\newcommand{\rigCameraSettings}{front camera set manually in the vendor's software (Logi Tune 3.15.62), which must remain running to maintain these settings: exposure 115 with gain 0, white balance 4155~K, focus 0, brightness 77, contrast, saturation and sharpness 128, anti-flicker 60~Hz, and a digital zoom of 118 (100 is none) with pan $-7200$ and tilt 25200, all in that software's units. Wrist camera: exposure and white balance automatic (its default); focus set by hand on its lens\xspace} % exposure, white balance and focus: fixed or automatic | copy from: the camera's settings | copied: 2026-10-08 | known: the front camera's values read from the vendor software's log (the same in its readings of 2026-10-06 16:41 and 20:45 and of 2026-10-08 18:13; the zoom and tilt differ from that log's values of 2026-10-05, 130 and -10800, and the log that remains begins on 2026-10-06 at 16:41, so when they were changed is not recorded; every session since has found the floor tags within about a millimetre of where the stored calibration has them, which a changed zoom would not allow) and shown in the operator's two screenshots of 2026-10-08; the wrist camera's automatic exposure and white balance read from the same log (15 readings, 2026-10-06 to 2026-10-08), its focus reported by the operator | CONFIRM: that the hand-set values held in every session: the datasets' camera audits (data/audit/clustered_camera.json, spread_camera.json) and the picture check at each session's start
+\newcommand{\rigLighting}{the 81~cm (32~inch) cubic photography light box of the VLA-REPLICA cell \cite{huang2026vlareplica} (Glendan): a frame of plastic pipes, walls lined with reflective silver fabric, a white floor sheet; three LED panels under the top, evenly spaced, above a white diffuser sheet fastened with hook-and-loop tape to the top's edges and the front poles, operated at the second-lowest of the dimmer's brightness steps. The front flap was zipped shut except along the strip where the arm is clamped, and every other opening was closed with the box's own flaps except the side window on the arm's left, which stayed open. The lamps' power and colour temperature were not read\xspace} % the light box: size and lamps | copy from: the rig | copied: 2026-10-08, from the operator's answers and one photograph of that day | known: the size, the three lamps under the top, the diffuser and the dimmer's step reported by the operator on 2026-10-08; the flap, the other openings and the open window on the arm's left reported by the operator on 2026-10-08 ("flap closed and zipped, leaving only the area horizontal where the arm is clamped unzipped ... only one side window was left open (the one on the left of the arm)"), which replaces the report of 2026-10-06 (the flap left unzipped; the cube placed through the side windows: docs/journal.md, 14:48 that day); the walls and the floor read from the photograph (not kept in the repository); the box's make cited from that paper (appendix A.1), which gives about 5600 K for its lamps at full brightness, a setting this rig did not use | not known: how many steps the dimmer has
+% src: lerobot-101 eval/table_geometry.json:2 ("tag_mm": 60.0) and its two tags, "0" and "1" (lines 4 and 28): the file
+%      this study's measuring code reads (src/tolerance_radius/rig/vision.py:217-218). The family is the only one the
+%      detector looks for: lerobot-101 scripts/camera/tag_check.py:35 (cv2.aruco.DICT_APRILTAG_36H11). The size is the
+%      outer edge of the black border (scripts/camera/make_print_assets.py:92). The same file's note (line 58) says
+%      the prints "measure ~58.5mm": an August measurement of prints that may have been replaced since, so it is not
+%      in the value. The hint (AprilTag 36h11) is confirmed.
+\newcommand{\rigTags}{AprilTag 36h11, ids 0 and 1, printed at a nominal 60~mm (measured: 59.7\,$\times$\,60.0 and 59.8\,$\times$\,60.0~mm)\xspace} % the two fiducial tags: family and printed size, mm | copy from: the table geometry file and a ruler | copied: 2026-10-05 | known: family, ids and nominal size read; sizes measured by the operator with calipers on 2026-10-05 (tag 0: 59.7 wide, 60 high; tag 1: 59.78 wide, 60 high), new prints for the light box | CONFIRM: that the table registration's own reading of the sides (config/table_geometry.json, registration.floor_tag_sides_mm) agrees within 0.5 mm
+\newcommand{\rigCube}{painted wood, orange, one face with rounded edges (placed face down); mass 20~g\xspace} % the cube: material, colour, mass | copy from: the cube | copied: 2026-10-05; the mass 2026-10-08 | known: material, colour and the rounded face reported by the operator with two photographs; 30 mm reported by the operator; the mass reported by the operator on 2026-10-08 ("cube is 20 g"), the scale and what it reads to not stated; the three edges were not measured again
+\newcommand{\rigTray}{a grey plastic storage basket moulded in a woven pattern, 256\,$\times$\,201~mm at the rim by the vendor's listing, 104~mm tall, its base 225\,$\times$\,170~mm by the operator's ruler. It stands on double-sided tape beyond the grid's column A, clear of the box's pipes, its nearest corner about 113~mm outside the grid (read from the front camera's image; accurate to about 10~mm); its position is defined by a reference image, and it is returned there with a live overlay whenever the arm has displaced it\xspace} % the basket: size and where it stands relative to the grid | copy from: a measurement at the rig | copied: 2026-10-08 | known: the make and the listing's outside size cited (reported by the operator; an earlier picture of the listing read rim 252 x 192, base 227 x 170, height 105 mm); the height confirmed by the operator on 2026-10-08 as the listing's; the base as the operator measured it; the tape and the clearance from both pipes reported by the operator on 2026-10-08; the place read from data/instrument/basket_reference.png through the stored table registration, not checked with a ruler
+% src: the August dataset's meta/info.json:5-18: "action" is six float32 values named shoulder_pan.pos,
+%      shoulder_lift.pos, elbow_flex.pos, wrist_flex.pos, wrist_roll.pos and gripper.pos. What the numbers mean is in
+%      the code. LeRobot src/lerobot/robots/so_follower/so_follower.py:219-230 writes them to each servo's
+%      Goal_Position: a position to reach, not a change of position. The five arm joints are degrees about the middle
+%      of the calibrated range and the gripper runs from 0 to 100 over its range (so_follower.py:50 and 54-59;
+%      src/lerobot/motors/motors_bus.py:871-877), because use_degrees is true by default (config_so_follower.py:42)
+%      and no session passes it. In a demonstration the stored action is what the leader arm read, in the same units
+%      (src/lerobot/teleoperators/so_leader/so_leader.py:146-152; src/lerobot/scripts/lerobot_record.py:316-322 and
+%      362). The recorder sends it as it is; the trial runner limits each step (the per-step clamp). The hint is
+%      confirmed.
+\newcommand{\rigActionSpace}{A position target for each of the six servos at every control step: the five arm joints in degrees from the middle of their calibrated range, the gripper from 0 to 100 over its range. A demonstration's actions are the leader arm's joint positions\xspace} % what an action is | copy from: the dataset's metadata | copied: 2026-10-05 | known: read (August's dataset for the names; LeRobot's code for what they mean) | CONFIRM: meta/info.json of this week's datasets holds the same six names
+% src: the August policy's saved config.json (checkpoint 075000): input_features holds observation.state of shape [6]
+%      beside the two images, and n_obs_steps is 1; training/settings.md:68, 97, 98 and 107 list the same. The state is
+%      what the follower's servos report as Present_Position, named and scaled like the action (LeRobot
+%      src/lerobot/robots/so_follower/so_follower.py:183-184; the August dataset's meta/info.json:19-32). This week's
+%      policies take their inputs from their datasets (settings.md:97-98, "derived"), which the same robot class
+%      records. The hint is confirmed.
+\newcommand{\rigStateInput}{The follower's six joint positions, in the action's units, at the current step only\xspace} % what the policy observes besides the two images | copy from: the policy's configuration | copied: 2026-10-05 | known: read (August's policy and dataset); planned for this week's two policies | CONFIRM: config.json of each of this week's checkpoints (input_features, n_obs_steps)
+% note: left open on purpose. The recorder asks for 30 Hz unless told otherwise (its --fps) and its log does not
+%       print the rate. In August 16 of 55 episodes held about 28 Hz while every frame was stamped at 30 (the
+%       priorSlow lines below); a fixed episode time then showed it in the frame count. Since 2026-10-06 a take ends
+%       on the operator's key, so what ran is counted from the sessions' logs, one line per control cycle:
+%       scripts/rig/recording_rate.py writes data/audit/<dataset>_rate.json (median and lowest rate over the saved
+%       takes). Fill this after the sittings from those two files (docs/runbook/04-rig-facts.md, the step after
+%       recording). The first three episodes of the clustered set read 29.99 Hz each (measured 2026-10-06).
+\newcommand{\rigTeleopRate}{30 requested; the recording loop held a median of 29.99 in both sets, and 29.96 in its slowest episode\xspace} % rate of the recording loop, Hz | copy from: the recorder's log | copied: 2026-10-07, from data/audit/clustered_rate.json and spread_rate.json (median_hz 29.989 in both, lowest_hz 29.956 and 29.977, no episode under 29.4; 55 episodes each) | known: measured (control cycles counted in the sessions' logs, scripts/rig/recording_rate.py)
+% note: left open until the sittings have run. Since 2026-10-06 a take lasts at most 35 s (the recorder's
+%       --episode-time; 25 until then) and ends when the operator presses the key with the arm back at rest, so the
+%       episodes are not of one length: give the shortest and the longest of both sets, from the datasets' own
+%       episode tables. The first three of the clustered set lasted 32.4, 26.3 and 24.7 s. August's recorder log
+%       starts "55 x 25s" and its 55 kept record loops lasted 25.03 to 25.07 s (measured 2026-10-05 from lerobot-101
+%       logs/session_20260818_193457.log, a file that is not in git).
+\newcommand{\rigEpisodeSeconds}{17.3 to 26.0 (median 20.9 in the clustered set, 20.0 in the spread set); an episode ends when the operator presses a key\xspace} % length of one demonstration episode, seconds | copy from: the recorder's log | copied: 2026-10-07, from the two sets' own tables (frames per episode at 30 a second: clustered 550 to 779, median 628; spread 520 to 712, median 600; 34,582 and 33,365 frames in all) | known: measured
+% src: protocol/protocol.md:125 ("set by the operator with the leader arm before each trial; there is no stored pose") and
+%      the trial runner itself: src/tolerance_radius/rig/trial_session.py:455-464 and 563 (teleoperation phases that end
+%      on the operator's key; nothing in the file commands a start pose). The handoff gate then compares the first
+%      command with wherever the arm is. The hint is confirmed.
+\newcommand{\rigStartPose}{Set by the operator with the leader arm before every trial; no pose is stored or commanded, and there is neither a physical stop for the follower nor a rest for the leader. In this pose the arm is folded and the gripper is closed. As recorded at the start of each of the 108 counted trials, the elbow ranged over 1.0 degrees and the shoulder's lift over 3.2, the shoulder's pan over 10.7, the wrist's roll over 15.4 and the wrist's flex over 20.0\xspace} % how the arm's start pose is set before a trial | copy from: the trial procedure | copied: 2026-10-05; the pose and the ranges added 2026-10-08 | known: read (the protocol and the trial runner); no stop and no rest, and the pose in words, reported by the operator on 2026-10-08; the ranges measured (largest less smallest of execution.start_pose_deg over the 108 records of data/trials/main.jsonl, all kinds of trial together)
+% src: config/protocol.toml:70-71 (handoff_tolerance_deg 8.0, replay_handoff_tolerance_deg 5.0) and the trial runner's
+%      argument defaults, src/tolerance_radius/rig/trial_session.py:263-265, applied at lines 369-370. The gate is
+%      lerobot-101 scripts/policy/rollout_session.py:51-87: it refuses when any of the six values of the first command
+%      is farther than this from the arm's reading (for the gripper the unit is its 0-to-100 scale, not degrees).
+%      The two numbers are also the generated macros \handoffTolerance and \handoffToleranceReplay, which follow
+%      config/protocol.toml by themselves; this line does not. The hint (8) is confirmed, for a policy.
+%      At commit 4057263 nothing compares a session's settings with the protocol file: they agree because the
+%      runner's defaults were typed to match. (On the main branch src/tolerance_radius/session_rules.py has since
+%      been written to hold a session to the [execution] section; on 2026-10-05 at 18:40 the trial runner did not
+%      call it yet.)
+\newcommand{\rigHandoffTolerance}{8 (5 for a replay)\xspace} % how far the first command may be from the arm's pose, degrees per joint | copy from: the trial runner's settings | copied: 2026-10-05 | known: read (the protocol file, still a draft, and the runner's defaults agree) | CONFIRM: the protocol file at its freeze; what ran is in each trial record (execution.handoff_tolerance_deg)
+% src: config/protocol.toml:73-78 (stall_steps 30, stall_progress_deg 1.5, stall_fraction 0.9; clamp_deg 15.0 at line
+%      68) and the trial runner's defaults, src/tolerance_radius/rig/trial_session.py:262 and 267-269; the threshold
+%      is clamp x fraction = 13.5 (trial_session.py:372). The rule itself is lerobot-101
+%      scripts/policy/rollout_session.py:175-185.
+%      At each step, lag is the largest distance of any joint's command (as the policy or the replay gave it, before
+%      the clamp) from that joint's reading, and progress is the largest change of any joint's reading over the last
+%      30 steps; the attempt ends when lag >= 13.5 and progress < 1.5. Thirty steps are one second at the rate asked
+%      for. The gripper counts in its own 0-to-100 units. The arm then holds its last goal, torque on.
+%      The trial record does not carry the three stall settings (trial_session.py:552-554): what ran rests on the
+%      defaults and on the command line of the session, unless the session rules named above come to refuse a
+%      session whose settings differ from the protocol file.
+\newcommand{\rigStallRule}{an attempt ends when one joint is at least 13.5 degrees from its command (0.9 of the clamp) and no joint has moved 1.5 degrees over the last 30 steps\xspace} % the rule that ends an attempt when the arm is blocked | copy from: the trial runner's settings | copied: 2026-10-05 | known: read (the protocol file, still a draft; the runner's defaults; the rule's code) | CONFIRM: the protocol file at its freeze, and that no session passed another --stall-... value
+
+% --- Training. Copy from: training/settings.md, itself copied from the saved training configuration. ----------------
+% src: training/settings.md, the table "For the appendix" (lines 61 to 80). That file was prepared on 2026-10-05, before
+%      any run of this week (its line 6): the ten values below are THE PLAN, not yet a record of this week's two runs.
+%      Six of them are also what August's saved configuration holds (train_config.json and config.json of checkpoint
+%      075000, read again on 2026-10-05 for these keys: batch_size 32, seed 1000, policy.optimizer_lr 1e-05,
+%      policy.chunk_size 100, policy.vision_backbone resnet18 with ResNet18_Weights.IMAGENET1K_V1,
+%      dataset.image_transforms.enable false). The parameter count was measured on that checkpoint (settings.md:245;
+%      the same figure is in lerobot-101 logs/session_20260819_115137.log:170, a file that is not in git).
+%      Three are this week's own: no held-out episodes (August held out 6), and the GPU type and the LeRobot version,
+%      which the notebook pins and refuses to run without (training/train_act_colab.ipynb, LEROBOT_VERSION and
+%      EXPECTED_GPU; training/README.md:270-271). August ran on the same GPU type and release (settings.md:238, 244).
+%      CONFIRM, for all ten, after each run's first checkpoint: the run's own train_config.json against August's and
+%      against the other run's (the two commands under "How to check this table against a run" in
+%      training/settings.md), and the ENV line the run prints. A run on another GPU, or a resumed run, changes a line
+%      here.
+\newcommand{\trainParams}{51.6\xspace} % parameters of the policy, millions | copy from: training/settings.md | copied: 2026-10-05, lines 63 and 245 (51,597,190) | known: measured on the August checkpoint; planned for this week (same architecture and inputs) | CONFIRM: the "policy loaded: N params" line of a trial session's log
+\newcommand{\trainBackbone}{ImageNet-pretrained ResNet-18\xspace} % vision backbone | copy from: training/settings.md | copied: 2026-10-05, lines 64, 113 and 114 | known: planned; August's saved value | CONFIRM: each run's train_config.json
+\newcommand{\trainChunk}{100\xspace} % action chunk size, steps | copy from: training/settings.md | copied: 2026-10-05, lines 67 and 108 | known: planned; August's saved value | CONFIRM: each run's train_config.json
+\newcommand{\trainBatch}{32\xspace} % batch size | copy from: training/settings.md | copied: 2026-10-05, lines 74 and 147 | known: planned; August's saved value | CONFIRM: each run's train_config.json
+\newcommand{\trainLearningRate}{$10^{-5}$\xspace} % learning rate | copy from: training/settings.md | copied: 2026-10-05, lines 72, 134 and 139 (1e-05, constant, the backbone's too) | known: planned; August's saved value | CONFIRM: each run's train_config.json
+\newcommand{\trainSeed}{1000\xspace} % seed of each of the two runs | copy from: training/settings.md | copied: 2026-10-05, lines 78 and 145 (LeRobot's default, not passed) | known: planned; August's saved value | CONFIRM: each run's train_config.json
+\newcommand{\trainAugmentation}{off\xspace} % image augmentation: on or off | copy from: training/settings.md | copied: 2026-10-05, lines 71 and 92 (dataset.image_transforms.enable false) | known: planned; August's saved value | CONFIRM: each run's train_config.json
+\newcommand{\trainHeldOut}{none\xspace} % episodes kept out of training for an evaluation loss (the protocol plans none) | copy from: training/settings.md | copied: 2026-10-05, lines 40, 41 and 76 (dataset.eval_split 0.0 and eval_steps 0; August: 0.1, the last 6 of 55) | known: planned | CONFIRM: each run's train_config.json
+\newcommand{\trainHardware}{one A100 GPU\xspace} % the kind of GPU the two runs used; no account or project name | copy from: training/settings.md | copied: 2026-10-05, line 80 ("to be confirmed from the ENV line each run prints"); August: line 238 | known: planned; the notebook refuses another GPU type | CONFIRM: the gpu field of each run's ENV line
+\newcommand{\trainLerobotVersion}{0.6.1\xspace} % version of LeRobot that trained the policies | copy from: training/settings.md | copied: 2026-10-05, lines 80 and 244 | known: planned; the notebook installs this release and refuses another | CONFIRM: the lerobot field of each run's ENV line
+
+% --- The earlier project's audit. Copy from: the earlier project's own records, by the author. ---------------------
+% These counts are NOT in this repository's data. Do not take them from the notes here: open the earlier records.
+%
+% What the records show about all three faults (for the appendix's opening sentence, which carries a CONFIRM mark):
+% each was found by the earlier project itself at the time, not by a later audit. The torn frames were found by its
+% own scan (on 2026-08-13 in its first dataset; on the recording day in its second), the slow episodes within an hour
+% of the recording, the setting within a quarter of an hour and two trials. "Had not flagged" holds only for the
+% checks each line names.
+%
+% WHICH DATASET? The earlier project has two datasets with torn frames, and the three count lines below fit either.
+%   (a) Its first dataset, 53 episodes (lerobot-101 docs/reports/video_artifacts_20260813.txt:6), scanned on 2026-08-13:
+%       171 flagged frames in 79,254 scanned, 170 from the front camera and 1 from the wrist camera, in 46 of 53
+%       episodes (lines 188-192); "Verified by eye: 4 severe hits, 5 weakest hits, 6 random controls" (line 3). It is
+%       the only audit report among the records, and the scan was written for this dataset.
+%   (b) The dataset behind the earlier evaluation, 55 episodes (its meta/info.json:127; lerobot-101
+%       docs/run-journal.md:15): "Corrupt frames: 31/80,910 (0.038%; front 2, wrist 29, all single-frame)", then
+%       "Accepted" (run-journal.md:26-27). The journal does not say in how many episodes. Measured here on 2026-10-05
+%       by running the same scan (lerobot-101 scripts/data/check_video_artifacts.py, its default thresholds) on the
+%       local copy of that dataset: 31 flagged frames in 80,910, front 2, wrist 29, in 18 of 55 episodes. Two
+%       cautions: 13 of the 31 sit in runs of two or three consecutive frames, which "all single-frame" does not
+%       describe; and 8 score between 5.0 and 6.9, under the lowest score that the scan's own notes call a confirmed
+%       tear (check_video_artifacts.py:28-29). For this dataset the scan was already routine: the frames were found
+%       at once and the dataset was kept and trained on.
+%   The paper's other sections call (b) the earlier dataset; the words "found by the audit" and "the checks those
+%   episodes had passed" fit (a).
+%   SETTLED 2026-10-08 (the author: "the one most suitable for our paper and most verifiable"; docs/decisions.md): the
+%   table reports (b), the dataset of the same task behind the earlier evaluation, whose counts were measured again here
+%   and on whose files the two checks were run again; (a) is named in the "how it was found" cell, from its report.
+%   The table's words were changed to fit: "flagged", "checks that pass on it", and no "audit".
+\newcommand{\priorDatasetEpisodes}{55\xspace} % episodes in the earlier dataset | copy from: the earlier project's dataset record | copied: 2026-10-08, at the author's word of that day ("the one most suitable for our paper and most verifiable") | known: read (lerobot-101 docs/run-journal.md:15 and :30, "55 ep / 40,455 frames"; the local copy's meta/info.json) | this is dataset (b) of WHICH DATASET above: the one behind the earlier evaluation, of the same task, and the one the paper's other sections call the earlier dataset
+\newcommand{\priorTornFrames}{31\xspace} % video frames flagged as torn by the earlier project's scan | copy from: the earlier project's record | copied: 2026-10-08, at the author's word of that day ("the one most suitable for our paper and most verifiable") | known: read (run-journal.md:26, "Corrupt frames: 31/80,910 (0.038%; front 2, wrist 29, all single-frame)") and measured again on 2026-10-05 by running the same scan with its default thresholds on the local copy: 31 flagged in 80,910, front 2, wrist 29 | cautions: 13 of the 31 sit in runs of two or three frames, and 8 score between 5.0 and 6.9, under the lowest score the scan's own notes call a confirmed tear: so "flagged", not "torn"
+\newcommand{\priorTornEpisodes}{18\xspace} % episodes with at least one flagged frame | copy from: the earlier project's record | copied: 2026-10-08, at the author's word of that day ("the one most suitable for our paper and most verifiable") | known: measured on 2026-10-05 with the same scan on the local copy (18 of 55); the earlier journal gives no count of episodes
+% src: lerobot-101 README.md:78 ("Finds torn/corrupt recorded frames that `verify_dataset.py` and `ffmpeg` both pass as
+%      clean") and scripts/data/check_video_artifacts.py:4-7 (the camera hands over a full-sized buffer, LeRobot writes
+%      it like any other frame, the encoded video is valid and ffmpeg reports no error). Read: verify_dataset.py
+%      decodes the first and last frame of each episode and compares their shape (lines 122-156), so it cannot see a
+%      torn frame. Measured here on 2026-10-05: "ffmpeg -v error" printed nothing for the front-camera file in which
+%      the scan of 2026-08-13 lists 63 torn frames. The value holds for either dataset. No record says that either
+%      check was run on a dataset before its scan: the earlier project states it as what the two checks do.
+\newcommand{\priorTornChecks}{The dataset check, which decodes the first and last frame of every episode, and ffmpeg's error report: both pass on these files\xspace} % the checks that pass on those episodes, in words | copy from: the earlier project's records | copied: 2026-10-05; reworded 2026-10-08 | known: measured on 2026-10-08, 20:47, on the local copy of the 55-episode dataset: ffmpeg -v error on its five video files prints no line, and lerobot-101 scripts/data/verify_dataset.py --expect-episodes 55 ends with DATASET OK; what the check decodes: verify_dataset.py:122-156 | no record says that either was run on this dataset before its scan; for the project's first dataset the project's notes say both passed
+% src: lerobot-101 docs/reports/video_artifacts_20260813.txt:2 ("Detector: temporal detour (z>12) then new-seam
+%      confirmation (tear>=5.0)") and scripts/data/check_video_artifacts.py:12-29. For dataset (a) a sample of the hits
+%      was checked by eye (the report's line 3); no record says so for dataset (b). What first drew attention to torn
+%      frames is not recorded.
+\newcommand{\priorTornFound}{The project's own scan of every decoded frame for a seam that neither neighbouring frame has, written after torn frames had been noticed visually in its first dataset (171 frames in 46 of its 53 episodes)\xspace} % how the flagged frames were found, in a few words | copy from: the earlier project's records | copied: 2026-10-05; reworded 2026-10-08 | known: read (lerobot-101 scripts/data/check_video_artifacts.py:12-29, the two stages; docs/reports/video_artifacts_20260813.txt:1-6 and 188-192: 53 episodes, 171 corrupt frames in 79,254 scanned, 46 of 53 episodes affected, a sample verified by eye); "seen by eye" is in the earlier project's working notes only, not in its git history; for the 55-episode dataset the scan was run before the evaluation and the dataset accepted (run-journal.md:26-27, in git on 2026-08-19 08:06)
+% src: lerobot-101 docs/run-journal.md:21-25 says that 16 episodes (26 to 33 and 41 to 48) were captured at about 28 Hz
+%      and stamped 30, that the computer's processor starved the loop's pacing in two bursts of about seven minutes,
+%      and that the episodes ran their full 25 s. Measured here on 2026-10-05 from that dataset's own episode table:
+%      16 episodes (26 to 33, 41 to 48) hold 697 to 703 frames and the other 39 hold 749 or 750; over 25 s that is
+%      27.9 to 28.1 Hz, mean 28.0; and every frame of every episode is stamped 1/30 s after the one before.
+%      The hint (16) is confirmed.
+\newcommand{\priorSlowEpisodes}{16\xspace} % episodes captured at about 28 Hz and stamped 30 | copy from: the earlier project's run record | copied: 2026-10-05, run-journal.md:21 | known: read; measured again from the dataset's frame counts
+\newcommand{\priorSlowRate}{28\xspace} % their measured capture rate, Hz | copy from: the earlier project's run record | copied: 2026-10-05, run-journal.md:21 | known: read; measured again (27.9 to 28.1 Hz: frames over the 25 s of an episode)
+% src: NOT in the run journal, which names no check. Measured here on 2026-10-05 from the earlier project's own files.
+%      (1) The recording session's log (lerobot-101 logs/session_20260818_193457.log, not in git) holds INFO and DEBUG
+%      lines only, ends "session ended cleanly", and reports the loop's rate in DEBUG lines alone ("Control loop held
+%      only ... Hz against a 30 Hz target", 11,672 of them). That level is LeRobot's choice: a loop that is slow
+%      because of its pacing, and not because of its own work, "stays at DEBUG" (LeRobot
+%      src/lerobot/utils/cycle_timer.py:294-314). (2) The pacing rule of lerobot-101
+%      scripts/data/verify_dataset.py:179-210 (an interval over 1.5 frame periods is late), applied to all 40,455 time
+%      stamps, finds no late interval; the longest is 33.33 ms. It cannot find one: LeRobot computes each time stamp
+%      as the frame's index divided by the rate asked for (src/lerobot/datasets/dataset_writer.py:225).
+%      training/README.md:168-172 records the same from running the script itself, and that its frame-count check
+%      (--expect-seconds 25) fails these 16 episodes. So the value says what these two checks do with the episodes.
+%      It does not say that the dataset check was run in August: no record tells.
+\newcommand{\priorSlowChecks}{No warning at recording, where the shortfall was logged at debug level only; the dataset check of frame pacing, which reads nominal time stamps and still reports that the loop never stalled\xspace} % the checks those episodes had passed, in words | copy from: the earlier project's records | copied: 2026-10-05; the last clause added 2026-10-08 | known: read (the session log's lines are at DEBUG level: lerobot-101 logs/session_20260818_193457.log:380; verify_dataset.py:179-210 reads the timestamp column) and measured on 2026-10-08, 20:47: verify_dataset.py on the local copy prints "no late frames; worst interval 33.3 ms -- the control loop never stalled"
+% note: the records do not say how it was found. They show that it was known within the hour: the recording ended at
+%       20:24 (the session log), and a commit of 21:19 the same evening already lists the 28 Hz episodes among the
+%       evaluation's caveats (lerobot-101 commit 144d9a5). The frame counts show it (about 700 frames where 25 s at
+%       30 Hz give 750), and the dataset check prints them for every episode (verify_dataset.py:109-110). No record
+%       says that this is how it was noticed. If it was, a routine check did flag this fault, and the appendix's
+%       "its routine checks had not flagged" is wrong for it. The author knows; ?? until then.
+\newcommand{\priorSlowFound}{Not recorded. Notes from the same evening give those episodes' frame counts, about 700 where 25~s at 30~Hz correspond to 750\xspace} % how the slow capture was found, in a few words | copy from: the earlier project's run record | copied: 2026-10-08 | known: read. The run record does not say how (run-journal.md:21-22 gives the fact; first in git 55 minutes after the session's last log line, commit 144d9a5, 2026-08-18 21:19). The earlier project's working notes, outside its git history, say that the 16 episodes "hold ~700 frames stamped 30 fps"; its dataset check prints frames per episode (verify_dataset.py:109-110). An episode then lasted a fixed 25 s (docs/runbook/04-rig-facts.md, step 13)
+% src: lerobot-101 eval/trials/act-cube-v1-preconfig.jsonl: two lines (2026-08-19, 11:54 and 12:03, one scene, both
+%      scored 5), each with "temporal_ensemble": null and a config_correction field, "ran un-ensembled despite logged
+%      0.01; corrected + archived 2026-08-19". The reported log, eval/trials/act-cube-v1.jsonl, has 31 lines, all with
+%      0.01, the first at 12:13. The cause and the check: scripts/policy/rollout_session.py:825-828 (two options
+%      shared one destination, and the first one's default, none, won) and tests/test_rollout_session_gates.py:530-535
+%      ("both first trials ran without ensembling while the AST check above passed"); the test of lines 510-527 read
+%      the default written in the source. Commits fe1f1d0 (11:44: the setting and that test) and 2f5a478 (12:09: the
+%      fix). With ensembling off the policy ran each chunk of 100 actions to its end:
+%      logs/session_20260819_115137.log:170 says "n_action_steps=100" and the log has no "temporal ensembling ON" line,
+%      which the first reported trial's log has at its line 171 (logs/session_20260819_121218.log; logs are not in
+%      git). The hint (temporal ensembling) is confirmed. The run journal does not mention the two trials.
+% One disagreement between records: the correction field and the commit message say the two trial lines "logged
+%      0.01". The code as committed at 11:44 stamps the parsed value (line 825 of rollout_session.py as of commit
+%      fe1f1d0), and the parsed value was none. The two lines as first written are not in git, so this cannot be
+%      settled from the records; no value below depends on it.
+\newcommand{\priorSettingOffName}{temporal ensembling of the policy's actions\xspace} % the execution setting that was off without notice, in words | copy from: the earlier project's trial records | copied: 2026-10-05 | known: read (the set-aside trial lines, the code, the test, two session logs)
+\newcommand{\priorSettingOffTrials}{2\xspace} % trials run with that setting off before it was noticed | copy from: the earlier project's trial records | copied: 2026-10-05, act-cube-v1-preconfig.jsonl (2 lines) | known: read
+\newcommand{\priorSettingOffChecks}{A unit test of the option's default, which read the value written in the source and not what a run parsed\xspace} % what check, if any, covered that setting at the time, in words | copy from: the earlier project's records | copied: 2026-10-05 | known: read (the test, its later comment, the fix's commit message)
+\newcommand{\priorSettingOffFound}{The operator noted discontinuous motion in both trials; neither session's log contains the line that reports ensembling as enabled\xspace} % how it was noticed, in a few words | copy from: the earlier project's records | copied: 2026-10-05 | known: read (the two trials' notes; the two session logs; the fix's commit message)

@@ -1,0 +1,39 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+
+# never committed
+secrets/
+*.env
+
+# bulky or regenerable data: recordings, datasets, checkpoints, videos
+data/recordings/
+data/logs/
+data/datasets/
+data/checkpoints/
+data/instrument/*.png
+data/instrument/*.jpg
+data/second_scoring/*/videos/
+*.mp4
+*.safetensors
+
+# LaTeX build products
+paper/build/
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# draft analysis output: never part of the paper
+analysis/report-draft/
+
+# for the author only
+AUDIT.md

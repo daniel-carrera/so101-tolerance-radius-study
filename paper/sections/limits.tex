@@ -1,0 +1,16 @@
+% Limits. Target 120 words. Written in full, from protocol/protocol.md (draft 0.3), sections 8 and 11.
+% The second sentence's geometry: within half a cell (25 mm) of a cell's centre every point is in that cell; farther
+% out, a point is in the cell's corner or, toward a held-out neighbour, in that neighbour. With the planned layout,
+% of the points 30 mm from their nearest clustered start about half lie in held-out cells, and from 35 mm nearly all
+% (counted on 2026-10-05 on a 0.25 mm lattice over the test region, from config/layouts/clustered.json; a one-off
+% count, not a script of this repository).
+% Said elsewhere, for want of room here: the by-eye reset error is an illustration (results.tex, where it is given);
+% the clustered layout has the guide's structure and not its numbers (method.tex); what the simulation says each
+% block can and cannot show (appendix.tex, "What the trial budget can show").
+\section{Limitations}
+\label{sec:limits}
+
+This study has one rig, task, object and policy family, one budget of \nDemos demonstrations, one training run per layout and \nTrialsTotal trials: a difference between the two policies cannot be attributed to the layouts, and every number is specific to this rig and these runs: the earlier policy of Fig.~\ref{fig:earlier} succeeded in 1 of 12 trials at 31 to 47~mm, the present one in 10 of 20 at the same distances. % src: intro.tex (1 of 12 at 31.01 to 47.14 mm, analysis/pilot_august/trials_with_distance.csv); analysis/report/results.json, the clustered policy's scored trials with d_mm from 31.01 to 47.14: 10 successes in 20, counted on 2026-10-09 (the earlier wording set 9 of 12 at 30 to 40 mm against it, which is not the same range: the reading companion's note)
+Beyond half a cell from the clustered demonstrations, distance is not separated from location (Table~\ref{tab:bins}).
+A code concealed each trial's condition, but the scorer also placed the cube and can often recognise a replay from its motion; rescoring \nSecondScored trials from video with identities concealed, the same person agreed in \nSecondScoredAgree, a check of consistency and not an independent score.
+The cube's orientation was set by hand, unmeasured; the arm's start pose was logged, not controlled.

@@ -1,0 +1,100 @@
+% Results. Target 550 words, two figures and one table.
+% Every number is a macro from generated/numbers.tex, written by scripts/make_report.py from the 108 counted trials
+% (analysis/report/report.md, run of 2026-10-08). The IF blocks this section had were settled from that report on
+% 2026-10-08; docs/journal.md has the entry. What each sentence rests on:
+%   scale: the four runs differ by 1.25 percentage points, over the rule's one, so distances are as read;
+%   radii: both block fits are bounded on both sides; the comparison's probability is 0.9947, "larger";
+%   plateau check (protocol/protocol.md, section 10): the clustered policy's pooled fit moves by 6.0 mm, over the limit of 5;
+%   layout: exact McNemar p = 0.1094, so prediction 3 did not hold; lookup: both counts inside their intervals;
+%   the spread policy's threshold block (T3) was not run (docs/decisions.md, 2026-10-08): pooled fit only, open above.
+%
+% WHICH RADIUS IS WHICH (protocol/protocol.md, section 10; generated/MACROS.md):
+%   block fit  = a condition's own threshold block. The headline, and what every comparison and prediction uses.
+%                clustered policy: \radiusClusteredThreshold (Low, High); replay: \radiusReplay (its only fit).
+%   pooled fit = the threshold block and the policy's workspace-test trials. A check, always labelled "pooled".
+%                clustered policy: \radiusClustered (Low, High); spread policy: \radiusSpread (Low, High).
+% An interval that is open on a side is never printed as a radius with two ends: "at most" or "at least".
+\section{Results}
+\label{sec:results}
+
+\subsection{The camera measurement and the resets}
+\label{sec:instrument}
+Against the printed scale, a measured 10~mm step deviated by \instrumentMeanAbsError~mm on average and by at most \instrumentMaxStepError~mm. % src: protocol/protocol.md, section 7 (the step of the scale check)
+Measured distances were \scaleFactor times the true distances (\scaleFactorMin to \scaleFactorMax across runs) and are reported uncorrected (Appendix~\ref{app:rig}).
+Over the \nTrialsTotal scored trials, accepted placements were a median of \resetErrorMedian~mm from their targets (maximum \resetErrorMax~mm), as read by the camera measurement that guided them.
+Placed by eye, using only a reference image and no overlay or readout, the cube was a median of \byEyeErrorMedian~mm from its target (95th percentile \byEyeErrorNinetyFive~mm; illustrative, $n=\nByEye$). % src: protocol/protocol.md, section 7 (which percentile is reported is our choice)
+Resets by image overlay \cite{kressgazit2024robot,tri2025careful,huang2026vlareplica} were not measured.
+
+\subsection{Replay and policy against distance}
+\emph{The replay's} success falls within a narrow range of distance: it succeeded in 7 of 7 trials within 10~mm of the replayed demonstration's start, in 6 of 11 between 10 and 20~mm, and in 0 of 4 beyond (Table~\ref{tab:bins}, Fig.~\ref{fig:curves}). % src: analysis/report/report.md, "Replay", the table of 10 mm bins
+Its tolerance radius is \radiusReplay~mm (\intervalLevel~\% interval \radiusReplayLow to \radiusReplayHigh), with a fitted width $w$ of 2.0~mm; the robustness check changes the radius by \plateauShiftReplay~mm. % src: analysis/report/report.md, "Replay", block fit (width 2.03 mm, posterior median)
+
+\emph{The clustered policy's} success does not decrease steadily with distance: over all its scored trials it succeeded in 11 of 11 within 10~mm of a demonstration, in 6 of 10 between 10 and 20~mm, and in 9 of 12 between 30 and 40~mm, all of the last in held-out cells. % src: analysis/report/report.md, "Clustered policy", the table of 10 mm bins over its 60 scored trials, and "Success by the cell of the placement"
+The rise at 30 to 40~mm is within sampling variation, but the decline is gradual and location matters besides distance: inside the convex hull of its demonstrations the policy succeeded in 28 of 36 trials and outside it in 9 of 24 (a descriptive split fixed in advance), and in the two interior held-out cells in 13 of 18 trials against 3 of 12 in the two corner ones (an exploratory split). % src: analysis/report/report.md, "Descriptive only" (hull: 28 of 36 and 9 of 24); analysis/report/results.json, the clustered policy's trials by cell, counted on 2026-10-08: B2 7 of 10 and D2 6 of 8; A1 0 of 6 and E3 3 of 6
+The block fit gives a radius of \radiusClusteredThreshold~mm (\radiusClusteredThresholdLow to \radiusClusteredThresholdHigh) with a width of 13.7~mm; the pooled fit, which adds the policy's workspace-test trials, gives \radiusClustered~mm (\radiusClusteredLow to \radiusClusteredHigh). % src: analysis/report/report.md, "Clustered policy", block fit (width 13.66 mm, posterior median)
+In the robustness check the block-fit radius changes by \plateauShiftClusteredThreshold~mm, within our limit of \plateauShiftLimit~mm, but the pooled-fit radius changes by \plateauShiftClustered~mm, beyond it. By our pre-specified rule, which applies to either fit, the policy's radius is therefore \emph{not established}, and every later result that uses the fitted curve is conditional on it (Appendix~\ref{app:protocol}, Table~\ref{tab:plateau}).
+
+\emph{The ordering} of the two conditions is the same in each analysis. Under the pre-specified rule the policy's radius is the larger (posterior median of the difference \radiusDiffClusteredReplay~mm, \radiusDiffClusteredReplayLow to \radiusDiffClusteredReplayHigh; probability $\probClusteredExceedsReplay$). In the robustness check the two intervals still do not overlap (replay \radiusReplayWideLow to \radiusReplayWideHigh~mm, policy at least \radiusClusteredThresholdWideLow~mm). Without a model (Table~\ref{tab:bins}), within 20~mm the two are alike (policy 17 of 21 trials, replay 13 of 18), and beyond 20~mm the policy succeeded in 20 of 39 trials and the replay in 0 of 4. % src: results.tex, Table "tab:bins", summed over its rows (policy 11+6 of 11+10 and 7+9+4+0 of 13+12+11+3; replay 7+6 of 7+11 and 0 of 4)
+In each of these analyses the policy succeeds at larger displacements than open-loop execution of its own demonstrations on the same hardware, although its nearest failure (\minFailureDistClustered~mm) is nearer than the replay's (\minFailureDistReplay~mm).
+
+\emph{Resets by eye.}
+The median by-eye error, \byEyeErrorMedian~mm, lies between 10 and 20~mm, where the clustered policy succeeded in 6 of 10 trials and the replay in 6 of 11, against 11 of 11 and 7 of 7 within 10~mm (Table~\ref{tab:bins}). % src: analysis/report/report.md, the tables of 10 mm bins of the clustered policy and of the replay
+
+\begin{figure}[t]
+\centering
+\figureorbox{figures/fig3-response-curves.pdf}{4.6cm}{Success against distance for the clustered policy and for the replay: each trial of the two threshold blocks, binned rates with Wilson intervals, the curves of the two block fits with their bands, and the two radii.}
+\caption{Success against distance $d$ for the clustered policy and the open-loop replay (threshold blocks; distances as measured, uncorrected). Small marks: single trials, in the row of their outcome. Large marks: success rates in 10~mm bins with Wilson intervals. Curves: posterior means of Eq.~\eqref{eq:model} with \intervalLevel~\% bands. Below: each $r_{50}$ with its interval. Table~\ref{tab:bins} adds the workspace-test trials, so its counts differ.} % src: protocol/protocol.md, section 10, "Without a model": bins of 10 mm
+\label{fig:curves}
+\end{figure}
+
+\begin{table}[t]
+\caption{Tolerance radius by condition, with the farthest success and the nearest failure of each threshold block (mm). First row of a condition: block fit; \emph{pooled}: with the policy's workspace-test trials. The clustered policy's radius is not established (Table~\ref{tab:plateau}).}
+\label{tab:radii}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.2pt}
+% A fit whose interval is open on a side has "at most <upper end>" or "at least <lower end>" in its last cell, as in the text:
+% the spread policy's pooled fit is open above. \maxSuccessDist... and \minFailureDist... cover the threshold block alone
+% (generated/MACROS.md), so they sit on the block's row and the pooled rows leave those cells empty.
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+ & Scored & Success & Farthest & Nearest & $r_{50}$ \\
+Condition & (void) & at $d=0$ & success & failure & (\intervalLevel~\% interval) \\
+\midrule
+Replay & \nTrialsReplay{} (\nVoidReplay{}) & \successZeroReplay{}/\nZeroReplay{} & \maxSuccessDistReplay{} & \minFailureDistReplay{} & \radiusReplay{} (\radiusReplayLow{}--\radiusReplayHigh{}) \\
+Clustered & \nTrialsClusteredThreshold{} (\nVoidClusteredThreshold{}) & \successZeroClustered{}/\nZeroClustered{} & \maxSuccessDistClustered{} & \minFailureDistClustered{} & \radiusClusteredThreshold{} (\radiusClusteredThresholdLow{}--\radiusClusteredThresholdHigh{}) \\
+\quad pooled & \nTrialsClustered{} (\nVoidClustered{}) & & & & \radiusClustered{} (\radiusClusteredLow{}--\radiusClusteredHigh{}) \\
+Spread, pooled & \nTrialsSpread{} (\nVoidSpread{}) & & & & at least \radiusSpreadLow{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\caption{Successes by measured distance $d$ to the nearest demonstration, over all scored trials of each condition. Distances were chosen by staircases or fixed in advance, so these are not rates over a uniform sample. A dash: no trial. Beyond 25~mm from a clustered demonstration, a placement lies in a cell corner or a held-out cell.} % src: analysis/report/report.md, "Success by the cell of the placement, at each distance" (every count in this table); protocol/protocol.md, section 4 (half a cell)
+\label{tab:bins}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+ & & \multicolumn{2}{c}{Clustered policy} & \multicolumn{2}{c}{Spread policy} \\
+$d$ (mm) & Replay & trained & held-out & trained & held-out \\
+\midrule
+0--10 & 7/7 & 11/11 & -- & 11/11 & -- \\ % src: the same table of the report, row "0 to 10 mm"
+10--20 & 6/11 & 6/10 & -- & 2/2 & 7/9 \\ % src: row "10 to 20 mm"
+20--30 & 0/4 & 4/9 & 3/4 & -- & 2/3 \\ % src: row "20 to 30 mm"
+30--40 & -- & -- & 9/12 & -- & 0/1 \\ % src: row "30 to 40 mm"
+40--50 & -- & -- & 4/11 & -- & -- \\ % src: row "40 to 50 mm"
+50--60 & -- & -- & 0/3 & -- & -- \\ % src: row "50 to 60 mm"
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Two layouts at the same placements}
+In the workspace test the spread policy succeeded at \workspaceSuccessSpread of \nPairs placements (Wilson interval \cite{wilson1927probable} \workspaceSpreadLow to \workspaceSpreadHigh~\%) and the clustered policy at \workspaceSuccessClustered (\workspaceClusteredLow to \workspaceClusteredHigh~\%); the outcomes differed at \pairsDiscordant placements, \pairsOnlySpread in favour of the spread policy and \pairsOnlyClustered of the clustered policy (exact McNemar test, two-sided, $p=\mcnemarP$; Fig.~\ref{fig:workspace} in Appendix~\ref{app:counts}).
+The difference is in the predicted direction, but the test does not establish it: with \nPairs pairs it detects only large differences (Appendix~\ref{app:protocol}), and each layout was trained once, so this compares two trained policies and not two layouts in general.
+The \emph{lookup prediction}, the clustered policy's block-fit curve applied to each placement's distance to a policy's nearest demonstration, expects \lookupPredictedClustered successes for the clustered policy (\intervalLevel~\% predictive interval \lookupClusteredLow to \lookupClusteredHigh) and \lookupPredictedSpread for the spread policy (\lookupSpreadLow to \lookupSpreadHigh). Both observed counts fall within these intervals, which are wide enough that only a large mismatch could have failed: this is weak evidence that distance alone explains the outcomes.
+Location matters for the spread policy too: inside the convex hull of its demonstrations it succeeded in 21 of 22 trials, and outside it in 1 of 4. % src: analysis/report/report.md, "Descriptive only" (the spread policy inside and outside the hull)
+The spread policy's threshold block was planned but omitted by the operator's decision, a deviation from the protocol (Appendix~\ref{app:counts}); its workspace-test trials bound its radius only from below (at least \radiusSpreadLow~mm).
+
+Of the four predictions stated before the data, two were met, one was met by its median alone and one was not met (Appendix~\ref{app:protocol}); the three deviations from the frozen protocol are listed in Appendix~\ref{app:counts}. % src: appendix.tex, "Predictions stated before the data" (2 and 4 met; 1 by the median alone; 3 not met; 5 is no prediction); \nDeviations is 3

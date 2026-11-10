@@ -1,0 +1,273 @@
+{
+ "log": "pilot_policy.jsonl",
+ "basket_named_mm": 2.0,
+ "wrist_named_px": 2.0,
+ "trials": [
+  {
+   "trial_id": "T1a-001",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_110237",
+   "basket_start": {
+    "across_mm": 0.0,
+    "down_mm": -0.1,
+    "lean": 0.4
+   },
+   "basket_end": {
+    "across_mm": 0.1,
+    "down_mm": 0.9,
+    "lean": -0.0
+   },
+   "wrist_start": {
+    "across_px": -0.5,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -0.3,
+    "down_px": -0.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 1.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-002",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_110237",
+   "basket_start": {
+    "across_mm": 0.1,
+    "down_mm": 0.9,
+    "lean": -0.3
+   },
+   "basket_end": {
+    "across_mm": 0.1,
+    "down_mm": 0.8,
+    "lean": -0.3
+   },
+   "wrist_start": {
+    "across_px": -1.5,
+    "down_px": -0.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -0.3,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-003",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_110237",
+   "basket_start": {
+    "across_mm": 0.1,
+    "down_mm": 0.8,
+    "lean": -0.3
+   },
+   "basket_end": {
+    "across_mm": 0.1,
+    "down_mm": 0.8,
+    "lean": -0.3
+   },
+   "wrist_start": {
+    "across_px": -0.9,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -0.5,
+    "down_px": 0.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-004",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_110237",
+   "basket_start": {
+    "across_mm": 0.1,
+    "down_mm": 0.7,
+    "lean": -0.2
+   },
+   "basket_end": {
+    "across_mm": 0.1,
+    "down_mm": 0.7,
+    "lean": -0.1
+   },
+   "wrist_start": {
+    "across_px": 0.1,
+    "down_px": 0.3,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -0.0,
+    "down_px": -1.2,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-005",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_110237",
+   "basket_start": {
+    "across_mm": 0.1,
+    "down_mm": 0.3,
+    "lean": -0.1
+   },
+   "basket_end": {
+    "across_mm": 0.2,
+    "down_mm": 0.3,
+    "lean": -0.1
+   },
+   "wrist_start": {
+    "across_px": -0.6,
+    "down_px": 0.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -0.1,
+    "down_px": 0.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-006",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_110237",
+   "basket_start": {
+    "across_mm": 0.1,
+    "down_mm": 0.2,
+    "lean": -0.1
+   },
+   "basket_end": {
+    "across_mm": 0.2,
+    "down_mm": 0.2,
+    "lean": -0.1
+   },
+   "wrist_start": {
+    "across_px": -0.0,
+    "down_px": 0.5,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -0.6,
+    "down_px": 0.5,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-007",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_110237",
+   "basket_start": {
+    "across_mm": 0.2,
+    "down_mm": 0.2,
+    "lean": -0.1
+   },
+   "basket_end": {
+    "across_mm": 42.5,
+    "down_mm": -11.7,
+    "lean": 25.3
+   },
+   "wrist_start": {
+    "across_px": -0.4,
+    "down_px": -0.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -3.5,
+    "down_px": 1.5,
+    "by": "hole"
+   },
+   "basket_moved_mm": 43.9,
+   "basket_was_moved": true,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-008",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_113859",
+   "basket_start": {
+    "across_mm": -1.1,
+    "down_mm": 0.5,
+    "lean": -1.2
+   },
+   "basket_end": {
+    "across_mm": 35.6,
+    "down_mm": -16.9,
+    "lean": 22.6
+   },
+   "wrist_start": {
+    "across_px": -3.5,
+    "down_px": 0.6,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -3.3,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 40.6,
+   "basket_was_moved": true,
+   "named_basket": false,
+   "named_wrist": true
+  },
+  {
+   "trial_id": "T1a-009",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_121841",
+   "basket_start": {
+    "across_mm": 0.2,
+    "down_mm": -1.1,
+    "lean": 0.1
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.6,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": null,
+   "basket_was_moved": null,
+   "named_basket": false,
+   "named_wrist": false
+  }
+ ]
+}

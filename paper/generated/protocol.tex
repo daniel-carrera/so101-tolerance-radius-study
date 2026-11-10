@@ -1,0 +1,64 @@
+% GENERATED FILE: do not edit by hand. Written by paper/make_numbers_stub.py from config/protocol.toml.
+% protocol version: 1.0
+% protocol status: frozen
+% While the status is not frozen these values may still change: run the script again after any change.
+
+\newcommand{\protocolVersion}{1.0\xspace} % version of the protocol the paper describes | src: config/protocol.toml, protocol.version
+\newcommand{\gridCols}{5\xspace} % columns of the grid | src: config/protocol.toml, table.cols
+\newcommand{\gridRows}{3\xspace} % rows of the grid | src: config/protocol.toml, table.rows
+\newcommand{\cellSize}{50\xspace} % side of a grid cell, mm | src: config/protocol.toml, table.cell_mm
+\newcommand{\cubeEdge}{30\xspace} % edge of the cube, mm | src: config/protocol.toml, table.cube_edge_mm
+\newcommand{\nCellsHeldOut}{4\xspace} % cells in which no demonstration starts | src: config/protocol.toml, table.held_out_cells (count)
+\newcommand{\heldOutCells}{A1, B2, D2 and E3\xspace} % their names, in words | src: config/protocol.toml, table.held_out_cells (names)
+\newcommand{\nCellsTrained}{11\xspace} % cells in which demonstrations start | src: config/protocol.toml, table.cols x table.rows - held-out cells
+\newcommand{\testMargin}{5\xspace} % test placements stay this far inside the grid's edge, mm | src: config/protocol.toml, table.test_region_margin_mm
+\newcommand{\placementTolerance}{2\xspace} % a reset is accepted within this distance of its target, mm | src: config/protocol.toml, placement.tolerance_mm
+\newcommand{\levelMatch}{0.5\xspace} % a requested distance is met within this, mm | src: config/protocol.toml, placement.level_match_mm
+\newcommand{\nDemosPerCell}{5\xspace} % demonstrations per trained cell, in both layouts | src: config/protocol.toml, datasets.episodes_per_cell
+\newcommand{\nDemos}{55\xspace} % demonstrations in each dataset: the budget | src: config/protocol.toml, trained cells x datasets.episodes_per_cell
+\newcommand{\nPointsClustered}{11\xspace} % distinct start points of the clustered layout | src: config/protocol.toml, trained cells (one point each)
+\newcommand{\nPointsSpread}{55\xspace} % distinct starts of the spread layout | src: config/protocol.toml, trained cells x datasets.episodes_per_cell (all distinct)
+\newcommand{\spreadMinSpacing}{12\xspace} % smallest planned distance between two spread starts, mm | src: config/protocol.toml, datasets.spread_min_spacing_mm
+\newcommand{\clusteredMaxDistInCell}{35\xspace} % farthest point of a trained cell from its centre, mm | src: config/protocol.toml, table.cell_mm / sqrt(2), rounded
+\newcommand{\nSittings}{4\xspace} % recording sittings, alternating the two layouts | src: config/protocol.toml, datasets.sittings (count)
+\newcommand{\trainSteps}{80,000\xspace} % training step at which both policies are evaluated | src: config/protocol.toml, training.evaluation_checkpoint
+\newcommand{\trainStepsFallback}{40,000\xspace} % smallest step the fallback rule allows | src: config/protocol.toml, training.fallback_min_checkpoint
+\newcommand{\stepInitial}{10\xspace} % staircase step until the first reversal, mm | src: config/protocol.toml, staircase.step_initial_mm
+\newcommand{\stepFinal}{5\xspace} % staircase step after the first reversal, mm | src: config/protocol.toml, staircase.step_final_mm
+\newcommand{\plannedReplay}{22\xspace} % replay trials planned | src: config/protocol.toml, blocks.T1b (anchors + staircases)
+\newcommand{\plannedClustered}{34\xspace} % clustered-policy threshold trials planned | src: config/protocol.toml, blocks.T1a (anchors + staircases)
+\newcommand{\plannedWorkspace}{52\xspace} % workspace-test trials planned | src: config/protocol.toml, blocks.T2.pairs x conditions
+\newcommand{\plannedSpread}{24\xspace} % spread-policy threshold trials planned | src: config/protocol.toml, blocks.T3 (anchors + staircases)
+\newcommand{\plannedTotal}{132\xspace} % scored trials planned in all | src: config/protocol.toml, sum of the four blocks
+\newcommand{\nPairsPlanned}{26\xspace} % placements planned for the workspace test | src: config/protocol.toml, blocks.T2.pairs
+\newcommand{\nPairsTrainedPlanned}{13\xspace} % of them, placements drawn over the trained cells | src: config/protocol.toml, blocks.T2.regions[trained_cells].pairs
+\newcommand{\nPairsHeldOutPlanned}{13\xspace} % of them, placements drawn over the held-out cells | src: config/protocol.toml, blocks.T2.regions[held_out_cells].pairs
+\newcommand{\anchorsZeroReplay}{4\xspace} % replay trials planned at d = 0 | src: config/protocol.toml, blocks.T1b.anchors_zero
+\newcommand{\anchorsZeroClustered}{6\xspace} % clustered-policy trials planned at d = 0 | src: config/protocol.toml, blocks.T1a.anchors_zero
+\newcommand{\anchorsFarClustered}{4\xspace} % clustered-policy trials planned at the far distance | src: config/protocol.toml, blocks.T1a.anchors_far
+\newcommand{\anchorsZeroSpread}{4\xspace} % spread-policy trials planned at d = 0 | src: config/protocol.toml, blocks.T3.anchors_zero
+\newcommand{\farLevel}{40\xspace} % the far anchor distance, mm | src: config/protocol.toml, blocks.T1a.far_level_mm
+\newcommand{\stairTrialsReplay}{9\xspace} % trials in each of the replay's two staircases | src: config/protocol.toml, blocks.T1b.staircases[].trials
+\newcommand{\stairTrialsClustered}{12\xspace} % trials in each of the clustered policy's two staircases | src: config/protocol.toml, blocks.T1a.staircases[].trials
+\newcommand{\stairTrialsSpread}{10\xspace} % trials in each of the spread policy's two staircases | src: config/protocol.toml, blocks.T3.staircases[].trials
+\newcommand{\stairStartNearReplay}{5\xspace} % start of the replay's near staircase, mm | src: config/protocol.toml, blocks.T1b.staircases[up].start_level_mm
+\newcommand{\stairStartFarReplay}{25\xspace} % start of the replay's far staircase, mm | src: config/protocol.toml, blocks.T1b.staircases[down].start_level_mm
+\newcommand{\stairStartNearClustered}{10\xspace} % start of the clustered policy's near staircase, mm | src: config/protocol.toml, blocks.T1a.staircases[up].start_level_mm
+\newcommand{\stairStartFarClustered}{40\xspace} % start of the clustered policy's far staircase, mm | src: config/protocol.toml, blocks.T1a.staircases[down].start_level_mm
+\newcommand{\stairStartNearSpread}{5\xspace} % start of the spread policy's near staircase, mm | src: config/protocol.toml, blocks.T3.staircases[up].start_level_mm
+\newcommand{\stairStartFarSpread}{25\xspace} % start of the spread policy's far staircase, mm | src: config/protocol.toml, blocks.T3.staircases[down].start_level_mm
+\newcommand{\maxLevelReplay}{50\xspace} % largest distance a replay staircase may request, mm | src: config/protocol.toml, blocks.T1b.max_level_mm
+\newcommand{\maxLevelClustered}{50\xspace} % largest distance a clustered-policy staircase may request, mm | src: config/protocol.toml, blocks.T1a.max_level_mm
+\newcommand{\maxLevelSpread}{50\xspace} % largest distance a spread-policy staircase may request, mm | src: config/protocol.toml, blocks.T3.max_level_mm
+\newcommand{\gridRadiusMax}{80\xspace} % upper end of the prior on the tolerance radius, mm | src: config/protocol.toml, analysis.r50_grid_mm.max
+\newcommand{\gridWidthMin}{0.5\xspace} % lower end of the prior on the curve's width, mm | src: config/protocol.toml, analysis.width_grid_mm.min
+\newcommand{\gridWidthMax}{20\xspace} % upper end of the prior on the curve's width, mm | src: config/protocol.toml, analysis.width_grid_mm.max
+\newcommand{\lapseValues}{0, 0.02, 0.05, 0.10\xspace} % the lapse rates the model weighs, for use inside math braces | src: config/protocol.toml, analysis.lapse_values
+\newcommand{\lapseValuesWide}{0, 0.02, 0.05, 0.10, 0.20, 0.35, 0.50\xspace} % the longer list of lapse rates of the plateau check, for use inside math braces | src: config/protocol.toml, analysis.lapse_values_sensitivity
+\newcommand{\plateauShiftLimit}{5\xspace} % how far the radii of a fit and of its plateau check may lie apart before the plateau is in doubt, mm | src: config/protocol.toml, analysis.sensitivity_limit_mm
+\newcommand{\floorValues}{0, 0.05, 0.10\xspace} % the floors the model weighs (the chance of a success far from every demonstration), for use inside math braces | src: config/protocol.toml, analysis.floor_values
+\newcommand{\nReplayDemosPlanned}{11\xspace} % demonstrations the replay block plays back, each from another cell | src: config/protocol.toml, blocks.T1b.replay_demos
+\newcommand{\handoffTolerance}{8\xspace} % how far a policy's first command may be from the arm's pose, degrees per joint | src: config/protocol.toml, execution.handoff_tolerance_deg
+\newcommand{\handoffToleranceReplay}{5\xspace} % the same for a replay, degrees per joint | src: config/protocol.toml, execution.replay_handoff_tolerance_deg
+\newcommand{\viewCreptLimit}{1\xspace} % no attempt once the front camera's picture stands this far from where its session solved the conversion, mm | src: config/protocol.toml, execution.view_crept_limit_mm
+\newcommand{\intervalLevel}{95\xspace} % level of every reported interval, percent | src: config/protocol.toml, analysis.interval_level x 100

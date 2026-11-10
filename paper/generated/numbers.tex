@@ -1,0 +1,263 @@
+% GENERATED FILE: do not edit by hand. Written by paper/make_numbers_stub.py.
+% The results of the experiment, one macro each. generated/MACROS.md says what each holds.
+% A macro that prints a bold ?? has no value yet: 17 of 217 are placeholders.
+% After a macro write a space, a unit joined by a tie (~mm, ~\%), punctuation, or {}. Never \, or ].
+
+% --- sim: Simulation of the procedure, before the protocol is frozen
+%     produced from: the procedure simulation (analysis/simulation/procedure.md); no trials
+\newcommand{\simTruthRadius}{20.0\xspace} % tolerance radius assumed true in the reported simulation, mm | src: analysis/simulation/procedure.csv, the case fixed before the data (simulated, not measured)
+\newcommand{\simTruthWidth}{3.0\xspace} % width of the success curve assumed true in the reported simulation, mm | src: analysis/simulation/procedure.csv, the case fixed before the data (simulated, not measured)
+\newcommand{\simReplications}{300\xspace} % number of simulated blocks behind each simulation figure | src: analysis/simulation/procedure.csv, the case fixed before the data (simulated, not measured)
+\newcommand{\simBias}{\ensuremath{-}0.2\xspace} % mean of (estimated radius - true radius) for the clustered policy's block as planned, mm | src: analysis/simulation/procedure.csv, the case fixed before the data (simulated, not measured)
+\newcommand{\simRmse}{1.6\xspace} % root-mean-square error of the estimated radius for that block, mm | src: analysis/simulation/procedure.csv, the case fixed before the data (simulated, not measured)
+\newcommand{\simIntervalWidth}{7.8\xspace} % mean width of the 95 % interval of the radius for that block, mm | src: analysis/simulation/procedure.csv, the case fixed before the data (simulated, not measured)
+\newcommand{\simCoverage}{97\xspace} % share of simulated blocks whose 95 % interval held the true radius, percent | src: analysis/simulation/procedure.csv, the case fixed before the data (simulated, not measured)
+\newcommand{\simRmseConstant}{2.3\xspace} % the same error with the block's trials at fixed, equally spaced distances, mm | src: analysis/simulation/procedure.csv, the case fixed before the data (simulated, not measured)
+\newcommand{\simIntervalWidthConstant}{9.0\xspace} % the same interval width with trials at fixed, equally spaced distances, mm | src: analysis/simulation/procedure.csv, the case fixed before the data (simulated, not measured)
+\newcommand{\simPairedRateLow}{40\xspace} % lower of the two success rates assumed for the paired test's power, percent | src: analysis/simulation/paired_power.csv, the case fixed before the data (computed exactly, not measured)
+\newcommand{\simPairedRateHigh}{90\xspace} % higher of the two success rates assumed for the paired test's power, percent | src: analysis/simulation/paired_power.csv, the case fixed before the data (computed exactly, not measured)
+\newcommand{\simPairedPower}{96\xspace} % chance that the exact McNemar test tells those two rates apart at the planned pairs, percent | src: analysis/simulation/paired_power.csv, the case fixed before the data (computed exactly, not measured)
+\newcommand{\simWidthCliff}{1.0\xspace} % width of the true curve taken as a cliff in the simulated figures by block, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simWidthMiddling}{3.0\xspace} % width of the true curve taken as a middling width in the simulated figures by block, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simWidthSlope}{10.0\xspace} % width of the true curve taken as a slope in the simulated figures by block, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simRmseReplayCliff}{1.0\xspace} % simulated root-mean-square error of the radius for the replay's block as written and a cliff: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simIntervalWidthReplayCliff}{6.3\xspace} % mean width of the 95 % interval for the replay's block as written and a cliff: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simRmseReplayMiddling}{2.1\xspace} % simulated root-mean-square error of the radius for the replay's block as written and a middling width: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simIntervalWidthReplayMiddling}{12.6\xspace} % mean width of the 95 % interval for the replay's block as written and a middling width: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simRmseReplaySlope}{5.2\xspace} % simulated root-mean-square error of the radius for the replay's block as written and a slope: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simIntervalWidthReplaySlope}{23.6\xspace} % mean width of the 95 % interval for the replay's block as written and a slope: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simOpenBelowReplay}{60\xspace} % share of simulated blocks whose interval is open below, for the replay's block as written and truths already falling at d = 0 (radius under two widths), percent | src: analysis/simulation/procedure.csv: the block as written, mean over the truths with a radius under two widths (simulated, not measured)
+\newcommand{\simRmseClusteredCliff}{0.8\xspace} % simulated root-mean-square error of the radius for the clustered policy's block as written and a cliff: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simIntervalWidthClusteredCliff}{4.2\xspace} % mean width of the 95 % interval for the clustered policy's block as written and a cliff: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simRmseClusteredMiddling}{1.6\xspace} % simulated root-mean-square error of the radius for the clustered policy's block as written and a middling width: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simIntervalWidthClusteredMiddling}{8.1\xspace} % mean width of the 95 % interval for the clustered policy's block as written and a middling width: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simRmseClusteredSlope}{4.2\xspace} % simulated root-mean-square error of the radius for the clustered policy's block as written and a slope: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simIntervalWidthClusteredSlope}{18.4\xspace} % mean width of the 95 % interval for the clustered policy's block as written and a slope: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simOpenBelowClustered}{50\xspace} % share of simulated blocks whose interval is open below, for the clustered policy's block as written and truths already falling at d = 0 (radius under two widths), percent | src: analysis/simulation/procedure.csv: the block as written, mean over the truths with a radius under two widths (simulated, not measured)
+\newcommand{\simRmseSpreadCliff}{0.9\xspace} % simulated root-mean-square error of the radius for the spread policy's block as written and a cliff: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simIntervalWidthSpreadCliff}{5.3\xspace} % mean width of the 95 % interval for the spread policy's block as written and a cliff: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simRmseSpreadMiddling}{1.9\xspace} % simulated root-mean-square error of the radius for the spread policy's block as written and a middling width: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simIntervalWidthSpreadMiddling}{11.3\xspace} % mean width of the 95 % interval for the spread policy's block as written and a middling width: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simRmseSpreadSlope}{4.8\xspace} % simulated root-mean-square error of the radius for the spread policy's block as written and a slope: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simIntervalWidthSpreadSlope}{21.7\xspace} % mean width of the 95 % interval for the spread policy's block as written and a slope: the middle one of the simulated truths with that width, mm | src: analysis/simulation/procedure.csv: the block as written, the middle one of the truths with that width (simulated, not measured)
+\newcommand{\simOpenBelowSpread}{57\xspace} % share of simulated blocks whose interval is open below, for the spread policy's block as written and truths already falling at d = 0 (radius under two widths), percent | src: analysis/simulation/procedure.csv: the block as written, mean over the truths with a radius under two widths (simulated, not measured)
+\newcommand{\simOpenBelow}{55\xspace} % the same share over the three threshold blocks together, percent | src: analysis/simulation/procedure.csv: the block as written, mean over the truths with a radius under two widths (simulated, not measured)
+
+% --- rule: Simulation of the comparison rule, before the protocol is frozen
+%     produced from: analysis/simulation/comparison_rule.csv (python -m tolerance_radius.compare_power): the clustered policy's block against the replay's, as written; no trials
+\newcommand{\simRuleReplayRadius}{15.0\xspace} % replay's radius assumed true in every case of the simulated comparison rule, mm | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRulePairs}{300\xspace} % simulated pairs of blocks behind each figure of the comparison rule | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthOneDiffEqual}{3\xspace} % share of simulated pairs of blocks in which the rule says "larger" although the two radii are equal, both curves of width 1 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthOneDiffThree}{56\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 3 mm beyond the replay's, both curves of width 1 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthOneDiffFive}{92\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 5 mm beyond the replay's, both curves of width 1 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthOneDiffEight}{100\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 8 mm beyond the replay's, both curves of width 1 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthOneDiffTen}{100\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 10 mm beyond the replay's, both curves of width 1 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthOneDiffFifteen}{100\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 15 mm beyond the replay's, both curves of width 1 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleSmallerWidthOneDiffEqual}{2\xspace} % share of simulated pairs of blocks in which the rule says "smaller" although the two radii are equal, both curves of width 1 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthThreeDiffEqual}{2\xspace} % share of simulated pairs of blocks in which the rule says "larger" although the two radii are equal, both curves of width 3 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthThreeDiffThree}{17\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 3 mm beyond the replay's, both curves of width 3 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthThreeDiffFive}{38\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 5 mm beyond the replay's, both curves of width 3 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthThreeDiffEight}{72\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 8 mm beyond the replay's, both curves of width 3 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthThreeDiffTen}{86\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 10 mm beyond the replay's, both curves of width 3 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthThreeDiffFifteen}{99\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 15 mm beyond the replay's, both curves of width 3 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleSmallerWidthThreeDiffEqual}{3\xspace} % share of simulated pairs of blocks in which the rule says "smaller" although the two radii are equal, both curves of width 3 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthSixDiffEqual}{3\xspace} % share of simulated pairs of blocks in which the rule says "larger" although the two radii are equal, both curves of width 6 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthSixDiffThree}{10\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 3 mm beyond the replay's, both curves of width 6 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthSixDiffFive}{20\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 5 mm beyond the replay's, both curves of width 6 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthSixDiffEight}{38\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 8 mm beyond the replay's, both curves of width 6 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthSixDiffTen}{55\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 10 mm beyond the replay's, both curves of width 6 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleLargerWidthSixDiffFifteen}{83\xspace} % share of simulated pairs of blocks in which the rule says "larger" when the policy's radius is 15 mm beyond the replay's, both curves of width 6 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+\newcommand{\simRuleSmallerWidthSixDiffEqual}{3\xspace} % share of simulated pairs of blocks in which the rule says "smaller" although the two radii are equal, both curves of width 6 mm, percent | src: analysis/simulation/comparison_rule.csv: pairs of the clustered policy's block and the replay's as written (simulated, not measured)
+
+% --- V0: Instrument check against a printed scale (camera only)
+%     produced from: data/instrument/ruler_*.csv through scripts/check_instrument.py; the camera checks of every sitting and block
+\newcommand{\nScaleRuns}{4\xspace} % number of scale runs (planned: 4, in x and in y at two places on the grid) | src: data/instrument/ruler_*.csv, as the camera reads
+\newcommand{\nScaleSteps}{31\xspace} % number of 10 mm steps measured over all scale runs | src: data/instrument/ruler_*.csv, as the camera reads
+\newcommand{\instrumentMeanAbsError}{0.3\xspace} % mean absolute error of a measured 10 mm step over all scale runs, mm | src: data/instrument/ruler_*.csv, as the camera reads
+\newcommand{\instrumentMaxStepError}{0.8\xspace} % largest error of a single 10 mm step, mm | src: data/instrument/ruler_*.csv, as the camera reads
+\newcommand{\scaleFactor}{1.019\xspace} % measured length of a true 50 mm run divided by 50, mean of the runs, three decimals | src: data/instrument/ruler_*.csv, as the camera reads: mean of the runs
+\newcommand{\scaleFactorMin}{1.012\xspace} % smallest scale factor among the runs, three decimals | src: data/instrument/ruler_*.csv, as the camera reads: smallest of the runs
+\newcommand{\scaleFactorMax}{1.025\xspace} % largest scale factor among the runs, three decimals | src: data/instrument/ruler_*.csv, as the camera reads: largest of the runs
+\newcommand{\nRepeatability}{11\xspace} % number of repeated placements on one target (planned: 10) | src: data/instrument/repeat_*.csv
+\newcommand{\repeatabilityScatter}{0.3\xspace} % largest distance of a repeated placement from the mean of the repeats, mm | src: data/instrument/repeat_*.csv, as the camera reads
+\newcommand{\gridDriftMax}{\textbf{??}\xspace} % largest disagreement of a session's fresh camera-to-table solve with the stored one, mm
+
+% --- V1: Reset by eye (camera only): the cube placed from a reference picture, with no overlay
+%     produced from: the by-eye placement log under data/instrument/
+\newcommand{\nByEye}{20\xspace} % number of by-eye placements measured (planned: 20) | src: data/instrument/byeye_*.csv
+\newcommand{\nOperatorsByEye}{1\xspace} % number of people who placed the cube by eye | src: data/instrument/byeye_*.csv: the labels
+\newcommand{\byEyeErrorMedian}{15.9\xspace} % median distance of a by-eye placement from its target, mm | src: data/instrument/byeye_*.csv
+\newcommand{\byEyeErrorNinetyFive}{31.0\xspace} % 95th percentile of that distance, mm | src: data/instrument/byeye_*.csv: 95th percentile, interpolated between ranks
+\newcommand{\byEyeErrorMax}{35.5\xspace} % largest by-eye error, mm | src: data/instrument/byeye_*.csv
+
+% --- data: The two datasets: recording and start-state audit
+%     produced from: data/audit/clustered.json and data/audit/spread.json; the recorder's logs; the dataset checks before training
+\newcommand{\nDemosTrainedClustered}{55\xspace} % demonstrations of the clustered set that were trained on | src: data/audit/clustered.json
+\newcommand{\nDemosTrainedSpread}{55\xspace} % demonstrations of the spread set that were trained on | src: data/audit/spread.json
+\newcommand{\nPracticeEpisodes}{\textbf{??}\xspace} % practice episodes recorded first and discarded
+\newcommand{\nRerecordedClustered}{2\xspace} % episodes of the clustered set that were recorded again | src: data/recording/clustered_placements.jsonl: kept episodes with at least one earlier take
+\newcommand{\nRerecordedSpread}{1\xspace} % episodes of the spread set that were recorded again | src: data/recording/spread_placements.jsonl: kept episodes with at least one earlier take
+\newcommand{\demoPlacementErrorMedian}{0.7\xspace} % median distance of a demonstration's measured start from its planned target, both sets, mm | src: data/audit/clustered.json and data/audit/spread.json: measured start to planned target
+\newcommand{\demoPlacementErrorMax}{2.7\xspace} % largest such distance, both sets, mm | src: data/audit/clustered.json and data/audit/spread.json: measured start to planned target
+\newcommand{\clusteredScatterMax}{1.4\xspace} % largest distance of a clustered demonstration's start from the mean start of its point, mm | src: data/audit/clustered.json: trained starts about the mean of their point
+\newcommand{\spreadSpacingMin}{17.5\xspace} % smallest distance between two measured starts of the spread set, mm | src: data/audit/spread.json: trained starts
+\newcommand{\nTornFramesNew}{\textbf{??}\xspace} % torn video frames found in the two new datasets by the torn-frame scan
+\newcommand{\nMispacedEpisodesNew}{\textbf{??}\xspace} % episodes of the two new datasets whose frame pacing failed its check
+\newcommand{\nRecordingDays}{1\xspace} % days on which the demonstrations were recorded | src: data/recording/*_placements.jsonl: dates of the kept episodes
+
+% --- T1b: Replay: the hardware's own tolerance
+%     produced from: data/trials/*.jsonl, block T1b (condition replay)
+\newcommand{\nTrialsReplay}{22\xspace} % scored replay trials | src: the counted trial logs, replay, scored, every block
+\newcommand{\nVoidReplay}{0\xspace} % void replay trials | src: the counted trial logs, replay, void, every block
+\newcommand{\successZeroReplay}{4\xspace} % successes among the trials of block T1b at the replayed demonstration's own start (d = 0) | src: the counted trial logs, replay, block T1b, anchors at d = 0
+\newcommand{\nZeroReplay}{4\xspace} % trials of block T1b at d = 0 | src: the counted trial logs, replay, block T1b, anchors at d = 0
+\newcommand{\radiusReplay}{16.5\xspace} % tolerance radius of the replay: posterior median of r50, mm | src: block fit of replay: posterior median of r50
+\newcommand{\radiusReplayLow}{13.0\xspace} % lower end of its 95 % interval, mm | src: block fit of replay: lower end of the interval
+\newcommand{\radiusReplayHigh}{21.5\xspace} % upper end of its 95 % interval, mm | src: block fit of replay: upper end of the interval
+\newcommand{\radiusReplayWide}{17.0\xspace} % the replay's radius fitted with the longer list of lapse values (the plateau check), mm | src: block fit of replay made again with the protocol's longer list of lapse values: posterior median of r50
+\newcommand{\radiusReplayWideLow}{13.0\xspace} % lower end of that fit's 95 % interval, mm | src: block fit of replay made again with the protocol's longer list of lapse values: lower end of the interval
+\newcommand{\radiusReplayWideHigh}{23.5\xspace} % upper end of that fit's 95 % interval, mm | src: block fit of replay made again with the protocol's longer list of lapse values: upper end of the interval
+\newcommand{\plateauShiftReplay}{0.5\xspace} % the shift of the replay's plateau check: its radius with the longer list of lapse values minus the reported one, mm | src: block fit of replay: its posterior median with the protocol's longer list of lapse values, minus its posterior median as reported
+\newcommand{\maxSuccessDistReplay}{19.8\xspace} % largest measured d with a success in block T1b, the replay's threshold block, mm | src: the counted trial logs, replay, scored, block T1b alone
+\newcommand{\minFailureDistReplay}{14.7\xspace} % smallest measured d with a failure in block T1b, the replay's threshold block, mm | src: the counted trial logs, replay, scored, block T1b alone
+\newcommand{\nReplayEpisodes}{11\xspace} % number of different demonstrations that were replayed | src: the counted trial logs, replay, scored: distinct replayed episodes
+
+% --- T1a: Clustered policy: its tolerance radius
+%     produced from: data/trials/*.jsonl, block T1a, and the clustered policy's trials of block T2 where a line says so
+\newcommand{\nTrialsClustered}{60\xspace} % scored trials of the clustered policy, all blocks (T1a and its half of T2) | src: the counted trial logs, act_clustered, scored, every block
+\newcommand{\nTrialsClusteredThreshold}{34\xspace} % scored trials of block T1a alone: what the threshold cost | src: the counted trial logs, block T1a, scored
+\newcommand{\nVoidClusteredThreshold}{0\xspace} % void trials of block T1a alone | src: the counted trial logs, block T1a, void
+\newcommand{\nVoidClustered}{0\xspace} % void trials of the clustered policy, all blocks | src: the counted trial logs, act_clustered, void, every block
+\newcommand{\successZeroClustered}{6\xspace} % successes of the clustered policy at d = 0, in its threshold block (T1a alone) | src: the counted trial logs, act_clustered, block T1a, anchors at d = 0
+\newcommand{\nZeroClustered}{6\xspace} % clustered-policy trials at d = 0, in its threshold block (T1a alone) | src: the counted trial logs, act_clustered, block T1a, anchors at d = 0
+\newcommand{\successFarClustered}{1\xspace} % successes of the clustered policy at the far anchor distance | src: the counted trial logs, block T1a, far anchors
+\newcommand{\nFarClustered}{4\xspace} % clustered-policy trials at the far anchor distance | src: the counted trial logs, block T1a, far anchors
+\newcommand{\radiusClustered}{36.0\xspace} % tolerance radius of the clustered policy from all its scored trials (T1a and T2), mm | src: pooled fit of act_clustered: posterior median of r50
+\newcommand{\radiusClusteredLow}{25.0\xspace} % lower end of its 95 % interval, mm | src: pooled fit of act_clustered: lower end of the interval
+\newcommand{\radiusClusteredHigh}{48.5\xspace} % upper end of its 95 % interval, mm | src: pooled fit of act_clustered: upper end of the interval
+\newcommand{\radiusClusteredWide}{42.0\xspace} % the clustered policy's radius from all its scored trials fitted with the longer list of lapse values (the plateau check), mm | src: pooled fit of act_clustered made again with the protocol's longer list of lapse values: posterior median of r50
+\newcommand{\radiusClusteredWideLow}{27.5\xspace} % lower end of that fit's 95 % interval, mm | src: pooled fit of act_clustered made again with the protocol's longer list of lapse values: lower end of the interval
+\newcommand{\radiusClusteredWideHigh}{58.0\xspace} % upper end of that fit's 95 % interval, mm | src: pooled fit of act_clustered made again with the protocol's longer list of lapse values: upper end of the interval
+\newcommand{\plateauShiftClustered}{6.0\xspace} % the shift of that plateau check: the radius from all its scored trials with the longer list of lapse values minus the reported one, mm | src: pooled fit of act_clustered: its posterior median with the protocol's longer list of lapse values, minus its posterior median as reported
+\newcommand{\radiusClusteredThreshold}{39.0\xspace} % the same radius fitted without the T2 trials (the curve behind the lookup prediction), mm | src: block fit of act_clustered: posterior median of r50
+\newcommand{\radiusClusteredThresholdLow}{23.0\xspace} % lower end of that fit's 95 % interval, mm | src: block fit of act_clustered: lower end of the interval
+\newcommand{\radiusClusteredThresholdHigh}{52.0\xspace} % upper end of that fit's 95 % interval, mm | src: block fit of act_clustered: upper end of the interval
+\newcommand{\radiusClusteredThresholdWide}{42.5\xspace} % the radius of block T1a alone fitted with the longer list of lapse values (the plateau check), mm | src: block fit of act_clustered made again with the protocol's longer list of lapse values: posterior median of r50
+\newcommand{\radiusClusteredThresholdWideLow}{26.0\xspace} % lower end of that fit's 95 % interval, mm | src: block fit of act_clustered made again with the protocol's longer list of lapse values: lower end of the interval
+\newcommand{\radiusClusteredThresholdWideHigh}{64.0\xspace} % upper end of that fit's 95 % interval, mm | src: block fit of act_clustered made again with the protocol's longer list of lapse values: upper end of the interval
+\newcommand{\plateauShiftClusteredThreshold}{3.5\xspace} % the shift of that plateau check: the radius of block T1a alone with the longer list of lapse values minus the reported one, mm | src: block fit of act_clustered: its posterior median with the protocol's longer list of lapse values, minus its posterior median as reported
+\newcommand{\maxSuccessDistClustered}{44.8\xspace} % largest measured d with a success of the clustered policy in its threshold block (T1a alone), mm | src: the counted trial logs, act_clustered, scored, block T1a alone
+\newcommand{\minFailureDistClustered}{10.1\xspace} % smallest measured d with a failure of the clustered policy in its threshold block (T1a alone), mm | src: the counted trial logs, act_clustered, scored, block T1a alone
+
+% --- T2: Workspace test: both policies at the same placements
+%     produced from: data/trials/*.jsonl, block T2 (pairs sharing a pair_id)
+\newcommand{\nPairs}{26\xspace} % placements at which both policies have a scored trial | src: the counted trial logs, block T2: placements with a scored trial of both policies
+\newcommand{\nTrialsWorkspace}{52\xspace} % scored trials of block T2, both policies | src: the counted trial logs, block T2, scored
+\newcommand{\nVoidWorkspace}{0\xspace} % void trials in block T2 | src: the counted trial logs, block T2, void
+\newcommand{\workspaceSuccessClustered}{16\xspace} % placements at which the clustered policy succeeded | src: the pairs of block T2, act_clustered
+\newcommand{\workspaceClusteredLow}{43\xspace} % lower end of the Wilson 95 % interval of its success rate, percent | src: the pairs of block T2, act_clustered: Wilson interval
+\newcommand{\workspaceClusteredHigh}{78\xspace} % upper end of that interval, percent | src: the pairs of block T2, act_clustered: Wilson interval
+\newcommand{\workspaceSuccessSpread}{22\xspace} % placements at which the spread policy succeeded | src: the pairs of block T2, act_spread
+\newcommand{\workspaceSpreadLow}{66\xspace} % lower end of the Wilson 95 % interval of its success rate, percent | src: the pairs of block T2, act_spread: Wilson interval
+\newcommand{\workspaceSpreadHigh}{94\xspace} % upper end of that interval, percent | src: the pairs of block T2, act_spread: Wilson interval
+\newcommand{\pairsBoth}{14\xspace} % placements at which both policies succeeded | src: the paired table of block T2
+\newcommand{\pairsNeither}{2\xspace} % placements at which neither succeeded | src: the paired table of block T2
+\newcommand{\pairsOnlySpread}{8\xspace} % placements at which only the spread policy succeeded | src: the paired table of block T2
+\newcommand{\pairsOnlyClustered}{2\xspace} % placements at which only the clustered policy succeeded | src: the paired table of block T2
+\newcommand{\pairsDiscordant}{10\xspace} % placements at which the two outcomes differed | src: the paired table of block T2
+\newcommand{\mcnemarP}{0.11\xspace} % two-sided p-value of the exact McNemar test on the discordant pairs | src: exact McNemar test on the discordant pairs of block T2, all pairs together
+\newcommand{\workspaceDistClusteredMedian}{27.1\xspace} % median d of the T2 placements to the nearest clustered demonstration, mm | src: the pairs of block T2, act_clustered: measured d
+\newcommand{\workspaceDistClusteredMax}{50.5\xspace} % largest such d, mm | src: the pairs of block T2, act_clustered: measured d
+\newcommand{\workspaceDistSpreadMedian}{10.8\xspace} % median d of the T2 placements to the nearest spread demonstration, mm | src: the pairs of block T2, act_spread: measured d
+\newcommand{\workspaceDistSpreadMax}{38.3\xspace} % largest such d, mm | src: the pairs of block T2, act_spread: measured d
+\newcommand{\lookupPredictedClustered}{17.7\xspace} % successes the lookup prediction expects of the clustered policy in T2, one decimal | src: block fit of act_clustered at the distances of the pairs of block T2, act_clustered
+\newcommand{\lookupClusteredLow}{10\xspace} % lower end of the 95 % predictive interval of that count | src: predicted count's interval, block fit of act_clustered, the pairs of block T2, act_clustered
+\newcommand{\lookupClusteredHigh}{24\xspace} % upper end of that predictive interval | src: predicted count's interval, block fit of act_clustered, the pairs of block T2, act_clustered
+\newcommand{\lookupPredictedSpread}{21.0\xspace} % successes the lookup prediction expects of the spread policy in T2, one decimal | src: block fit of act_clustered at the distances of the pairs of block T2, act_spread
+\newcommand{\lookupSpreadLow}{15\xspace} % lower end of the 95 % predictive interval of that count | src: predicted count's interval, block fit of act_clustered, the pairs of block T2, act_spread
+\newcommand{\lookupSpreadHigh}{25\xspace} % upper end of that predictive interval | src: predicted count's interval, block fit of act_clustered, the pairs of block T2, act_spread
+\newcommand{\nPairsTrained}{13\xspace} % placements of block T2 whose measured position lies in a trained cell | src: the pairs of block T2 whose measured position lies in trained cells
+\newcommand{\nPairsHeldOut}{13\xspace} % placements of block T2 whose measured position lies in a held-out cell | src: the pairs of block T2 whose measured position lies in held-out cells
+\newcommand{\workspaceSuccessClusteredTrained}{8\xspace} % placements in trained cells at which the clustered policy succeeded | src: the pairs of block T2 whose measured position lies in trained cells, act_clustered
+\newcommand{\workspaceSuccessClusteredHeldOut}{8\xspace} % placements in held-out cells at which the clustered policy succeeded | src: the pairs of block T2 whose measured position lies in held-out cells, act_clustered
+\newcommand{\workspaceSuccessSpreadTrained}{13\xspace} % placements in trained cells at which the spread policy succeeded | src: the pairs of block T2 whose measured position lies in trained cells, act_spread
+\newcommand{\workspaceSuccessSpreadHeldOut}{9\xspace} % placements in held-out cells at which the spread policy succeeded | src: the pairs of block T2 whose measured position lies in held-out cells, act_spread
+\newcommand{\lookupPredictedClusteredTrained}{10.1\xspace} % successes the lookup prediction expects of the clustered policy at the placements in trained cells, one decimal | src: block fit of act_clustered at the distances of the pairs of block T2 whose measured position lies in trained cells, act_clustered
+\newcommand{\lookupPredictedClusteredHeldOut}{7.5\xspace} % successes the lookup prediction expects of the clustered policy at the placements in held-out cells, one decimal | src: block fit of act_clustered at the distances of the pairs of block T2 whose measured position lies in held-out cells, act_clustered
+\newcommand{\lookupPredictedSpreadTrained}{11.1\xspace} % successes the lookup prediction expects of the spread policy at the placements in trained cells, one decimal | src: block fit of act_clustered at the distances of the pairs of block T2 whose measured position lies in trained cells, act_spread
+\newcommand{\lookupPredictedSpreadHeldOut}{9.9\xspace} % successes the lookup prediction expects of the spread policy at the placements in held-out cells, one decimal | src: block fit of act_clustered at the distances of the pairs of block T2 whose measured position lies in held-out cells, act_spread
+
+% --- T3: Spread policy: its tolerance radius (run only if time allows)
+%     produced from: data/trials/*.jsonl, block T3, and the spread policy's trials of block T2
+\newcommand{\nTrialsSpread}{26\xspace} % scored trials of the spread policy, all blocks (T3 and its half of T2) | src: the counted trial logs, act_spread, scored, every block
+\newcommand{\nVoidSpread}{0\xspace} % void trials of the spread policy, all blocks | src: the counted trial logs, act_spread, void, every block
+\newcommand{\nTrialsSpreadThreshold}{0\xspace} % scored trials of block T3 alone | src: the counted trial logs, block T3, scored
+\newcommand{\nVoidSpreadThreshold}{0\xspace} % void trials of block T3 alone | src: the counted trial logs, block T3, void
+\newcommand{\successZeroSpread}{\textbf{??}\xspace} % successes of the spread policy at d = 0, in its threshold block (T3 alone)
+\newcommand{\nZeroSpread}{0\xspace} % spread-policy trials at d = 0, in its threshold block (T3 alone) | src: the counted trial logs, act_spread, block T3, anchors at d = 0
+\newcommand{\radiusSpread}{28.5\xspace} % tolerance radius of the spread policy from all its scored trials, mm | src: pooled fit of act_spread: posterior median of r50
+\newcommand{\radiusSpreadLow}{19.5\xspace} % lower end of its 95 % interval, mm | src: pooled fit of act_spread: lower end of the interval
+\newcommand{\radiusSpreadHigh}{64.5\xspace} % upper end of its 95 % interval, mm | src: pooled fit of act_spread: upper end of the interval
+\newcommand{\radiusSpreadWide}{29.0\xspace} % the spread policy's radius from all its scored trials fitted with the longer list of lapse values (the plateau check), mm | src: pooled fit of act_spread made again with the protocol's longer list of lapse values: posterior median of r50
+\newcommand{\radiusSpreadWideLow}{20.0\xspace} % lower end of that fit's 95 % interval, mm | src: pooled fit of act_spread made again with the protocol's longer list of lapse values: lower end of the interval
+\newcommand{\radiusSpreadWideHigh}{69.0\xspace} % upper end of that fit's 95 % interval, mm | src: pooled fit of act_spread made again with the protocol's longer list of lapse values: upper end of the interval
+\newcommand{\plateauShiftSpread}{0.5\xspace} % the shift of that plateau check: the radius from all its scored trials with the longer list of lapse values minus the reported one, mm | src: pooled fit of act_spread: its posterior median with the protocol's longer list of lapse values, minus its posterior median as reported
+\newcommand{\radiusSpreadThreshold}{\textbf{??}\xspace} % the same radius fitted from block T3 alone (the spread policy's block fit), mm
+\newcommand{\radiusSpreadThresholdLow}{\textbf{??}\xspace} % lower end of that fit's 95 % interval, mm
+\newcommand{\radiusSpreadThresholdHigh}{\textbf{??}\xspace} % upper end of that fit's 95 % interval, mm
+\newcommand{\radiusSpreadThresholdWide}{\textbf{??}\xspace} % the radius of block T3 alone fitted with the longer list of lapse values (the plateau check), mm
+\newcommand{\radiusSpreadThresholdWideLow}{\textbf{??}\xspace} % lower end of that fit's 95 % interval, mm
+\newcommand{\radiusSpreadThresholdWideHigh}{\textbf{??}\xspace} % upper end of that fit's 95 % interval, mm
+\newcommand{\maxSuccessDistSpread}{\textbf{??}\xspace} % largest measured d with a success of the spread policy in its threshold block (T3 alone), mm
+\newcommand{\minFailureDistSpread}{\textbf{??}\xspace} % smallest measured d with a failure of the spread policy in its threshold block (T3 alone), mm
+
+% --- compare: Comparisons of radii, from independent posteriors
+%     produced from: the fits of T1a, T1b and T3 (protocol section 10, comparison of radii)
+\newcommand{\radiusDiffClusteredReplay}{22.0\xspace} % clustered policy's radius minus the replay's: posterior median of the difference, mm | src: block fits, act_clustered minus replay, taken as independent: median of the difference
+\newcommand{\radiusDiffClusteredReplayLow}{5.5\xspace} % lower end of the 95 % interval of that difference, mm | src: block fits, act_clustered minus replay, taken as independent: lower end of the interval
+\newcommand{\radiusDiffClusteredReplayHigh}{35.5\xspace} % upper end of the 95 % interval of that difference, mm | src: block fits, act_clustered minus replay, taken as independent: upper end of the interval
+\newcommand{\probClusteredExceedsReplay}{>0.99\xspace} % posterior probability that the clustered policy's radius exceeds the replay's | src: block fits of act_clustered and replay, taken as independent; a tie on the grid counts half
+\newcommand{\radiusDiffSpreadClustered}{\textbf{??}\xspace} % spread policy's radius minus the clustered policy's: posterior median, mm
+\newcommand{\radiusDiffSpreadClusteredLow}{\textbf{??}\xspace} % lower end of the 95 % interval of that difference, mm
+\newcommand{\radiusDiffSpreadClusteredHigh}{\textbf{??}\xspace} % upper end of the 95 % interval of that difference, mm
+\newcommand{\probSpreadExceedsClustered}{\textbf{??}\xspace} % posterior probability that the spread policy's radius exceeds the clustered policy's
+
+% --- calc: Reset sensitivity: a calculation from the fitted curve, not a measurement
+%     produced from: the clustered policy's fitted curve and the by-eye errors of block V1 (protocol section 10, reset sensitivity)
+\newcommand{\resetSensitivityPlaced}{88\xspace} % success the fitted curve gives at d = the placement errors of this study's resets, percent | src: block fit of act_clustered at the placement errors of the scored trials (a calculation)
+\newcommand{\resetSensitivityByEye}{79\xspace} % success the fitted curve gives at d = the by-eye errors of block V1, percent | src: block fit of act_clustered at the by-eye errors of data/instrument/byeye_*.csv (a calculation)
+
+% --- scene: The scene at each trial's start: the basket's place and the wrist camera's, read from the trials' own videos
+%     produced from: data/audit/scene_<log>.json, written by scripts/rig/scene_audit.py; the outcomes from data/trials/*.jsonl
+\newcommand{\nTrialsBasketNamed}{49\xspace} % scored trials that began with the basket farther from its place than the protocol's 2 mm | src: data/audit/scene_<log>.json, written by scripts/rig/scene_audit.py from the trials' videos; scored trials whose first frames show the basket beyond the audit's limit from its place
+\newcommand{\nTrialsWristNamed}{0\xspace} % scored trials that began with the wrist camera farther from its place than the protocol's 2 px | src: data/audit/scene_<log>.json, written by scripts/rig/scene_audit.py from the trials' videos; scored trials whose first frames show the wrist camera beyond the audit's limit from its place
+\newcommand{\nTrialsBasketMoved}{2\xspace} % scored trials in which the arm moved the basket | src: data/audit/scene_<log>.json, written by scripts/rig/scene_audit.py from the trials' videos; scored trials that the audit marks as having moved the basket
+\newcommand{\basketStartMax}{2.3\xspace} % largest distance of the basket from its place at a scored trial's start, across or down, mm | src: data/audit/scene_<log>.json, written by scripts/rig/scene_audit.py from the trials' videos; scored trials: the basket at the first frames against its reference, the larger of across and down
+\newcommand{\wristStartMax}{1.9\xspace} % largest distance of the wrist camera's picture from its place at a scored trial's start, across or down, in pixels, one decimal | src: data/audit/scene_<log>.json, written by scripts/rig/scene_audit.py from the trials' videos; scored trials: the fixed jaw in the wrist camera's first frames against its reference, the larger of across and down
+
+% --- second: The second scoring from video: a part of the counted trials, scored again
+%     produced from: data/second_scoring/main/agreement.json, written by scripts/second_scoring.py compare
+\newcommand{\nSecondScored}{24\xspace} % counted trials that were scored again from their videos | src: data/second_scoring/main/agreement.json, written by scripts/second_scoring.py compare: the trials scored again
+\newcommand{\nSecondScoredAgree}{24\xspace} % of them, trials in which the second score is the first score | src: data/second_scoring/main/agreement.json, written by scripts/second_scoring.py compare: the trials whose second score is the first score
+\newcommand{\nSecondScoredCannotTell}{0\xspace} % of them, trials in which the second scorer could not tell from the video | src: data/second_scoring/main/agreement.json, written by scripts/second_scoring.py compare: the trials the second scorer could not tell
+
+% --- all: All trials, and what the trial records say about how they were run
+%     produced from: data/trials/*.jsonl (every block): placements, voids, the execution and versions fields; docs/decisions.md
+\newcommand{\nTrialsTotal}{108\xspace} % scored trials, all blocks and conditions | src: the counted trial logs, scored
+\newcommand{\nVoidTotal}{0\xspace} % void trials, all blocks and conditions | src: the counted trial logs, void
+\newcommand{\voidReasons}{none\xspace} % why trials were void, in words with a count each: setup fault (2), placement out of tolerance (1) | src: the counted trial logs: void_reason, as typed
+\newcommand{\resetErrorMedian}{0.3\xspace} % median distance of an accepted placement from its target over all scored trials, mm | src: the counted trial logs, scored: placed to target
+\newcommand{\resetErrorMax}{0.6\xspace} % largest such distance, mm | src: the counted trial logs, scored: placed to target
+\newcommand{\viewCreptMedian}{0.57\xspace} % median distance of the front camera's picture from where its session solved the conversion, read just before each scored attempt, mm, two decimals | src: the counted trial logs, scored: execution.view_crept_mm, as the session read it before the attempt
+\newcommand{\viewCreptMax}{0.99\xspace} % largest such distance before a scored attempt (a session makes no attempt beyond the protocol's limit), mm, two decimals | src: the counted trial logs, scored: execution.view_crept_mm, as the session read it before the attempt
+\newcommand{\trialMinutesMedian}{1.3\xspace} % median time from one trial's start to the next one's, minutes, one decimal | src: the counted trial logs: one record's ts_start to the next one's in the same log
+\newcommand{\nTrialDays}{1\xspace} % days on which evaluation trials ran | src: the counted trial logs: dates of ts_start
+\newcommand{\nOperators}{1\xspace} % people who placed the cube and scored the trials | src: the counted trial logs: operator and scorer codes
+\newcommand{\nDeviations}{3\xspace} % deviations from the frozen protocol logged in docs/decisions.md | src: docs/decisions.md: rows marked DEVIATION
+\newcommand{\evalCheckpoint}{80,000\xspace} % training step of the checkpoints that were evaluated (the protocol plans 80,000) | src: the counted trial logs: checkpoint of the policy trials
+\newcommand{\execClamp}{15\xspace} % per-step clamp on a joint command during trials, degrees | src: the counted trial logs: execution.clamp_deg
+\newcommand{\execEnsembleCoeff}{0.01\xspace} % coefficient of the temporal ensembling used at rollout | src: the counted trial logs: execution.temporal_ensemble_coeff of the policy trials
+\newcommand{\execControlRate}{30\xspace} % control rate requested during trials, Hz | src: the counted trial logs: execution.control_hz
+\newcommand{\execControlRateAchieved}{29.1\xspace} % control rate achieved in scored policy trials, between the first step sent and the last: median over the trials, Hz, one decimal | src: the counted trial logs, scored policy trials: the steps sent after the first over execution.loop_s, the time from the first step sent to the last; median over the trials
+\newcommand{\execTimeLimit}{45\xspace} % time limit of one attempt, seconds | src: the counted trial logs: execution.time_limit_s
+\newcommand{\lerobotCommit}{6adf51511b\xspace} % short commit id of the public LeRobot code that drove the arm | src: the counted trial logs: versions.lerobot

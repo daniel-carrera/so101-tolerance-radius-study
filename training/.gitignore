@@ -1,0 +1,5 @@
+# Parameter files and launch outputs carry the Hub namespace and the W&B account: they stay out of git
+# (double-blind hygiene). README.md, step 3, writes them into local/.
+local/
+# `colab exec -f X.ipynb` writes X_output.ipynb beside the notebook it ran.
+*_output.ipynb

@@ -1,0 +1,27 @@
+% Related work. Target 350 words. Written in full.
+% A citation carries only the claim recorded for it in docs/reference/citations-verified.md and related-work.md.
+% "We are not aware of" is used only for what related-work.md lists as not found; the searches behind it were short.
+% Left out on purpose: lerobot2026wilson (check first whether an author of this paper wrote it).
+% Cut for room on 2026-10-05, and still citable: kim2026robogate (a logistic failure boundary fitted for a scripted
+% controller in simulation), which belongs with the "Thresholds" paragraph if a line comes free.
+\section{Related Work}
+\label{sec:related}
+
+\textbf{Displacement.}
+On real arms, policies have been tested at displacements no finer than about 25~mm \cite{andresg2026demonstration}, at shifts pooled into one rate \cite{zhao2025proprioceptive}, at placements 150~mm apart \cite{xue2025demogen} or without stated distances \cite{long2026register,sumarac2026act}. % src: docs/reference/citations-verified.md, rows andresg2026demonstration (1 and 2 inches), zhao2025proprioceptive, xue2025demogen (15 cm), long2026register, sumarac2026act
+In simulation, DemoGen concludes that ``the effective range can be approximated by the union of the areas surrounding the demonstrated object placements'' \cite{xue2025demogen}; we test that hypothesis with a prediction from a fitted curve (Section~\ref{sec:method}).
+
+\textbf{Evaluation.}
+Absolute success rates ``can easily be shifted up or down based on how difficult we make the task'' \cite{tri2025careful}.
+Resets are made by hand on marks \cite{andresg2026demonstration}, by image overlay \cite{kressgazit2024robot,tri2025careful,huang2026vlareplica}, on a grid board \cite{jin2026umibench} or with a guiding tool \cite{heo2023furniturebench}.
+
+\textbf{Thresholds.}
+Up-and-down staircases \cite{dixon1948method,levitt1971transformed}, Bayesian adaptive placement \cite{watson1983quest,kontsevich1999bayesian} and psychometric functions fitted with a lapse term \cite{wichmann2001fitting} are standard in psychophysics \cite{treutwein1995adaptive,leek2001adaptive}.
+
+\textbf{Layout.}
+The documented default repeats locations \cite{huggingface2026imitation}, while a data-scaling study advises a position range ``as extensive as possible'' \cite{lin2024data}.
+In simulation, 90 uniformly sampled demonstrations gave 66~\% success over the workspace, against 29.5~\% for 9 points with 10 each \cite{wang2025move}. % src: docs/reference/citations-verified.md, row wang2025move (its Section IV-A)
+On the same arm, a study with a frozen vision encoder compared one, two and ten positions at 50 demonstrations \cite{andresg2026demonstration}. % src: docs/reference/citations-verified.md, row andresg2026demonstration; related-work.md, section 4
+
+\textbf{Gap.}
+We are not aware of a real-robot study that reports success against the measured distance to the nearest demonstration, estimates a displacement threshold for a manipulation policy with a staircase or a fitted psychometric function, or compares a clustered with a distinct-position layout at a fixed number of demonstrations. Like a recent study of controller gains \cite{bronars2026tune}, we measure such choices under controlled conditions.

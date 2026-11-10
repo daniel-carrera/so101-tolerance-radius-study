@@ -1,0 +1,25 @@
+# Pilot overrides, applied on top of config/protocol.toml when a trial session is started with --pilot.
+#
+# Pilots are run before the protocol is frozen: to shake down the tools at the rig, to check that a freshly trained
+# policy works at all, and to see roughly where a staircase should start. They are logged to their own file
+# (data/trials/pilot*.jsonl) and are never counted in the analysis. Only what differs from the protocol is written here.
+
+[protocol]
+version = "pilot"
+status = "pilot"
+
+# The go or no-go check on Tuesday night: the clustered policy at nine exact demonstration starts.
+[blocks.T1a]
+anchors_zero = 9
+anchors_far = 0
+staircases = []
+
+# Replay shake-down on Tuesday afternoon: every replayed demonstration once at its own start, then two short
+# staircases. Eleven, as many as the block replays: the counted block tests only four of them at their own start,
+# so this is the one look at each.
+[blocks.T1b]
+anchors_zero = 11
+staircases = [
+  { id = "up", start_level_mm = 5.0, trials = 5 },
+  { id = "down", start_level_mm = 25.0, trials = 5 },
+]

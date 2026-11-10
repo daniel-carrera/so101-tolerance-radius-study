@@ -1,0 +1,31 @@
+{
+  "groups": [
+    {
+      "block": "T1a",
+      "condition": "act_clustered",
+      "n_drawn": 2,
+      "n_scored": 9
+    }
+  ],
+  "logs": [
+    {
+      "file": "data/trials/pilot_policy.jsonl",
+      "n_records": 9,
+      "n_scored": 9,
+      "sha256": "fbac1c26e77d4e1942076fc71e23f3a7fe7e7759de1e9c29d8408a5ba3bb70b6"
+    }
+  ],
+  "logs_digest": "8d87ef1dc6e52473cef22862c2dbf3b782eecaeb002b2f04691a4b0b90f25c67",
+  "n_drawn": 2,
+  "n_scored": 9,
+  "one_in": 5,
+  "passed_over": [],
+  "rehearsal": true,
+  "schema_version": 1,
+  "seed": 1,
+  "views": [
+    "front",
+    "wrist"
+  ],
+  "whole_pairs": []
+}

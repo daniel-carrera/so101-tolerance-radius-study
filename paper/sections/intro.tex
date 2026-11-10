@@ -1,0 +1,32 @@
+% Introduction. Target 350 words. Written in full: no result of the new experiment appears here.
+% The first paragraph states the paper's subject in the workshop's terms (docs/venue.md, section 6): two choices beneath
+% the policy, one instrument for both, the policy as a fixed probe, the checklist entries as a deliverable.
+% What each citation may carry is in docs/reference/citations-verified.md; do not widen a claim without reading the source.
+\section{Introduction}
+\label{sec:intro}
+
+Two choices beneath a robot policy are rarely reported: where an evaluation places the object at reset relative to the demonstrations, and how a fixed budget of demonstrations is distributed.
+We study both through success as a function of the distance to the nearest demonstration, summarised by a \emph{tolerance radius}: the distance at which success is halfway between its level near a demonstration (the plateau) and its level far from every demonstration (the floor).
+As a reference, we measure the same radius for an \emph{open-loop replay} (a demonstration's recorded actions executed with no policy or camera): a baseline for the same hardware and control stack.
+The policy, Action Chunking with Transformers (ACT) \cite{zhao2023learning}, is held fixed and is not the object of study.
+For the replay we find a well-defined radius, close to the median error of resets placed by eye. The policy succeeds at larger distances, but its success depends on location as well as distance, and its fitted radius is not established. Two layouts tested at 26 paired placements are not separated. We conclude with checklist entries. % src: results.tex (the three findings); 26 is \nPairs
+
+Imitation policies are known to succeed near demonstrated placements and to fail a few centimetres away \cite{xue2025demogen,zhao2025proprioceptive,andresg2026demonstration,sumarac2026act}, so a reported success rate depends on where resets are placed and how accurately: the \emph{reset distribution}.
+However, we are not aware of a paper that reports a measured accuracy for its object resets; a benchmark on the arm we use did not record positions, which ``prevents analysis of spatial success patterns'' \cite{selvaraj2026armnetbench}.
+
+\begin{figure}[t]
+\centering
+\figureorbox{figures/fig1-earlier-evaluation.pdf}{4.2cm}{Outcome of each trial of the earlier evaluation against its distance to the nearest trained demonstration, with the untested stretch shaded.}
+\caption{Our earlier evaluation of the same task, re-analysed.
+Each mark is one of 31 trials (12 scenes, each run two or three times): its outcome against the distance from the cube's start position to the nearest demonstration the policy was trained on. Large marks: each group's success rate, with a horizontal line over its range of distances and a vertical line for its Wilson 95~\% interval. A held-out cell is a grid cell without demonstrations. % src: analysis/pilot_august/trials_with_distance.csv, 31 rows
+Start positions were not logged; we measured them afterwards from the trial recordings (open circle: the one trial measured from a still image, not from its video).
+No trial started between 5.6 and 31~mm.} % src: same file, column d_nearest_trained49_mm: largest in a trained cell 5.63, smallest in a held-out cell 31.01
+\label{fig:earlier}
+\end{figure}
+
+Our earlier evaluation of the same task illustrates the problem (Fig.~\ref{fig:earlier}, Appendix~\ref{app:earlier}): of 31 trials whose starts we measured only afterwards, the 19 in cells with demonstrations had started within 5.6~mm of a trained demonstration and all succeeded, the 12 in held-out cells 31 to 47~mm away and one succeeded. % src: analysis/pilot_august/trials_with_distance.csv, 31 rows; kind = id: 19 rows, 19 successes, d_nearest_trained49_mm from 0.63 to 5.63; kind = ood: 12 rows, 1 success, from 31.01 to 47.14
+No intermediate distance was tested: both rates were determined by where the cube was placed, and neither indicates the distance at which the policy begins to fail. % src: same file: no row with d_nearest_trained49_mm between 5.63 and 31.01
+
+On a minimal task (one cube, one basket, a low-cost open-hardware arm \cite{therobotstudio2026so100}), each reset is placed by camera overlay within \placementTolerance~mm of a target, at an adaptively chosen distance, and logged; a fitted success curve gives the radius.
+The second choice is often made by following a default: the LeRobot guide suggests ``at least 50 episodes, with 10 episodes per location'' \cite{huggingface2026imitation}. % src: docs/reference/citations-verified.md, huggingface2026imitation (verbatim)
+We compare two layouts of \nDemos demonstrations: repeated starts at a few locations, or \nPointsSpread distinct start positions. Both policies are tested at the same placements and compared with the success predicted from the fitted curve.

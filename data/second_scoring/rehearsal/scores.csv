@@ -1,0 +1,3 @@
+item,score,scorer,watched_again,videos_sha256
+item-01,failure,op1,0,e8235e4eabec512d8fdf1e831ac38f971c3ea5a34d55cd821743c07132f93654
+item-02,success,op1,0,7517a966aff0c51e1df9159204c6e8f728116451aac09b95747d92e9712768ef

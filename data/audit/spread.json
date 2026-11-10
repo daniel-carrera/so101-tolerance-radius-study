@@ -1,0 +1,775 @@
+{
+  "demo_starts": [
+    {
+      "cell": "C1",
+      "dataset": "spread",
+      "episode_index": 0,
+      "measured": {
+        "x_mm": 109.3244087326529,
+        "y_mm": 42.936652585762246
+      },
+      "planned": {
+        "x_mm": 109.0,
+        "y_mm": 43.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C3",
+      "dataset": "spread",
+      "episode_index": 1,
+      "measured": {
+        "x_mm": 144.10276111144597,
+        "y_mm": 122.88078467639544
+      },
+      "planned": {
+        "x_mm": 144.0,
+        "y_mm": 123.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C2",
+      "dataset": "spread",
+      "episode_index": 2,
+      "measured": {
+        "x_mm": 125.13480406542946,
+        "y_mm": 84.94165973611017
+      },
+      "planned": {
+        "x_mm": 125.0,
+        "y_mm": 85.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "E2",
+      "dataset": "spread",
+      "episode_index": 3,
+      "measured": {
+        "x_mm": 241.9543308955632,
+        "y_mm": 60.7004649035701
+      },
+      "planned": {
+        "x_mm": 241.0,
+        "y_mm": 61.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "B1",
+      "dataset": "spread",
+      "episode_index": 4,
+      "measured": {
+        "x_mm": 80.7259954008016,
+        "y_mm": 22.049834963000468
+      },
+      "planned": {
+        "x_mm": 80.0,
+        "y_mm": 22.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "E1",
+      "dataset": "spread",
+      "episode_index": 5,
+      "measured": {
+        "x_mm": 202.61518196021825,
+        "y_mm": 35.16081997558713
+      },
+      "planned": {
+        "x_mm": 202.0,
+        "y_mm": 35.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "A2",
+      "dataset": "spread",
+      "episode_index": 6,
+      "measured": {
+        "x_mm": 9.892735735103052,
+        "y_mm": 89.24699712421737
+      },
+      "planned": {
+        "x_mm": 9.0,
+        "y_mm": 90.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "B3",
+      "dataset": "spread",
+      "episode_index": 7,
+      "measured": {
+        "x_mm": 83.44502086717475,
+        "y_mm": 138.00169973465617
+      },
+      "planned": {
+        "x_mm": 83.0,
+        "y_mm": 138.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "D1",
+      "dataset": "spread",
+      "episode_index": 8,
+      "measured": {
+        "x_mm": 160.62403811132992,
+        "y_mm": 35.33563755354878
+      },
+      "planned": {
+        "x_mm": 160.0,
+        "y_mm": 35.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "D3",
+      "dataset": "spread",
+      "episode_index": 9,
+      "measured": {
+        "x_mm": 163.1788980716193,
+        "y_mm": 106.76167527833525
+      },
+      "planned": {
+        "x_mm": 163.0,
+        "y_mm": 107.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "A3",
+      "dataset": "spread",
+      "episode_index": 10,
+      "measured": {
+        "x_mm": 12.441877763760704,
+        "y_mm": 115.56807483475275
+      },
+      "planned": {
+        "x_mm": 12.0,
+        "y_mm": 116.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C1",
+      "dataset": "spread",
+      "episode_index": 11,
+      "measured": {
+        "x_mm": 123.27304050315647,
+        "y_mm": 6.367315286290998
+      },
+      "planned": {
+        "x_mm": 123.0,
+        "y_mm": 7.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C2",
+      "dataset": "spread",
+      "episode_index": 12,
+      "measured": {
+        "x_mm": 109.42675149984271,
+        "y_mm": 68.11302785590962
+      },
+      "planned": {
+        "x_mm": 109.0,
+        "y_mm": 68.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "D3",
+      "dataset": "spread",
+      "episode_index": 13,
+      "measured": {
+        "x_mm": 171.47797068173247,
+        "y_mm": 124.07212186232431
+      },
+      "planned": {
+        "x_mm": 171.0,
+        "y_mm": 124.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "E2",
+      "dataset": "spread",
+      "episode_index": 14,
+      "measured": {
+        "x_mm": 225.63122455319453,
+        "y_mm": 73.58336558901199
+      },
+      "planned": {
+        "x_mm": 225.0,
+        "y_mm": 73.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "B1",
+      "dataset": "spread",
+      "episode_index": 15,
+      "measured": {
+        "x_mm": 85.51190329506358,
+        "y_mm": 40.61236293176543
+      },
+      "planned": {
+        "x_mm": 85.0,
+        "y_mm": 41.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "A3",
+      "dataset": "spread",
+      "episode_index": 16,
+      "measured": {
+        "x_mm": 33.86671594446416,
+        "y_mm": 141.2152922616541
+      },
+      "planned": {
+        "x_mm": 34.0,
+        "y_mm": 142.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "E1",
+      "dataset": "spread",
+      "episode_index": 17,
+      "measured": {
+        "x_mm": 219.64902588355613,
+        "y_mm": 46.24149818099959
+      },
+      "planned": {
+        "x_mm": 219.0,
+        "y_mm": 46.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "D1",
+      "dataset": "spread",
+      "episode_index": 18,
+      "measured": {
+        "x_mm": 152.58747038058598,
+        "y_mm": 9.486898972106022
+      },
+      "planned": {
+        "x_mm": 152.0,
+        "y_mm": 10.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "B3",
+      "dataset": "spread",
+      "episode_index": 19,
+      "measured": {
+        "x_mm": 53.9551318236076,
+        "y_mm": 112.43187691365807
+      },
+      "planned": {
+        "x_mm": 54.0,
+        "y_mm": 113.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "A2",
+      "dataset": "spread",
+      "episode_index": 20,
+      "measured": {
+        "x_mm": 10.404969679671334,
+        "y_mm": 61.15120453245458
+      },
+      "planned": {
+        "x_mm": 10.0,
+        "y_mm": 62.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C3",
+      "dataset": "spread",
+      "episode_index": 21,
+      "measured": {
+        "x_mm": 106.99699424871957,
+        "y_mm": 138.45594504244855
+      },
+      "planned": {
+        "x_mm": 107.0,
+        "y_mm": 139.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C2",
+      "dataset": "spread",
+      "episode_index": 22,
+      "measured": {
+        "x_mm": 108.0097223144284,
+        "y_mm": 94.09129077543035
+      },
+      "planned": {
+        "x_mm": 108.0,
+        "y_mm": 94.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C3",
+      "dataset": "spread",
+      "episode_index": 23,
+      "measured": {
+        "x_mm": 119.2592039334444,
+        "y_mm": 115.840294614777
+      },
+      "planned": {
+        "x_mm": 119.0,
+        "y_mm": 116.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C1",
+      "dataset": "spread",
+      "episode_index": 24,
+      "measured": {
+        "x_mm": 133.86660582870462,
+        "y_mm": 27.384248705166556
+      },
+      "planned": {
+        "x_mm": 134.0,
+        "y_mm": 28.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "E2",
+      "dataset": "spread",
+      "episode_index": 25,
+      "measured": {
+        "x_mm": 239.7626970334073,
+        "y_mm": 87.57437241644993
+      },
+      "planned": {
+        "x_mm": 239.0,
+        "y_mm": 88.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "A3",
+      "dataset": "spread",
+      "episode_index": 26,
+      "measured": {
+        "x_mm": 35.33282387677905,
+        "y_mm": 101.52331860823018
+      },
+      "planned": {
+        "x_mm": 35.0,
+        "y_mm": 102.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "A2",
+      "dataset": "spread",
+      "episode_index": 27,
+      "measured": {
+        "x_mm": 42.38465970082829,
+        "y_mm": 79.19864271143467
+      },
+      "planned": {
+        "x_mm": 42.0,
+        "y_mm": 80.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "D3",
+      "dataset": "spread",
+      "episode_index": 28,
+      "measured": {
+        "x_mm": 161.10566518262846,
+        "y_mm": 139.9691758451353
+      },
+      "planned": {
+        "x_mm": 161.0,
+        "y_mm": 141.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "B1",
+      "dataset": "spread",
+      "episode_index": 29,
+      "measured": {
+        "x_mm": 62.26689241004479,
+        "y_mm": 11.132456244628466
+      },
+      "planned": {
+        "x_mm": 62.0,
+        "y_mm": 11.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "B3",
+      "dataset": "spread",
+      "episode_index": 30,
+      "measured": {
+        "x_mm": 74.07084764531734,
+        "y_mm": 112.44249370552035
+      },
+      "planned": {
+        "x_mm": 74.0,
+        "y_mm": 112.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "E1",
+      "dataset": "spread",
+      "episode_index": 31,
+      "measured": {
+        "x_mm": 239.70534164725095,
+        "y_mm": 9.851490255841773
+      },
+      "planned": {
+        "x_mm": 239.0,
+        "y_mm": 10.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "D1",
+      "dataset": "spread",
+      "episode_index": 32,
+      "measured": {
+        "x_mm": 181.26088437557522,
+        "y_mm": 39.64653533567089
+      },
+      "planned": {
+        "x_mm": 181.0,
+        "y_mm": 40.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "D1",
+      "dataset": "spread",
+      "episode_index": 33,
+      "measured": {
+        "x_mm": 175.43626028733502,
+        "y_mm": 12.41193568474947
+      },
+      "planned": {
+        "x_mm": 175.0,
+        "y_mm": 13.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C2",
+      "dataset": "spread",
+      "episode_index": 34,
+      "measured": {
+        "x_mm": 141.4573401329299,
+        "y_mm": 75.02849969206362
+      },
+      "planned": {
+        "x_mm": 141.0,
+        "y_mm": 75.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C1",
+      "dataset": "spread",
+      "episode_index": 35,
+      "measured": {
+        "x_mm": 143.58824869410338,
+        "y_mm": 48.66096655082296
+      },
+      "planned": {
+        "x_mm": 143.0,
+        "y_mm": 48.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "E2",
+      "dataset": "spread",
+      "episode_index": 36,
+      "measured": {
+        "x_mm": 212.57713130990126,
+        "y_mm": 90.59119086174985
+      },
+      "planned": {
+        "x_mm": 212.0,
+        "y_mm": 91.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "A3",
+      "dataset": "spread",
+      "episode_index": 37,
+      "measured": {
+        "x_mm": 10.040068631179395,
+        "y_mm": 139.40651581777274
+      },
+      "planned": {
+        "x_mm": 10.0,
+        "y_mm": 139.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "B3",
+      "dataset": "spread",
+      "episode_index": 38,
+      "measured": {
+        "x_mm": 59.101380819504534,
+        "y_mm": 138.4104023330454
+      },
+      "planned": {
+        "x_mm": 59.0,
+        "y_mm": 139.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "B1",
+      "dataset": "spread",
+      "episode_index": 39,
+      "measured": {
+        "x_mm": 60.257502731309465,
+        "y_mm": 36.84603328268013
+      },
+      "planned": {
+        "x_mm": 60.0,
+        "y_mm": 37.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "E1",
+      "dataset": "spread",
+      "episode_index": 40,
+      "measured": {
+        "x_mm": 239.16360631334672,
+        "y_mm": 33.448578607629315
+      },
+      "planned": {
+        "x_mm": 239.0,
+        "y_mm": 34.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "D3",
+      "dataset": "spread",
+      "episode_index": 41,
+      "measured": {
+        "x_mm": 189.8673346310103,
+        "y_mm": 111.96803292106064
+      },
+      "planned": {
+        "x_mm": 190.0,
+        "y_mm": 112.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C3",
+      "dataset": "spread",
+      "episode_index": 42,
+      "measured": {
+        "x_mm": 133.31296839041732,
+        "y_mm": 139.40036935602566
+      },
+      "planned": {
+        "x_mm": 133.0,
+        "y_mm": 140.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "A2",
+      "dataset": "spread",
+      "episode_index": 43,
+      "measured": {
+        "x_mm": 36.256845955345575,
+        "y_mm": 57.97809766273519
+      },
+      "planned": {
+        "x_mm": 36.0,
+        "y_mm": 59.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "A2",
+      "dataset": "spread",
+      "episode_index": 44,
+      "measured": {
+        "x_mm": 23.43058760052561,
+        "y_mm": 78.13539632065788
+      },
+      "planned": {
+        "x_mm": 23.0,
+        "y_mm": 80.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C3",
+      "dataset": "spread",
+      "episode_index": 45,
+      "measured": {
+        "x_mm": 139.11073595113882,
+        "y_mm": 100.97438725170261
+      },
+      "planned": {
+        "x_mm": 139.0,
+        "y_mm": 102.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "E2",
+      "dataset": "spread",
+      "episode_index": 46,
+      "measured": {
+        "x_mm": 207.94075504660066,
+        "y_mm": 63.275967861335765
+      },
+      "planned": {
+        "x_mm": 208.0,
+        "y_mm": 65.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "B3",
+      "dataset": "spread",
+      "episode_index": 47,
+      "measured": {
+        "x_mm": 95.20916943782848,
+        "y_mm": 112.33817746928048
+      },
+      "planned": {
+        "x_mm": 95.0,
+        "y_mm": 114.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C2",
+      "dataset": "spread",
+      "episode_index": 48,
+      "measured": {
+        "x_mm": 126.19524527444258,
+        "y_mm": 54.46504951782074
+      },
+      "planned": {
+        "x_mm": 126.0,
+        "y_mm": 56.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "D3",
+      "dataset": "spread",
+      "episode_index": 49,
+      "measured": {
+        "x_mm": 188.6578079496432,
+        "y_mm": 136.5623373776688
+      },
+      "planned": {
+        "x_mm": 188.0,
+        "y_mm": 138.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "E1",
+      "dataset": "spread",
+      "episode_index": 50,
+      "measured": {
+        "x_mm": 218.4806553357502,
+        "y_mm": 14.475214855085726
+      },
+      "planned": {
+        "x_mm": 218.0,
+        "y_mm": 15.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "B1",
+      "dataset": "spread",
+      "episode_index": 51,
+      "measured": {
+        "x_mm": 91.39003176922215,
+        "y_mm": 3.206599688057812
+      },
+      "planned": {
+        "x_mm": 91.0,
+        "y_mm": 5.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "D1",
+      "dataset": "spread",
+      "episode_index": 52,
+      "measured": {
+        "x_mm": 197.37503765213893,
+        "y_mm": 7.320568056191835
+      },
+      "planned": {
+        "x_mm": 197.0,
+        "y_mm": 10.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "C1",
+      "dataset": "spread",
+      "episode_index": 53,
+      "measured": {
+        "x_mm": 107.07697878845143,
+        "y_mm": 20.694709615868817
+      },
+      "planned": {
+        "x_mm": 107.0,
+        "y_mm": 22.0
+      },
+      "trained": true
+    },
+    {
+      "cell": "A3",
+      "dataset": "spread",
+      "episode_index": 54,
+      "measured": {
+        "x_mm": 33.57284804270298,
+        "y_mm": 123.09143585529661
+      },
+      "planned": {
+        "x_mm": 33.0,
+        "y_mm": 124.0
+      },
+      "trained": true
+    }
+  ],
+  "schema_version": 1
+}

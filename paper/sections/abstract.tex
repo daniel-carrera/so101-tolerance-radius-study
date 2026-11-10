@@ -1,0 +1,13 @@
+% Abstract. Target 150 words; check_paper.py fails above 180.
+% Every result is a macro, except the two counts inside and outside the convex hull of the demonstrations, which are
+% typed with their source (the report's descriptive table; the same counts stand in results.tex).
+% Rewritten on 2026-10-08 after five blind reads of the paper (docs/journal.md): the replay's radius leads, the
+% policy's counts by distance follow, and the policy's fitted radius is given as not established, which is what the
+% pre-specified robustness check says (protocol/protocol.md, section 10).
+% The same text goes into the submission form: python3 check_paper.py --abstract.
+Two choices beneath a robot policy are rarely reported: where an evaluation places the object at reset relative to the demonstrations, and how a fixed budget of demonstrations is distributed.
+On a low-cost arm with one imitation-learning method (ACT), we place every reset within \placementTolerance~mm of a target (median error \resetErrorMedian~mm), log it, and report success against the distance to the nearest demonstration, summarised by a \emph{tolerance radius}: the distance at which success is halfway between its levels near and far from the demonstrations.
+An open-loop replay of demonstrations has a radius of \radiusReplay~mm (\intervalLevel~\% interval \radiusReplayLow to \radiusReplayHigh); resets placed by eye from a reference image miss by a median of \byEyeErrorMedian~mm.
+The policy succeeds at larger distances than the replay, but its success depends on location as well as distance (28 of 36 trials inside the convex hull of its demonstrations, 9 of 24 outside), and its fitted radius of \radiusClusteredThreshold~mm is not established under a pre-specified robustness check. % src: analysis/report/report.md, "Descriptive only" (the clustered policy inside and outside the hull)
+A policy trained on \nPointsSpread distinct start positions succeeded at \workspaceSuccessSpread of \nPairs shared test placements, and one trained on \nDemosPerCell demonstrations at each of \nPointsClustered locations at \workspaceSuccessClustered; the paired test does not establish a difference ($p=\mcnemarP$), and the spread layout's own radius was not measured.
+We propose five reporting-checklist entries.

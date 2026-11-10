@@ -1,0 +1,177 @@
+# The protocol's parameters: the one place the planner, the tools at the rig and the analysis read them from.
+#
+# docs/protocol.md explains each choice. While `status` is "draft" the values may change; once it is "frozen" (before
+# the first evaluation trial) a change is a deviation and is logged in docs/decisions.md with its reason.
+# Lengths are millimetres in the rig's table frame unless a key says otherwise.
+
+[protocol]
+version = "1.0"
+status = "frozen"
+
+# ----------------------------------------------------------------------------------------------------------------------
+# The table and the grid on it
+# ----------------------------------------------------------------------------------------------------------------------
+[table]
+# The grid's origin is the table frame's origin: x runs along columns A to E, y along rows 1 to 3.
+# Cell "B1" is column B, row 1; its centre is at (75, 25).
+cols = 5
+rows = 3
+cell_mm = 50.0
+# No demonstration starts in these cells. B2 and D2 are surrounded by trained cells; A1 and E3 are corners.
+held_out_cells = ["A1", "B2", "D2", "E3"]
+cube_edge_mm = 30.0
+# Test placements keep the cube's centre at least this far inside the grid's outer edge.
+test_region_margin_mm = 5.0
+
+[placement]
+# A reset is accepted when the camera measures the cube's centre within this distance of the target.
+tolerance_mm = 2.0
+# A requested distance is met when the target's distance to its nearest demonstration is within this of the request.
+level_match_mm = 0.5
+
+# ----------------------------------------------------------------------------------------------------------------------
+# The two demonstration sets: the same budget, laid out two ways
+# ----------------------------------------------------------------------------------------------------------------------
+[datasets]
+episodes_per_cell = 5            # 11 trained cells x 5 = 55 episodes in each set
+layout_seed = 20261006
+# Spread set: no two planned start positions closer than this.
+spread_min_spacing_mm = 12.0
+# Recording order: rounds of 11 episodes (one per trained cell), in four sittings that alternate the sets so that a
+# slow drift over the day falls equally on both: clustered rounds 1-3, spread rounds 1-3, spread rounds 4-5,
+# clustered rounds 4-5.
+sittings = [
+  { dataset = "clustered", rounds = [1, 2, 3] },
+  { dataset = "spread", rounds = [1, 2, 3] },
+  { dataset = "spread", rounds = [4, 5] },
+  { dataset = "clustered", rounds = [4, 5] },
+]
+
+[training]
+policy = "act"
+steps = 80000
+checkpoint_every = 10000
+# Both policies are evaluated at this step, chosen before any evaluation. If a run cannot reach it in time, both are
+# evaluated at their largest common checkpoint, and never below `fallback_min_checkpoint`.
+evaluation_checkpoint = 80000
+fallback_min_checkpoint = 40000
+
+# ----------------------------------------------------------------------------------------------------------------------
+# How a policy or a replay is run at the rig (docs/protocol.md, section 6)
+# ----------------------------------------------------------------------------------------------------------------------
+[execution]
+# What the trial runner hands to the earlier project's gated loop. A counted session is refused when one of its
+# settings differs from these, and every trial's record carries the values that ran. In August one such setting was
+# off for part of an evaluation without anyone noticing: this section is the guard against a repeat.
+control_hz = 30
+time_limit_s = 45.0                  # one attempt (30 until 2026-10-06: a demonstration now lasts 35 s)
+clamp_deg = 15.0                     # a joint's command may be at most this far from its present position
+temporal_ensemble_coeff = 0.01       # action smoothing, with a new prediction at every step
+handoff_tolerance_deg = 8.0          # a policy's first command against the arm's pose, each joint
+replay_handoff_tolerance_deg = 5.0   # the same for a replay: it starts from nearly the demonstration's own pose
+max_handoff_retries = 3              # then the trial is void
+min_attempt_s = 1.0                  # an attempt that a key ends sooner than this is a slip of the key: void
+# The stall rule ends an attempt when the joint farthest behind its command is at least `stall_fraction` of the clamp
+# behind it, and no joint has moved `stall_progress_deg` over the last `stall_steps` steps: behind and not getting
+# anywhere. Being behind alone is not a stall: a clamp that saturates during quick motion looks the same.
+stall_steps = 30
+stall_progress_deg = 1.5
+stall_fraction = 0.9
+# Before every attempt a session measures how far the front camera's picture stands from where it solved its
+# conversion at its start (the camera moves as it warms, and a trial's start is what its session measured). A
+# reading beyond this many millimetres on the floor makes no attempt: the trial goes back to its placement for a
+# new go, and a second such reading ends the session, which is started again. 0 would switch the stop off, which
+# a counted session cannot do.
+view_crept_limit_mm = 1.0
+
+# ----------------------------------------------------------------------------------------------------------------------
+# The adaptive rule that chooses the next distance
+# ----------------------------------------------------------------------------------------------------------------------
+[staircase]
+# One up, one down: after a success the next distance is larger, after a failure smaller. It settles around the
+# distance at which success is 50 %.
+rule = "1up1down"
+step_initial_mm = 10.0           # until the staircase first reverses direction
+step_final_mm = 5.0              # afterwards
+min_level_mm = 0.0
+
+# ----------------------------------------------------------------------------------------------------------------------
+# The blocks of trials, in priority order (docs/protocol.md, section "Trial budget")
+# ----------------------------------------------------------------------------------------------------------------------
+[blocks.T1b]
+title = "Replay baseline: the hardware's own tolerance"
+condition = "replay"
+anchors_zero = 4                 # trials at an exact demonstration start position
+# 50, not 40: with a limit of 40 the interval was too often left open above when the radius is near 40 mm (the
+# simulation of draft 0.1; docs/decisions.md has the figures).
+max_level_mm = 50.0
+# Demonstrations of the clustered set that are played back: one from each of this many cells, chosen by the block's
+# seed. 11 is every trained cell, so that the replay is tested over the same places on the table as the policy.
+replay_demos = 11
+staircases = [
+  { id = "up", start_level_mm = 5.0, trials = 9 },
+  { id = "down", start_level_mm = 25.0, trials = 9 },
+]
+
+[blocks.T1a]
+title = "Tolerance radius of the clustered policy"
+condition = "act_clustered"
+anchors_zero = 6
+anchors_far = 4                  # trials at `far_level_mm`: a repeat of August's held-out condition
+# 40, not 50: at 50 mm nearly every placeable point lies in the corner cells A1 and E3; at 40 mm the interior
+# held-out cells B2 and D2 take their share. August's held-out trials started 31 to 47 mm away.
+far_level_mm = 40.0
+max_level_mm = 50.0
+staircases = [
+  { id = "up", start_level_mm = 10.0, trials = 12 },
+  { id = "down", start_level_mm = 40.0, trials = 12 },
+]
+
+[blocks.T2]
+title = "Workspace test: both policies at the same placements"
+conditions = ["act_clustered", "act_spread"]
+# Each placement is tested with both policies. Half are drawn uniformly over the trained cells and half over the
+# held-out cells: over the trained cells alone the test has nothing to find once the tolerance radius is large
+# enough for the clusters to cover their own cells, and over the held-out cells alone it has nothing to find while
+# the radius is small (analysis/simulation/workspace_designs.md compares the designs; docs/decisions.md has the
+# figures). `pairs` is the total, and the planner refuses a list of regions that does not add up to it.
+pairs = 26
+regions = [
+  { region = "trained_cells", pairs = 13 },
+  { region = "held_out_cells", pairs = 13 },
+]
+placement_seed = 20261007
+
+[blocks.T3]
+title = "Tolerance radius of the spread policy"
+condition = "act_spread"
+anchors_zero = 4
+max_level_mm = 50.0
+staircases = [
+  { id = "up", start_level_mm = 5.0, trials = 10 },
+  { id = "down", start_level_mm = 25.0, trials = 10 },
+]
+
+# ----------------------------------------------------------------------------------------------------------------------
+# The analysis
+# ----------------------------------------------------------------------------------------------------------------------
+[analysis]
+# Model: P(success at distance d) = floor + (1 - lapse - floor) / (1 + exp((d - r50) / width)).
+# The tolerance radius r50 is the distance at which success is halfway between its plateau (1 - lapse) and its floor.
+# It is estimated as the median of a posterior computed on a grid, with a flat prior on r50, a flat prior on
+# log(width), and the lapse and floor values below weighted equally.
+# The floor is the chance of a lucky success far from every demonstration. In August one such success (an edge grasp
+# at 40 mm) moved the fitted radius by 6 mm when the floor was fixed at zero. In simulation, ignoring a floor that is
+# there costs far more than allowing for one that is not (analysis/simulation/procedure.md, section 6).
+r50_grid_mm = { min = 0.0, max = 80.0, step = 0.5 }
+width_grid_mm = { min = 0.5, max = 20.0, count = 30 }
+lapse_values = [0.0, 0.02, 0.05, 0.10]
+# Every fit is repeated with this longer list and reported beside the first, as a check on the plateau: with a low
+# true plateau the short list pulls the radius inward, and the long one does not. The long list is not the main fit
+# because it widens every interval when the plateau is high, which is the case the study is built around
+# (analysis/simulation/lapse_values.md has the figures).
+lapse_values_sensitivity = [0.0, 0.02, 0.05, 0.10, 0.20, 0.35, 0.50]
+# The two fits' medians may differ by this much before the paper says that the radius is not established.
+sensitivity_limit_mm = 5.0
+floor_values = [0.0, 0.05, 0.10]
+interval_level = 0.95

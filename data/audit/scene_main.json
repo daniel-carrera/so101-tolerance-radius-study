@@ -1,0 +1,3207 @@
+{
+ "log": "main.jsonl",
+ "basket_named_mm": 2.0,
+ "wrist_named_px": 2.0,
+ "trials": [
+  {
+   "trial_id": "T1a-001",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_132130",
+   "basket_start": {
+    "across_mm": -0.0,
+    "down_mm": 0.5,
+    "lean": 0.0
+   },
+   "basket_end": {
+    "across_mm": 0.0,
+    "down_mm": 0.5,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.8,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-002",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_132130",
+   "basket_start": {
+    "across_mm": 0.0,
+    "down_mm": 0.4,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.1,
+    "down_mm": 0.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-001",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_132130",
+   "basket_start": {
+    "across_mm": 0.1,
+    "down_mm": 0.3,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.1,
+    "down_mm": 0.3,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-002",
+   "condition": "replay",
+   "outcome": "failure",
+   "session": "20261008_132130",
+   "basket_start": {
+    "across_mm": -0.9,
+    "down_mm": 0.3,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": -0.9,
+    "down_mm": 1.3,
+    "lean": -0.4
+   },
+   "wrist_start": {
+    "across_px": 1.0,
+    "down_px": 0.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 1.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-003",
+   "condition": "replay",
+   "outcome": "failure",
+   "session": "20261008_132130",
+   "basket_start": {
+    "across_mm": 0.1,
+    "down_mm": 1.2,
+    "lean": -0.4
+   },
+   "basket_end": {
+    "across_mm": 0.2,
+    "down_mm": 1.2,
+    "lean": -0.4
+   },
+   "wrist_start": {
+    "across_px": 1.0,
+    "down_px": 0.6,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.1,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-003",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_132130",
+   "basket_start": {
+    "across_mm": 0.1,
+    "down_mm": 1.1,
+    "lean": -0.3
+   },
+   "basket_end": {
+    "across_mm": -0.9,
+    "down_mm": 1.1,
+    "lean": -0.3
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 1.0,
+    "down_px": -0.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 1.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-004",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_132130",
+   "basket_start": {
+    "across_mm": 0.1,
+    "down_mm": 1.0,
+    "lean": -0.3
+   },
+   "basket_end": {
+    "across_mm": 0.2,
+    "down_mm": 1.0,
+    "lean": -0.3
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.6,
+    "down_px": 2.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-004",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_132130",
+   "basket_start": {
+    "across_mm": -0.9,
+    "down_mm": 1.0,
+    "lean": -0.2
+   },
+   "basket_end": {
+    "across_mm": -0.8,
+    "down_mm": 0.9,
+    "lean": -0.3
+   },
+   "wrist_start": {
+    "across_px": 0.7,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-005",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_132130",
+   "basket_start": {
+    "across_mm": -0.8,
+    "down_mm": 0.9,
+    "lean": -0.1
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.9,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.6,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": null,
+   "basket_was_moved": null,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-006",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_134218",
+   "basket_start": {
+    "across_mm": -0.9,
+    "down_mm": 0.8,
+    "lean": -0.1
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 1.0,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 1.1,
+    "down_px": -0.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T1a-007",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_134218",
+   "basket_start": {
+    "across_mm": -0.8,
+    "down_mm": 0.8,
+    "lean": -0.1
+   },
+   "basket_end": {
+    "across_mm": -0.8,
+    "down_mm": 0.8,
+    "lean": -0.1
+   },
+   "wrist_start": {
+    "across_px": 0.7,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 0.2,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-008",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_134218",
+   "basket_start": {
+    "across_mm": -0.8,
+    "down_mm": 0.7,
+    "lean": -0.1
+   },
+   "basket_end": {
+    "across_mm": 32.8,
+    "down_mm": 10.6,
+    "lean": 20.9
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 35.0,
+   "basket_was_moved": true,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-005",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_135106",
+   "basket_start": {
+    "across_mm": -0.8,
+    "down_mm": -0.3,
+    "lean": -0.5
+   },
+   "basket_end": {
+    "across_mm": -0.8,
+    "down_mm": -0.3,
+    "lean": -0.5
+   },
+   "wrist_start": {
+    "across_px": 1.1,
+    "down_px": 0.5,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-009",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_135106",
+   "basket_start": {
+    "across_mm": -0.8,
+    "down_mm": -0.4,
+    "lean": -0.5
+   },
+   "basket_end": {
+    "across_mm": -0.8,
+    "down_mm": -0.3,
+    "lean": -0.4
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 1.1,
+    "down_px": 0.2,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-010",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_135106",
+   "basket_start": {
+    "across_mm": -0.8,
+    "down_mm": -0.4,
+    "lean": -0.3
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.5,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T1a-011",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_135106",
+   "basket_start": {
+    "across_mm": -0.8,
+    "down_mm": -0.4,
+    "lean": -0.3
+   },
+   "basket_end": {
+    "across_mm": -0.7,
+    "down_mm": -0.5,
+    "lean": -0.3
+   },
+   "wrist_start": {
+    "across_px": 0.9,
+    "down_px": 0.6,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.2,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-006",
+   "condition": "replay",
+   "outcome": "failure",
+   "session": "20261008_135106",
+   "basket_start": {
+    "across_mm": -0.8,
+    "down_mm": -0.5,
+    "lean": -0.3
+   },
+   "basket_end": {
+    "across_mm": -0.7,
+    "down_mm": -0.5,
+    "lean": -0.2
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-012",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_135106",
+   "basket_start": {
+    "across_mm": -0.7,
+    "down_mm": -0.5,
+    "lean": -0.2
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.1,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -0.5,
+    "down_px": 0.5,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T1a-013",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_135106",
+   "basket_start": {
+    "across_mm": -0.7,
+    "down_mm": -0.5,
+    "lean": -0.3
+   },
+   "basket_end": {
+    "across_mm": 42.7,
+    "down_mm": -12.5,
+    "lean": 26.0
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.6,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 45.0,
+   "basket_was_moved": true,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-014",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.5,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.6,
+    "down_px": 0.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-007",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.2,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.5,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-015",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-008",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.5,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-009",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.0,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-010",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 1.1,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.2,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-011",
+   "condition": "replay",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 0.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.1,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-016",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.3,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-012",
+   "condition": "replay",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.9,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.6,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-017",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.2,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 0.6,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-018",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 1.4,
+    "down_px": -0.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-013",
+   "condition": "replay",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 1.4,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.1,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-019",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.2
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.9,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.7,
+    "down_px": -0.2,
+    "by": "hole"
+   },
+   "basket_moved_mm": 1.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T1b-014",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.8,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-015",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.1,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-016",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.2,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-020",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.0,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-021",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-022",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.5,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-023",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-024",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.7,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-017",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.7,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.1,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-018",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.3,
+    "down_px": 0.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-019",
+   "condition": "replay",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.2,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-025",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.7,
+    "down_px": 0.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-020",
+   "condition": "replay",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.1,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-026",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-021",
+   "condition": "replay",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.6,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-027",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 1.5,
+    "down_px": 0.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T1a-028",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.1,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.8,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-029",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": -0.5,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.2,
+    "down_px": 0.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T1a-030",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.1,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.7,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.2,
+    "down_px": 1.5,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-031",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.4
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-032",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.4
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-033",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.1,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1b-022",
+   "condition": "replay",
+   "outcome": "failure",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.8,
+    "down_px": 0.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T1a-034",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_140653",
+   "basket_start": {
+    "across_mm": 0.5,
+    "down_mm": 2.1,
+    "lean": 0.4
+   },
+   "basket_end": {
+    "across_mm": 0.5,
+    "down_mm": 2.1,
+    "lean": 0.4
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-001",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.2,
+    "down_mm": 2.1,
+    "lean": 0.4
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 0.3,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-002",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 2.1,
+    "lean": 0.4
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 0.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.6,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-003",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 2.1,
+    "lean": 0.4
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.8,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 1.4,
+    "down_px": 0.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T2-004",
+   "condition": "act_spread",
+   "outcome": "failure",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 2.0,
+    "lean": 0.3
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.3,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -1.3,
+    "down_px": null,
+    "by": "edge"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T2-005",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.9,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.9,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 1.0,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-006",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.9,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.9,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-007",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.9,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.9,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-008",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.8,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.8,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.3,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-009",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.8,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.8,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.7,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-010",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.7,
+    "lean": 0.2
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 1.3,
+    "down_px": -0.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T2-011",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.7,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.7,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.3,
+    "down_px": 0.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.2,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-012",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_153839",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.6,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.6,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": -0.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-013",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.2,
+    "down_mm": 1.7,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.2,
+    "down_mm": 1.7,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": -0.0,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.9,
+    "down_px": 0.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-014",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.2,
+    "down_mm": 1.6,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.7,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.9,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-015",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.7,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.2,
+    "down_mm": 1.6,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.2,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 0.6,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-016",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.6,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.6,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-017",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.5,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.5,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.5,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-018",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.5,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.5,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-019",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.5,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.5,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.7,
+    "down_px": 0.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-020",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.5,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.5,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.7,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.4,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-021",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.9,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-022",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.8,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.8,
+    "down_px": 0.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-023",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.3,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.2,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-024",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.4,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.3,
+    "down_px": 0.3,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-025",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.7,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-026",
+   "condition": "act_spread",
+   "outcome": "failure",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.8,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T2-027",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.3,
+    "down_mm": 1.3,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.8,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 0.6,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-028",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.3,
+    "down_mm": 1.2,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-029",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 1.6,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-030",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.2,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-031",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.6,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 1.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-032",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 1.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 0.5,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-033",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.8,
+    "down_px": 0.6,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.7,
+    "down_px": 0.5,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T2-034",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 1.6,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-035",
+   "condition": "act_spread",
+   "outcome": "failure",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.7,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.7,
+    "down_px": 0.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-036",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 1.0,
+   "basket_was_moved": false,
+   "named_basket": false,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-037",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.2,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-038",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.1,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.5,
+    "down_px": 1.3,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-039",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.6,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-040",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.0,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-041",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.4
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-042",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.2,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-043",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.6,
+    "down_px": 1.4,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-044",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.6,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.3,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-045",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.1,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.3,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.6,
+    "down_px": 0.7,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-046",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": null,
+   "wrist_start": {
+    "across_px": 0.4,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 1.0,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false,
+   "basket_end_by": "the next trial's first frames"
+  },
+  {
+   "trial_id": "T2-047",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.3,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": -0.0,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-048",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.3,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.2,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.1,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-049",
+   "condition": "act_spread",
+   "outcome": "failure",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.1
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 1.2,
+    "lean": 0.1
+   },
+   "wrist_start": {
+    "across_px": 0.3,
+    "down_px": 1.0,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.9,
+    "down_px": -0.5,
+    "by": "hole"
+   },
+   "basket_moved_mm": 1.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-050",
+   "condition": "act_clustered",
+   "outcome": "failure",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 0.8,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": -0.2,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-051",
+   "condition": "act_clustered",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.3
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.2,
+    "down_px": 1.1,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  },
+  {
+   "trial_id": "T2-052",
+   "condition": "act_spread",
+   "outcome": "success",
+   "session": "20261008_160406",
+   "basket_start": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "basket_end": {
+    "across_mm": 0.4,
+    "down_mm": 2.2,
+    "lean": 0.2
+   },
+   "wrist_start": {
+    "across_px": 0.5,
+    "down_px": 0.9,
+    "by": "hole"
+   },
+   "wrist_end": {
+    "across_px": 0.4,
+    "down_px": 0.6,
+    "by": "hole"
+   },
+   "basket_moved_mm": 0.0,
+   "basket_was_moved": false,
+   "named_basket": true,
+   "named_wrist": false
+  }
+ ]
+}

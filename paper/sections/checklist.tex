@@ -1,0 +1,26 @@
+% Proposed checklist entries, and the discussion. Target 250 words.
+% The five entries are a deliverable of the paper (docs/venue.md, section 6): they do not depend on the results and are
+% written in full. The discussion's numbers are macros; its one directional sentence was settled with "results-lookup"
+% in results.tex on 2026-10-08 (both observed counts lie inside their predictive intervals).
+% The radius printed here is the clustered policy's block fit (\radiusClusteredThreshold). If its interval is open on a
+% side (results.tex, "results-bound"), write "a radius of at most ..." or "of at least ..." here as well.
+\section{Proposed Checklist Entries and Discussion}
+\label{sec:checklist}
+
+We propose five entries for the workshop's Design Choice Reporting Checklist, under \emph{demonstrations} and \emph{reset distributions}:
+\begin{enumerate}
+\item \textbf{Demonstration start states.} A map of where the object started in each demonstration, how the positions were set, and their scatter.
+\item \textbf{Reset positions.} Each trial's measured object start and its distance to the nearest demonstration; the success counts by distance; the distances never tested.
+\item \textbf{Reset accuracy.} The aid used to place the object, the measured placement error, and how the measurement was checked.
+\item \textbf{Tolerance radius.} Where one curve describes the counts: the distance at which success is halfway between plateau and floor, with an interval or a one-sided bound and a check of the fit. In every case: the farthest success and the nearest failure.
+\item \textbf{Open-loop reference.} The same for an open-loop replay of demonstrations, with its trials interleaved with the policy's.
+\end{enumerate}
+The first three require a camera, two printed tags and a log; the last two require the trials of Section~\ref{sec:results} (\nTrialsClusteredThreshold and \nTrialsReplay trials here, a median of \trialMinutesMedian~minutes each).
+
+Two relationships motivate these entries.
+First, reset accuracy relative to the distances at which success changes can alter a reported success rate: here, resets placed by eye had a median error of \byEyeErrorMedian~mm ($n=\nByEye$, one person), a distance at which the clustered policy succeeded in 6 of 10 trials, against 11 of 11 within 10~mm. % src: analysis/report/report.md, "Clustered policy", the table of 10 mm bins
+Second, demonstration spacing relative to those distances affects how much of a workspace a dataset covers; here the test of the two layouts was inconclusive.
+
+The procedure can be applied to another rig.
+Two further records concern defaults: the arm's software writes a position gain of 16 where, by its own source, the servo's default is 32 (Table~\ref{tab:rig}), and three data-pipeline faults of our earlier work pass the checks that were in place (Appendix~\ref{app:faults}). % src: numbers_by_hand.tex, \rigServoGains (P = 16 written; the servo's default 32 by LeRobot's source); appendix.tex, "Faults"
+On acceptance we will release the overlay, the planner, both datasets with measured start states, the trial logs, and the frozen protocol with its dated history. % the release waits for acceptance so that no link or account appears in a paper under double-blind review (settled 2026-10-08 under the author's standing word to decide; docs/decisions.md)

@@ -1,0 +1,49 @@
+{
+  "groups": [
+    {
+      "block": "T1a",
+      "condition": "act_clustered",
+      "n_drawn": 7,
+      "n_scored": 34
+    },
+    {
+      "block": "T1b",
+      "condition": "replay",
+      "n_drawn": 5,
+      "n_scored": 22
+    },
+    {
+      "block": "T2",
+      "condition": "act_clustered",
+      "n_drawn": 6,
+      "n_scored": 26
+    },
+    {
+      "block": "T2",
+      "condition": "act_spread",
+      "n_drawn": 6,
+      "n_scored": 26
+    }
+  ],
+  "logs": [
+    {
+      "file": "data/trials/main.jsonl",
+      "n_records": 108,
+      "n_scored": 108,
+      "sha256": "3311bc99029c771273f64b146063acf89f4278301656a5a8b8fa6e8ab411e36d"
+    }
+  ],
+  "logs_digest": "dc02a5f49b6672c88c181d4f3abeadc87411b06aa62e3f96fca77b79e72494cc",
+  "n_drawn": 24,
+  "n_scored": 108,
+  "one_in": 5,
+  "passed_over": [],
+  "rehearsal": false,
+  "schema_version": 1,
+  "seed": 20261006,
+  "views": [
+    "front",
+    "wrist"
+  ],
+  "whole_pairs": []
+}

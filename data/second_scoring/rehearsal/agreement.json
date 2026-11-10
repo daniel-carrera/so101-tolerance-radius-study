@@ -1,0 +1,107 @@
+{
+  "all": {
+    "agreement": 1.0,
+    "cannot_tell_first": {
+      "failure": 0,
+      "success": 0
+    },
+    "n_agree": 2,
+    "n_cannot_tell": 0,
+    "n_compared": 2,
+    "n_disagree": 0,
+    "n_items": 2,
+    "table": {
+      "failure_failure": 1,
+      "failure_success": 0,
+      "success_failure": 0,
+      "success_success": 1
+    },
+    "wilson_hi": 1.0,
+    "wilson_lo": 0.342380228
+  },
+  "by_kind": {
+    "policy": {
+      "agreement": 1.0,
+      "cannot_tell_first": {
+        "failure": 0,
+        "success": 0
+      },
+      "n_agree": 2,
+      "n_cannot_tell": 0,
+      "n_compared": 2,
+      "n_disagree": 0,
+      "n_items": 2,
+      "table": {
+        "failure_failure": 1,
+        "failure_success": 0,
+        "success_failure": 0,
+        "success_success": 1
+      },
+      "wilson_hi": 1.0,
+      "wilson_lo": 0.342380228
+    },
+    "replay": {
+      "agreement": null,
+      "cannot_tell_first": {
+        "failure": 0,
+        "success": 0
+      },
+      "n_agree": 0,
+      "n_cannot_tell": 0,
+      "n_compared": 0,
+      "n_disagree": 0,
+      "n_items": 0,
+      "table": {
+        "failure_failure": 0,
+        "failure_success": 0,
+        "success_failure": 0,
+        "success_success": 0
+      },
+      "wilson_hi": null,
+      "wilson_lo": null
+    }
+  },
+  "cannot_tell": [],
+  "disagreements": [],
+  "interval_level": 0.95,
+  "provenance": {
+    "folder": "data/second_scoring/rehearsal",
+    "groups": [
+      {
+        "block": "T1a",
+        "condition": "act_clustered",
+        "n_drawn": 2,
+        "n_scored": 9
+      }
+    ],
+    "logs": [
+      "data/trials/pilot_policy.jsonl"
+    ],
+    "logs_digest": "8d87ef1dc6e52473cef22862c2dbf3b782eecaeb002b2f04691a4b0b90f25c67",
+    "n_drawn": 2,
+    "n_scored": 9,
+    "one_in": 5,
+    "passed_over": [],
+    "seed": 1,
+    "views": [
+      "front",
+      "wrist"
+    ],
+    "whole_pairs": []
+  },
+  "rehearsal": true,
+  "schema_version": 1,
+  "scorers": {
+    "first": [
+      "op1"
+    ],
+    "n_same_role": 2,
+    "second": [
+      "op1"
+    ]
+  },
+  "watched_again": {
+    "n_items": 0,
+    "total": 0
+  }
+}

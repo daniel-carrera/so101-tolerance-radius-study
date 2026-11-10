@@ -1,0 +1,65 @@
+% Method. Target 650 words. Written in full, as a compression of protocol/protocol.md (draft 0.3).
+% Every parameter is a macro from generated/protocol.tex, so the text follows config/protocol.toml when it changes.
+% The lines that stated how the experiment was planned to run were checked against docs/journal.md, docs/decisions.md and
+% the trial log on 2026-10-08 and corrected where the run differed; each now carries a comment that says what it rests on.
+%
+% What the protocol has and this section leaves out, for want of room, and where each went:
+%   - the scale factor and whether distances are divided by it: results.tex, "The instrument and the resets";
+%   - why distances read long, the operator's confirmation of a placement, the staircases' steps and largest distances,
+%     how the replayed demonstrations were chosen and the pose gate, what a pilot trial is, what makes a trial void,
+%     the rule for an interval that is open on a side, the priors, why a radius and not a width, the analysis
+%     without a model: appendix.tex, "The protocol";
+%   - what "void" means for Table I: that table's caption (results.tex);
+%   - the reset-sensitivity calculation: results.tex, where its figures are given.
+\section{Method}
+\label{sec:method}
+
+\subsection{Rig and camera measurement}
+The rig is an SO-101 follower arm \cite{therobotstudio2026so100}, front and wrist cameras in a light box, and LeRobot \cite{cadene2024lerobot,cadene2026lerobot} (settings in Appendix~\ref{app:rig}).
+The task: pick up a \cubeEdge~mm cube and place it in a basket.
+A grid of $\gridCols\times\gridRows$ cells of \cellSize~mm is fixed to the table by two fiducial tags and is not drawn on it, so the policy sees no marks of position; no demonstration starts in its \nCellsHeldOut \emph{held-out} cells.
+
+A \emph{start position} is the cube's position as measured by the front camera, in millimetres in the table's frame.
+The same detector measures demonstrations and trials, each through a camera-to-table conversion solved from the two floor tags, so an offset common to both cancels in a distance; a printed millimetre scale checks the scale error that remains (Section~\ref{sec:instrument}).
+The independent variable is $d$: the distance from a trial's start position to the nearest one among the demonstrations its policy was trained on.
+
+\subsection{One budget, two layouts}
+Each dataset holds \nDemos demonstrations, \nDemosPerCell in each of the \nCellsTrained other, \emph{trained}, cells (Fig.~\ref{fig:layouts}).
+In the \emph{clustered} layout the \nDemosPerCell demonstrations of a cell start at its centre. This is the structure that the LeRobot guide suggests \cite{huggingface2026imitation}, with fewer repeats per location. % src: docs/reference/citations-verified.md, huggingface2026imitation: "10 episodes per location"
+In the \emph{spread} layout the demonstrations start at \nPointsSpread distinct positions, at least \spreadMinSpacing~mm apart.
+One operator recorded both sets in four sessions on one day, following one procedure (Appendix~\ref{app:rig}). % as run: four sittings on 2026-10-07, clustered, spread, spread, clustered (data/recording/*_placements.jsonl; docs/journal.md of that day)
+We trained one ACT policy \cite{zhao2023learning} on each set with identical settings and evaluated both at step \evalCheckpoint, fixed in advance. % as run: every counted policy trial names the checkpoint of step 80,000 (data/trials/main.jsonl, checkpoint); no fallback was used (protocol/protocol.md, section 5)
+
+\begin{figure}[t]
+\centering
+\figureorbox{figures/fig2-layouts.pdf}{3.2cm}{The grid with the measured start positions of the clustered set and of the spread set, and the held-out cells marked.}
+\caption{The two layouts of one budget: measured start positions of the \nDemos demonstrations of the clustered set and of the spread set. Hatched cells are held out.}
+\label{fig:layouts}
+\end{figure}
+
+\subsection{Trials}
+In a trial, as before each demonstration, an overlay guides the cube onto a planned target (Fig.~\ref{fig:overlay}); the placement is accepted within \placementTolerance~mm and its measured position logged.
+The \emph{condition} that then runs is the clustered policy, the spread policy, or a \emph{replay}: a demonstration's recorded actions sent through the same control loop and safety gates, with no policy or camera.
+The operator scores each trial: only a cube released in the basket counts as a success.
+We replay \nReplayDemosPlanned clustered demonstrations, one per trained cell, with the arm starting each replay from approximately that demonstration's initial pose; for a replay, $d$ is measured from the start position of the replayed demonstration.
+For a requested distance $L$, the target is drawn uniformly among the admissible points whose distance to the nearest demonstration is $L$.
+One-up-one-down staircases \cite{dixon1948method,levitt1971transformed} choose $L$, larger after a success and smaller after a failure, so that trials concentrate where the outcome is uncertain.
+A condition's \emph{threshold block} consists of two such staircases, one starting at a small distance and one at a large distance, and \emph{anchor trials} at fixed distances: at $d=0$ and, for the clustered policy, at \farLevel~mm.
+
+The clustered policy's block and the replay's ran interleaved in one shuffled order, over four consecutive sessions in about 91 minutes, so that both were exposed to the same state of the rig. % src: data/trials/main.jsonl, ts_start and the media folders of blocks T1a and T1b: sessions from 13:22:47 to 14:54:07 on 2026-10-08 (Appendix B says what ended each)
+The \emph{workspace test} followed: \nPairsPlanned placements drawn uniformly, \nPairsTrainedPlanned over trained and \nPairsHeldOutPlanned over held-out cells, each tested with both policies in immediate succession. The spread policy's own block was planned last and was not run. % src: data/trials/main.jsonl (block T2 from 15:41:34 to 16:49:00, every pair back to back); docs/decisions.md, 2026-10-08 (block T3 is not run)
+Each trial's condition was concealed from the operator by a code.
+
+\subsection{Analysis}
+The protocol, with its predictions and this analysis, was frozen before the first analysed trial (Appendix~\ref{app:protocol}). % src: git tag protocol-v1 (2026-10-08 12:50:13) and docs/decisions.md; the first counted trial's ts_start is 13:22:47 that day
+For each condition we fit
+\begin{equation}
+P(\text{success} \mid d) = \gamma + \frac{1-\lambda-\gamma}{1+\exp\bigl((d-r_{50})/w\bigr)},
+\label{eq:model}
+\end{equation}
+with plateau $1-\lambda$, the success level near a demonstration, where the lapse rate $\lambda$ is the share of failures unrelated to distance \cite{wichmann2001fitting}; floor $\gamma$, the probability of success far from every demonstration; width $w$ of the transition; and tolerance radius $r_{50}$, where success is halfway between plateau and floor. % src: the formula of Eq. (1); the 1 is not a quantity
+We report the posterior median of $r_{50}$ with its \intervalLevel~\% posterior interval, or only a bound (``at most'' or ``at least'') where the data do not bound the interval on one side.
+A \emph{block fit} uses only a condition's own threshold block; all comparisons and predictions use block fits. A \emph{pooled fit} also includes the policy's workspace-test trials and is reported as a check.
+As a \emph{robustness check}, every fit is repeated with lapse rates up to 0.5 in place of 0.1; if the radius of either fit changes by more than \plateauShiftLimit~mm, we report that condition's radius as not established. % src: config/protocol.toml, analysis.lapse_values and analysis.lapse_values_sensitivity (their largest values)
+We call one radius \emph{larger} than another when the posterior probability that it exceeds the other is at least 0.95, and \emph{smaller} when that probability is at most 0.05; otherwise the two are not distinguished. % src: protocol/protocol.md, section 9, prediction 2
+The \emph{lookup prediction} for a policy at a placement is the clustered policy's fitted curve at the placement's distance to that policy's nearest demonstration.
