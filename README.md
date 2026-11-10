@@ -11,6 +11,9 @@ The paper is in this repository: [paper/paper.pdf](paper/paper.pdf), *Measuring 
 Radius, Referenced to Open-Loop Replay*. It was submitted to the CoRL 2026 workshop *Everything Beneath the Policy*
 and was not accepted. The PDF is the submitted version, which is anonymous because the review was double blind.
 
+The [trial map](https://daniel-carrera.github.io/so101-tolerance-radius-study/) shows every counted trial on the table
+grid, with its outcome.
+
 ## The study
 
 The table carries a grid of 15 cells, 5 by 3, each 50 mm square. Two AprilTags on the table fix its frame, and a front
@@ -131,8 +134,11 @@ rig. Those notes are not part of this repository.
 ## Trial map
 
 The trial map is an interactive page that draws every counted trial where the cube started on the grid. It also shows
-where the demonstrations started and whether each trial succeeded. It lives in `docs/` and will be served by GitHub
-Pages; its link goes here once Pages is on. It also works offline: open `docs/index.html` in a browser.
+where the demonstrations started and whether each trial succeeded. It is at
+<https://daniel-carrera.github.io/so101-tolerance-radius-study/>, served by GitHub Pages from `docs/`. A trial opens
+straight from the address, for example
+<https://daniel-carrera.github.io/so101-tolerance-radius-study/#T1a-025>. The page also works offline: open
+`docs/index.html` in a browser.
 
 The page reads `docs/data/trials.json`. [scripts/export_data.py](scripts/export_data.py) writes that file from the
 trial log, the demonstration audits, the protocol and the table's tag positions. The three trial clips and the reset
