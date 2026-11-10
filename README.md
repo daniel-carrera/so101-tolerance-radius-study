@@ -141,8 +141,10 @@ straight from the address, for example
 `docs/index.html` in a browser.
 
 The page reads `docs/data/trials.json`. [scripts/export_data.py](scripts/export_data.py) writes that file from the
-trial log, the demonstration audits, the protocol and the table's tag positions. The three trial clips and the reset
-clip in `docs/assets/` are the only videos published.
+trial log, the demonstration audits, the protocol, the table's tag positions and each session's camera view
+(`data/camera_views.json`). Every trial has its front-camera clip in `docs/assets/trials/`, and the page can draw the
+grid over it. `docs/assets/` also holds a clip of the reset overlay, and photos and a clip of the setup. These clips
+are the only videos published; the full recordings, with the wrist camera, are not.
 
 ## License
 

@@ -11,6 +11,9 @@ It reads, and changes none of:
 - `config/protocol.toml`: the grid, the held-out cells and the blocks' titles
 - `config/table_geometry.json`: the two AprilTags on the table, and the front camera's view used to turn the map
 - `data/instrument/byeye_op1_20261008_172808.csv`: 20 resets made by eye with no overlay, each measured afterwards
+- `data/camera_views.json`: for each session, the front camera's view of the table (table millimetres
+  to picture pixels), solved from the frame the session started on with the session's own code;
+  the page draws the grid over each trial's video through it
 
 and writes `docs/data/trials.json`, plus `docs/data/trials.js`, the same object assigned to
 `window.TRIAL_DATA`, for a browser that opens the page from a file URL and will not fetch a JSON file from disk.
@@ -26,6 +29,7 @@ import csv
 import hashlib
 import json
 import math
+import re
 import sys
 import tomllib
 from pathlib import Path
@@ -47,25 +51,29 @@ AUDITS = {"clustered": REPO_ROOT / "data" / "audit" / "clustered.json",
 PROTOCOL = REPO_ROOT / "config" / "protocol.toml"
 TABLE_GEOMETRY = REPO_ROOT / "config" / "table_geometry.json"
 BY_EYE = REPO_ROOT / "data" / "instrument" / "byeye_op1_20261008_172808.csv"
+VIEWS = REPO_ROOT / "data" / "camera_views.json"
 
 #: The demonstration set each condition's distance is measured in. A replay plays back demonstrations of the
 #: clustered set (protocol.toml, [blocks.T1b]); its distance is to the replayed demonstration itself.
 DEMO_SET = {"act_clustered": "clustered", "act_spread": "spread", "replay": "clustered"}
 
-#: The only clips on the page: the three Daniel approved for the portfolio on 2026-11-09, copied unchanged from
-#: the portfolio site's assets. Each is byte-identical to the copy that was reviewed for its trial.
+#: The three clips Daniel approved for the portfolio on 2026-11-09, copied unchanged from
+#: the portfolio site's assets. Each is byte-identical to the copy that was reviewed for its trial. The page suggests
+#: them first.
+#: Every other trial's clip is `assets/trials/<trial>.mp4`: its front-camera recording re-encoded for a browser the
+#: same way, added at Daniel's request on 2026-11-10 (see the trial map's notes).
 APPROVED_CLIPS = {
     "T1a-025": "arm-policy-far",
     "T1b-002": "arm-replay-far-miss",
     "T1b-008": "arm-replay-own-start",
 }
 
-#: Spelling corrections to the scorer's notes, for the page only. The trial log keeps each note as it was typed at
-#: the rig; here a word is corrected, nothing is reworded. Each pair is (as typed, as shown), and the export stops if
-#: the typed text is not in that trial's note.
+#: Spelling fixed in the scorer's notes at Daniel's request on 2026-11-10: one word each, nothing reworded. The log
+#: keeps every note as typed; the page marks a fixed note as "spelling corrected". Each pair must match its note
+#: exactly once, as whole words, or the export stops. "mid air" (three notes) is an accepted spelling and stays.
 NOTE_SPELLING = {
     "T1a-013": [("agian", "again")],
-    "T1a-014": [("by a little but,", "by a little bit,")],
+    "T1a-014": [("little but", "little bit")],
     "T1b-012": [("procedure a if", "procedure as if")],
     "T1b-018": [("god", "good")],
     "T2-012": [("tthen", "then")],
@@ -80,14 +88,14 @@ NOTE_SPELLING = {
 }
 
 
-def shown_note(trial_id: str, typed: str, problems: list[str]) -> str:
-    """The scorer's note as the page shows it: as typed, with the listed spelling corrections applied."""
-    note = typed or ""
+def fixed_note(trial_id: str, note: str, problems: list[str]) -> str:
+    """The scorer's note with its listed spelling fixes applied, each checked to match exactly once."""
     for wrong, right in NOTE_SPELLING.get(trial_id, []):
-        if wrong not in note:
-            problems.append(f"note of {trial_id}: {wrong!r} is not in it")
+        pattern = r"\b" + re.escape(wrong) + r"\b"
+        if len(re.findall(pattern, note)) != 1:
+            problems.append(f"{trial_id}: the note does not hold {wrong!r} exactly once")
             continue
-        note = note.replace(wrong, right)
+        note = re.sub(pattern, right, note)
     return note
 
 
@@ -119,6 +127,7 @@ def main() -> None:
     grid = Grid.from_protocol(protocol)
     table_geometry = json.loads(TABLE_GEOMETRY.read_text(encoding="utf-8"))
     records = [json.loads(line) for line in TRIALS.read_text(encoding="utf-8").splitlines() if line.strip()]
+    views = json.loads(VIEWS.read_text(encoding="utf-8"))
 
     demos = {name: geometry.trained_demos(schema.read_demo_starts(path), name) for name, path in AUDITS.items()}
     demo_by_episode = {name: {d.episode_index: d for d in ds} for name, ds in demos.items()}
@@ -168,18 +177,28 @@ def main() -> None:
             "outcome": record["outcome"],
             "failure": record["failure"],
             "subgoal": record["subgoal"],
-            "notes": shown_note(planned["trial_id"], record["notes"], problems),
+            "notes": fixed_note(planned["trial_id"], record["notes"], problems),
+            "notes_spelling_fixed": [list(pair) for pair in NOTE_SPELLING.get(planned["trial_id"], [])],
             "ts_start": record["ts_start"],
-            "clip": APPROVED_CLIPS.get(planned["trial_id"]),
+            "session": Path(record["media"]["front"]).parent.name,
+            "clip": APPROVED_CLIPS.get(planned["trial_id"], f"trials/{planned['trial_id']}"),
+            "featured": planned["trial_id"] in APPROVED_CLIPS,
         })
 
+    for trial_id in NOTE_SPELLING:
+        if trial_id not in {t["id"] for t in trials}:
+            problems.append(f"spelling fix for {trial_id}: the trial is not in the log")
     for trial_id, name in APPROVED_CLIPS.items():
         if trial_id not in {t["id"] for t in trials}:
             problems.append(f"approved clip {name}: trial {trial_id} is not in the log")
+    for trial in trials:
         for suffix in (".mp4", ".jpg"):
-            if not (PAGE / "assets" / f"{name}{suffix}").is_file():
-                problems.append(f"approved clip {name}: assets/{name}{suffix} is missing from docs/assets")
+            if not (PAGE / "assets" / f"{trial['clip']}{suffix}").is_file():
+                problems.append(f"{trial['id']}: assets/{trial['clip']}{suffix} is missing from docs/assets")
 
+    for trial in trials:
+        if trial["session"] not in views:
+            problems.append(f"{trial['id']}: no camera view for session {trial['session']} in {VIEWS.name}")
     by_eye = [float(row["error_mm"]) for row in csv.DictReader(BY_EYE.open(encoding="utf-8"))]
     if not by_eye:
         problems.append(f"{BY_EYE.name}: no resets in it")
@@ -199,11 +218,10 @@ def main() -> None:
                 "table_geometry": {"path": str(TABLE_GEOMETRY.relative_to(REPO_ROOT)),
                                    "sha256": sha256(TABLE_GEOMETRY)},
                 "resets_by_eye": {"path": str(BY_EYE.relative_to(REPO_ROOT)), "sha256": sha256(BY_EYE)},
+                "camera_views": {"path": str(VIEWS.relative_to(REPO_ROOT)), "sha256": sha256(VIEWS)},
             },
             "written_by": "scripts/export_data.py",
             "lengths": "millimetres in the table frame of the AprilTags; positions are the cube's measured centre",
-            "notes": "the scorer's notes from the rig, with spelling corrected (NOTE_SPELLING in the script); "
-                     "the trial log keeps them as typed",
         },
         "table": {
             "cols": grid.cols,
@@ -216,6 +234,10 @@ def main() -> None:
         },
         # Resets made by eye from a reference picture, with no overlay: how far each landed from its target.
         "resets_by_eye_mm": by_eye,
+        # Each session's front-camera view: a 3 x 3 matrix from table millimetres to pixels of the 640 x 480 picture.
+        "camera_views": {session: {"mm_to_px": entry["mm_to_px"], "frame_px": entry["frame_px"]}
+                         for session, entry in sorted(views.items())
+                         if session in {t["session"] for t in trials}},
         "tags": [{"id": tag_id, "corners_mm": tag["corners"], "center_mm": tag["centre"]}
                  for tag_id, tag in sorted(table_geometry["tags"].items())],
         "camera_view": camera_turn(table_geometry, grid),
@@ -237,7 +259,7 @@ def main() -> None:
     (out / "trials.js").write_text(script, encoding="utf-8")
 
     print(f"wrote data/trials.json and data/trials.js: {len(trials)} trials, "
-          f"{sum(len(d) for d in demos.values())} demonstration starts, {len(APPROVED_CLIPS)} clips")
+          f"{sum(len(d) for d in demos.values())} demonstration starts, {len(trials)} clips")
     for condition in ("act_clustered", "act_spread", "replay"):
         mine = [t for t in trials if t["condition"] == condition]
         far = [t for t in mine if t["d_mm"] > 20]

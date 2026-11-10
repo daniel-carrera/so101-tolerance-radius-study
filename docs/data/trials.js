@@ -28,11 +28,14 @@ window.TRIAL_DATA = {
    "resets_by_eye": {
     "path": "data/instrument/byeye_op1_20261008_172808.csv",
     "sha256": "3be5452452fce112cdee571b422dc0a5e8dffaa0a962b8167f8197d731e8a4a7"
+   },
+   "camera_views": {
+    "path": "data/camera_views.json",
+    "sha256": "d74ceeec533a575a4bc6c71b30bbafd9a156d4b8585eed4dff4ed039e4bef0d8"
    }
   },
   "written_by": "scripts/export_data.py",
-  "lengths": "millimetres in the table frame of the AprilTags; positions are the cube's measured centre",
-  "notes": "the scorer's notes from the rig, with spelling corrected (NOTE_SPELLING in the script); the trial log keeps them as typed"
+  "lengths": "millimetres in the table frame of the AprilTags; positions are the cube's measured centre"
  },
  "table": {
   "cols": 5,
@@ -69,6 +72,146 @@ window.TRIAL_DATA = {
   18.64,
   15.04
  ],
+ "camera_views": {
+  "20261008_132130": {
+   "mm_to_px": [
+    [
+     -0.7393745268059729,
+     -0.16672406809908474,
+     298.74877081923006
+    ],
+    [
+     -0.005301631327954463,
+     0.49177753202583857,
+     132.45713275644596
+    ],
+    [
+     -1.1680108774875712e-05,
+     -0.000557691449563002,
+     0.8579926732921285
+    ]
+   ],
+   "frame_px": [
+    640,
+    480
+   ]
+  },
+  "20261008_134218": {
+   "mm_to_px": [
+    [
+     -0.7397589194236857,
+     -0.16628580023064155,
+     298.55025698634296
+    ],
+    [
+     -0.005542673494185625,
+     0.491441424592598,
+     133.0178959816293
+    ],
+    [
+     -1.2484639516199673e-05,
+     -0.0005573504807969206,
+     0.8578379953973152
+    ]
+   ],
+   "frame_px": [
+    640,
+    480
+   ]
+  },
+  "20261008_135106": {
+   "mm_to_px": [
+    [
+     -0.7397670601623925,
+     -0.1663927977380364,
+     298.4854434950954
+    ],
+    [
+     -0.005526443317772183,
+     0.49130752304957925,
+     133.06959977476163
+    ],
+    [
+     -1.2725687040224668e-05,
+     -0.0005576457203568285,
+     0.8577635213507742
+    ]
+   ],
+   "frame_px": [
+    640,
+    480
+   ]
+  },
+  "20261008_140653": {
+   "mm_to_px": [
+    [
+     -0.7400804412134709,
+     -0.16538478656859606,
+     298.51684588003405
+    ],
+    [
+     -0.005275188657587507,
+     0.4922817360851314,
+     133.35544826667325
+    ],
+    [
+     -1.1746293150431566e-05,
+     -0.0005548489818960077,
+     0.8578831174590481
+    ]
+   ],
+   "frame_px": [
+    640,
+    480
+   ]
+  },
+  "20261008_153839": {
+   "mm_to_px": [
+    [
+     -0.7389572123392703,
+     -0.16554147696443347,
+     298.34427249177867
+    ],
+    [
+     -0.005014362699630955,
+     0.49188060842634296,
+     132.7235057647115
+    ],
+    [
+     -1.0897058202209156e-05,
+     -0.0005562603072879961,
+     0.8575779535624258
+    ]
+   ],
+   "frame_px": [
+    640,
+    480
+   ]
+  },
+  "20261008_160406": {
+   "mm_to_px": [
+    [
+     -0.7397609394007733,
+     -0.16612544229252685,
+     298.5410784457896
+    ],
+    [
+     -0.00549680045750344,
+     0.49140852503898325,
+     133.21706309379414
+    ],
+    [
+     -1.2847085270770878e-05,
+     -0.0005571885984648128,
+     0.8577896803676004
+    ]
+   ],
+   "frame_px": [
+    640,
+    480
+   ]
+  }
+ },
  "tags": [
   {
    "id": "0",
@@ -1265,8 +1408,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good attempt",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:22:47-07:00",
-   "clip": null
+   "session": "20261008_132130",
+   "clip": "trials/T1a-001",
+   "featured": false
   },
   {
    "id": "T1a-002",
@@ -1295,8 +1441,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "correctly grasped, but did it just at the very end in the y axis, barely grasping it, it managed right at the edge and placed it correctly.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:24:13-07:00",
-   "clip": null
+   "session": "20261008_132130",
+   "clip": "trials/T1a-002",
+   "featured": false
   },
   {
    "id": "T1b-001",
@@ -1325,8 +1474,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good attempt",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:25:34-07:00",
-   "clip": null
+   "session": "20261008_132130",
+   "clip": "trials/T1b-001",
+   "featured": false
   },
   {
    "id": "T1b-002",
@@ -1355,8 +1507,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp, grasped too low but very close to it, too low in the y axis.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:26:54-07:00",
-   "clip": "arm-replay-far-miss"
+   "session": "20261008_132130",
+   "clip": "arm-replay-far-miss",
+   "featured": true
   },
   {
    "id": "T1b-003",
@@ -1385,8 +1540,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "grasped too low in y axis, just missing the cube, it touched it with one of the grippers but failed to grab it. didn't try to grab it again.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:29:13-07:00",
-   "clip": null
+   "session": "20261008_132130",
+   "clip": "trials/T1b-003",
+   "featured": false
   },
   {
    "id": "T1a-003",
@@ -1415,8 +1573,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp the cube, too low in the y axis, very close. tried to grab it again, nudging it, then it got stuck hovering near the cube.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:31:28-07:00",
-   "clip": null
+   "session": "20261008_132130",
+   "clip": "trials/T1a-003",
+   "featured": false
   },
   {
    "id": "T1a-004",
@@ -1445,8 +1606,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good attempt",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:34:00-07:00",
-   "clip": null
+   "session": "20261008_132130",
+   "clip": "trials/T1a-004",
+   "featured": false
   },
   {
    "id": "T1b-004",
@@ -1475,8 +1639,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good attempt",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:35:47-07:00",
-   "clip": null
+   "session": "20261008_132130",
+   "clip": "trials/T1b-004",
+   "featured": false
   },
   {
    "id": "T1a-005",
@@ -1505,8 +1672,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "it failed to grasp it correctly, the gripper was not fully aligned, so it pressed down on it and pushed it away, then the arm was hovering over the same place, stuck.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:36:58-07:00",
-   "clip": null
+   "session": "20261008_132130",
+   "clip": "trials/T1a-005",
+   "featured": false
   },
   {
    "id": "T1a-006",
@@ -1535,8 +1705,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "grasped very close but not enough and missed the cube, tried to regrasp but grasped above the cube in front of it several times before getting stuck in place.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:43:17-07:00",
-   "clip": null
+   "session": "20261008_134218",
+   "clip": "trials/T1a-006",
+   "featured": false
   },
   {
    "id": "T1a-007",
@@ -1565,8 +1738,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp, touched the cube but one of the grippers wasn't aligned so it nudged the gripper. the arm then tried to regrip but to the left of the cube missing it, and then it got stuck",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:45:29-07:00",
-   "clip": null
+   "session": "20261008_134218",
+   "clip": "trials/T1a-007",
+   "featured": false
   },
   {
    "id": "T1a-008",
@@ -1595,8 +1771,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "correctly placed, but it clipped the basket.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:48:14-07:00",
-   "clip": null
+   "session": "20261008_134218",
+   "clip": "trials/T1a-008",
+   "featured": false
   },
   {
    "id": "T1b-005",
@@ -1625,8 +1804,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:52:23-07:00",
-   "clip": null
+   "session": "20261008_135106",
+   "clip": "trials/T1b-005",
+   "featured": false
   },
   {
    "id": "T1a-009",
@@ -1655,8 +1837,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "nudged the cube, missed it by a very little bit, tried to regrasp the same spot several times.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:53:13-07:00",
-   "clip": null
+   "session": "20261008_135106",
+   "clip": "trials/T1a-009",
+   "featured": false
   },
   {
    "id": "T1a-010",
@@ -1685,8 +1870,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp, very close, nudged it, tried to regrasp same incorrect spot, then got stuck.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:55:40-07:00",
-   "clip": null
+   "session": "20261008_135106",
+   "clip": "trials/T1a-010",
+   "featured": false
   },
   {
    "id": "T1a-011",
@@ -1715,8 +1903,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "not sure how it gripped it, it was literally on the edge, somehow it worked and succeeded.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:58:12-07:00",
-   "clip": null
+   "session": "20261008_135106",
+   "clip": "trials/T1a-011",
+   "featured": false
   },
   {
    "id": "T1b-006",
@@ -1745,8 +1936,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "just missed it, too low in the y axis.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T13:59:30-07:00",
-   "clip": null
+   "session": "20261008_135106",
+   "clip": "trials/T1b-006",
+   "featured": false
   },
   {
    "id": "T1a-012",
@@ -1775,8 +1969,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "missed the cube by a little bit. nudged it a few times, got stuck close to it.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:01:35-07:00",
-   "clip": null
+   "session": "20261008_135106",
+   "clip": "trials/T1a-012",
+   "featured": false
   },
   {
    "id": "T1a-013",
@@ -1805,8 +2002,16 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "correctly placed it but clipped the basket again.",
+   "notes_spelling_fixed": [
+    [
+     "agian",
+     "again"
+    ]
+   ],
    "ts_start": "2026-10-08T14:04:08-07:00",
-   "clip": null
+   "session": "20261008_135106",
+   "clip": "trials/T1a-013",
+   "featured": false
   },
   {
    "id": "T1a-014",
@@ -1835,8 +2040,16 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "missed the grasp by a little bit, tried again, then got stuck",
+   "notes_spelling_fixed": [
+    [
+     "little but",
+     "little bit"
+    ]
+   ],
    "ts_start": "2026-10-08T14:08:11-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-014",
+   "featured": false
   },
   {
    "id": "T1b-007",
@@ -1865,8 +2078,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "correct",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:10:18-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-007",
+   "featured": false
   },
   {
    "id": "T1a-015",
@@ -1895,8 +2111,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:11:56-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-015",
+   "featured": false
   },
   {
    "id": "T1b-008",
@@ -1925,8 +2144,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:13:07-07:00",
-   "clip": "arm-replay-own-start"
+   "session": "20261008_140653",
+   "clip": "arm-replay-own-start",
+   "featured": true
   },
   {
    "id": "T1b-009",
@@ -1955,8 +2177,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:14:08-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-009",
+   "featured": false
   },
   {
    "id": "T1b-010",
@@ -1985,8 +2210,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:15:35-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-010",
+   "featured": false
   },
   {
    "id": "T1b-011",
@@ -2015,8 +2243,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp, very close but not enough",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:16:36-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-011",
+   "featured": false
   },
   {
    "id": "T1a-016",
@@ -2045,8 +2276,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:17:55-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-016",
+   "featured": false
   },
   {
    "id": "T1b-012",
@@ -2075,8 +2309,16 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "grasped but slipped and it nudged the cube, didn't try to pick it up again, it just did the regular procedure as if the cube was placed correctly",
+   "notes_spelling_fixed": [
+    [
+     "procedure a if",
+     "procedure as if"
+    ]
+   ],
    "ts_start": "2026-10-08T14:19:17-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-012",
+   "featured": false
   },
   {
    "id": "T1a-017",
@@ -2105,8 +2347,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:21:00-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-017",
+   "featured": false
   },
   {
    "id": "T1a-018",
@@ -2135,8 +2380,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "just missed the cube, tried to regrasp then got stuck",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:23:20-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-018",
+   "featured": false
   },
   {
    "id": "T1b-013",
@@ -2165,8 +2413,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "very close, but unaligned grip, nudged the cube and missed. then behaved as if it had grasped it correctly.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:25:17-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-013",
+   "featured": false
   },
   {
    "id": "T1a-019",
@@ -2195,8 +2446,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp, then got stuck trying to regrasp.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:26:37-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-019",
+   "featured": false
   },
   {
    "id": "T1b-014",
@@ -2225,8 +2479,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:29:08-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-014",
+   "featured": false
   },
   {
    "id": "T1b-015",
@@ -2255,8 +2512,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:30:12-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-015",
+   "featured": false
   },
   {
    "id": "T1b-016",
@@ -2285,8 +2545,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:30:57-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-016",
+   "featured": false
   },
   {
    "id": "T1a-020",
@@ -2315,8 +2578,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:31:42-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-020",
+   "featured": false
   },
   {
    "id": "T1a-021",
@@ -2345,8 +2611,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:32:35-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-021",
+   "featured": false
   },
   {
    "id": "T1a-022",
@@ -2375,8 +2644,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "correctly grasped it but it failed at first, it nudged it 3 times and at the last try it perfectly gripped it.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:33:15-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-022",
+   "featured": false
   },
   {
    "id": "T1a-023",
@@ -2405,8 +2677,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good, almost missed it, grabbed it by the very edge.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:34:32-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-023",
+   "featured": false
   },
   {
    "id": "T1a-024",
@@ -2435,8 +2710,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:35:27-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-024",
+   "featured": false
   },
   {
    "id": "T1b-017",
@@ -2465,8 +2743,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good, it almost missed again, gripping it by the very edge low in the y axis.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:36:14-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-017",
+   "featured": false
   },
   {
    "id": "T1b-018",
@@ -2495,8 +2776,16 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [
+    [
+     "god",
+     "good"
+    ]
+   ],
    "ts_start": "2026-10-08T14:37:11-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-018",
+   "featured": false
   },
   {
    "id": "T1b-019",
@@ -2525,8 +2814,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp, nudging the cube, then acted as if it had picked it up.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:38:07-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-019",
+   "featured": false
   },
   {
    "id": "T1a-025",
@@ -2555,8 +2847,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:39:06-07:00",
-   "clip": "arm-policy-far"
+   "session": "20261008_140653",
+   "clip": "arm-policy-far",
+   "featured": true
   },
   {
    "id": "T1b-020",
@@ -2585,8 +2880,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:39:57-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-020",
+   "featured": false
   },
   {
    "id": "T1a-026",
@@ -2615,8 +2913,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:40:57-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-026",
+   "featured": false
   },
   {
    "id": "T1b-021",
@@ -2645,8 +2946,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp, pretended that it did, missed too low in the y axis.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:41:43-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-021",
+   "featured": false
   },
   {
    "id": "T1a-027",
@@ -2675,8 +2979,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "grasped to the right, as if the cube was in the cell to the right, failed, then tried grasping to the cell above, and failed then got stuck",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:43:09-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-027",
+   "featured": false
   },
   {
    "id": "T1a-028",
@@ -2705,8 +3012,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "barely grasped it, on the very edge, it was aiming above in the y axis.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:45:11-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-028",
+   "featured": false
   },
   {
    "id": "T1a-029",
@@ -2735,8 +3045,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "grasped to the cell above, failed, then tried again and got stuck",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:46:03-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-029",
+   "featured": false
   },
   {
    "id": "T1a-030",
@@ -2765,8 +3078,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:47:36-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-030",
+   "featured": false
   },
   {
    "id": "T1a-031",
@@ -2795,8 +3111,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "failed at first, pushing the cube a little bit, then it grasped it correctly.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:48:26-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-031",
+   "featured": false
   },
   {
    "id": "T1a-032",
@@ -2825,8 +3144,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp, went for the wrong cell, then got stuck after retrying",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:49:36-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-032",
+   "featured": false
   },
   {
    "id": "T1a-033",
@@ -2855,8 +3177,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "barely grasped it, very low in the y axis",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:51:34-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-033",
+   "featured": false
   },
   {
    "id": "T1b-022",
@@ -2885,8 +3210,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp, nudging it forward, then pretended it had grasped it correctly",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:52:25-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1b-022",
+   "featured": false
   },
   {
    "id": "T1a-034",
@@ -2915,8 +3243,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T14:53:48-07:00",
-   "clip": null
+   "session": "20261008_140653",
+   "clip": "trials/T1a-034",
+   "featured": false
   },
   {
    "id": "T2-001",
@@ -2945,8 +3276,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:41:34-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-001",
+   "featured": false
   },
   {
    "id": "T2-002",
@@ -2975,8 +3309,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:42:16-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-002",
+   "featured": false
   },
   {
    "id": "T2-003",
@@ -3005,8 +3342,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "missed the cube, it collided with the cube, then tried to regrip above it 1-2 cells, then it got stuck",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:43:01-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-003",
+   "featured": false
   },
   {
    "id": "T2-004",
@@ -3035,8 +3375,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "missed and nudged it, then it got stuck near the basket",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:44:38-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-004",
+   "featured": false
   },
   {
    "id": "T2-005",
@@ -3065,8 +3408,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:46:11-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-005",
+   "featured": false
   },
   {
    "id": "T2-006",
@@ -3095,8 +3441,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:47:17-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-006",
+   "featured": false
   },
   {
    "id": "T2-007",
@@ -3125,8 +3474,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:48:09-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-007",
+   "featured": false
   },
   {
    "id": "T2-008",
@@ -3155,8 +3507,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:49:13-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-008",
+   "featured": false
   },
   {
    "id": "T2-009",
@@ -3185,8 +3540,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:50:29-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-009",
+   "featured": false
   },
   {
    "id": "T2-010",
@@ -3215,8 +3573,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "almost grasped it, it was too far up in the y axis, just missed. then got stuck above the cube trying to grasp the cell above.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:51:25-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-010",
+   "featured": false
   },
   {
    "id": "T2-011",
@@ -3245,8 +3606,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T15:53:10-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-011",
+   "featured": false
   },
   {
    "id": "T2-012",
@@ -3275,8 +3639,16 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "grasped in front of the cube too far in y, almost got it but missed, then tried to regrasp to the left and front diagonal cell, then got stuck",
+   "notes_spelling_fixed": [
+    [
+     "tthen",
+     "then"
+    ]
+   ],
    "ts_start": "2026-10-08T15:54:31-07:00",
-   "clip": null
+   "session": "20261008_153839",
+   "clip": "trials/T2-012",
+   "featured": false
   },
   {
    "id": "T2-013",
@@ -3305,8 +3677,16 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "missed the cube, went too low in y axis, tried to regrab it several times in the same spot, didn't get stuck",
+   "notes_spelling_fixed": [
+    [
+     "went to low",
+     "went too low"
+    ]
+   ],
    "ts_start": "2026-10-08T16:05:10-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-013",
+   "featured": false
   },
   {
    "id": "T2-014",
@@ -3335,8 +3715,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:07:25-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-014",
+   "featured": false
   },
   {
    "id": "T2-015",
@@ -3365,8 +3748,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "missed the cube by a little bit, tried regrasping but just nudged it, it grasped in different places nearby of the cube, then got stuck in the air.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:08:10-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-015",
+   "featured": false
   },
   {
    "id": "T2-016",
@@ -3395,8 +3781,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:10:03-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-016",
+   "featured": false
   },
   {
    "id": "T2-017",
@@ -3425,8 +3814,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:10:59-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-017",
+   "featured": false
   },
   {
    "id": "T2-018",
@@ -3455,8 +3847,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "missed once, nudging the cube down in y axis, then it tried to regrip and it grasped the cube then succeeded",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:11:41-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-018",
+   "featured": false
   },
   {
    "id": "T2-019",
@@ -3485,8 +3880,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "missed the cube, nudging it, then tried to regrip the cell front left diagonal. then got stuck",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:12:58-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-019",
+   "featured": false
   },
   {
    "id": "T2-020",
@@ -3515,8 +3913,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:14:38-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-020",
+   "featured": false
   },
   {
    "id": "T2-021",
@@ -3545,8 +3946,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:15:37-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-021",
+   "featured": false
   },
   {
    "id": "T2-022",
@@ -3575,8 +3979,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "just missed it, nudging it, then it tried to regrip several times at a cell front left diagonal.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:16:29-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-022",
+   "featured": false
   },
   {
    "id": "T2-023",
@@ -3605,8 +4012,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:18:27-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-023",
+   "featured": false
   },
   {
    "id": "T2-024",
@@ -3635,8 +4045,16 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "missed the first time, nudging it, then the second attempt it grabbed it by the bottom edge. success.",
+   "notes_spelling_fixed": [
+    [
+     "grabed",
+     "grabbed"
+    ]
+   ],
    "ts_start": "2026-10-08T16:19:14-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-024",
+   "featured": false
   },
   {
    "id": "T2-025",
@@ -3665,8 +4083,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:20:15-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-025",
+   "featured": false
   },
   {
    "id": "T2-026",
@@ -3695,8 +4116,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed to grasp, then grasped mid air several times above the cube.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:21:00-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-026",
+   "featured": false
   },
   {
    "id": "T2-027",
@@ -3725,8 +4149,16 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "it kept missing and nudging it, until at last it grasped it correctly.",
+   "notes_spelling_fixed": [
+    [
+     "nuging",
+     "nudging"
+    ]
+   ],
    "ts_start": "2026-10-08T16:22:46-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-027",
+   "featured": false
   },
   {
    "id": "T2-028",
@@ -3755,8 +4187,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "it missed a few times, nudging the cube, then barely picked it up on the edge and succeeded.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:24:12-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-028",
+   "featured": false
   },
   {
    "id": "T2-029",
@@ -3785,8 +4220,16 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "it missed a few times, nudging it, until it grabbed it by the very edge. success",
+   "notes_spelling_fixed": [
+    [
+     "grabed",
+     "grabbed"
+    ]
+   ],
    "ts_start": "2026-10-08T16:25:16-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-029",
+   "featured": false
   },
   {
    "id": "T2-030",
@@ -3815,8 +4258,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "success",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:27:29-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-030",
+   "featured": false
   },
   {
    "id": "T2-031",
@@ -3845,8 +4291,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "success",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:28:09-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-031",
+   "featured": false
   },
   {
    "id": "T2-032",
@@ -3875,8 +4324,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:28:52-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-032",
+   "featured": false
   },
   {
    "id": "T2-033",
@@ -3905,8 +4357,16 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "it nudged the cube and then it began trying to regrasp it in a far front left diagonal cell, then it got stuck mid air",
+   "notes_spelling_fixed": [
+    [
+     "re grasp",
+     "regrasp"
+    ]
+   ],
    "ts_start": "2026-10-08T16:29:30-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-033",
+   "featured": false
   },
   {
    "id": "T2-034",
@@ -3935,8 +4395,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:31:08-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-034",
+   "featured": false
   },
   {
    "id": "T2-035",
@@ -3965,8 +4428,16 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "it kept nudging after each failed regrasp, until the timer ran out",
+   "notes_spelling_fixed": [
+    [
+     "re grasp",
+     "regrasp"
+    ]
+   ],
    "ts_start": "2026-10-08T16:31:54-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-035",
+   "featured": false
   },
   {
    "id": "T2-036",
@@ -3995,8 +4466,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "it failed a few times, nudging the cube, until the last try it slipped into its grip and it succeeded",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:33:49-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-036",
+   "featured": false
   },
   {
    "id": "T2-037",
@@ -4025,8 +4499,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:35:06-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-037",
+   "featured": false
   },
   {
    "id": "T2-038",
@@ -4055,8 +4532,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:35:42-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-038",
+   "featured": false
   },
   {
    "id": "T2-039",
@@ -4085,8 +4565,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:36:21-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-039",
+   "featured": false
   },
   {
    "id": "T2-040",
@@ -4115,8 +4598,16 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [
+    [
+     "god",
+     "good"
+    ]
+   ],
    "ts_start": "2026-10-08T16:36:58-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-040",
+   "featured": false
   },
   {
    "id": "T2-041",
@@ -4145,8 +4636,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:37:49-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-041",
+   "featured": false
   },
   {
    "id": "T2-042",
@@ -4175,8 +4669,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:38:28-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-042",
+   "featured": false
   },
   {
    "id": "T2-043",
@@ -4205,8 +4702,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:39:09-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-043",
+   "featured": false
   },
   {
    "id": "T2-044",
@@ -4235,8 +4735,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:39:42-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-044",
+   "featured": false
   },
   {
    "id": "T2-045",
@@ -4265,8 +4768,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:40:37-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-045",
+   "featured": false
   },
   {
    "id": "T2-046",
@@ -4295,8 +4801,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "nudged the cube, failed, then tried regrasping a cell to the front left diagonal mid air and got stuck",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:41:17-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-046",
+   "featured": false
   },
   {
    "id": "T2-047",
@@ -4325,8 +4834,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:42:43-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-047",
+   "featured": false
   },
   {
    "id": "T2-048",
@@ -4355,8 +4867,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:43:38-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-048",
+   "featured": false
   },
   {
    "id": "T2-049",
@@ -4385,8 +4900,16 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "nudged it several times almost grasping it but finally pushing it away, then regrasping right below it. failed.",
+   "notes_spelling_fixed": [
+    [
+     "nuged",
+     "nudged"
+    ]
+   ],
    "ts_start": "2026-10-08T16:44:14-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-049",
+   "featured": false
   },
   {
    "id": "T2-050",
@@ -4415,8 +4938,11 @@ window.TRIAL_DATA = {
    "failure": "grasp",
    "subgoal": 2,
    "notes": "failed, got stuck to the left area in the air.",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:46:32-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-050",
+   "featured": false
   },
   {
    "id": "T2-051",
@@ -4445,8 +4971,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:47:58-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-051",
+   "featured": false
   },
   {
    "id": "T2-052",
@@ -4475,8 +5004,11 @@ window.TRIAL_DATA = {
    "failure": null,
    "subgoal": 5,
    "notes": "good",
+   "notes_spelling_fixed": [],
    "ts_start": "2026-10-08T16:48:39-07:00",
-   "clip": null
+   "session": "20261008_160406",
+   "clip": "trials/T2-052",
+   "featured": false
   }
  ]
 };

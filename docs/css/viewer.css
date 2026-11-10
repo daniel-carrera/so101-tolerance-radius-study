@@ -197,7 +197,7 @@ code {
   padding: 0.6rem 0 1.5rem;
 }
 @media (min-width: 62rem) {
-  .explore { grid-template-columns: minmax(0, 1.75fr) minmax(19rem, 1fr); align-items: start; }
+  .explore { grid-template-columns: minmax(0, 1.55fr) minmax(20rem, 1fr); align-items: start; }
   .panel { position: sticky; top: 1rem; }
 }
 
@@ -446,3 +446,132 @@ html:not([data-theme="light"]) .out-miss { color: #f08a3f; }
 .reset-clip { margin: 0 0 1.25rem; max-width: 60rem; }
 .reset-clip video { display: block; width: 100%; height: auto; border-radius: 2px; background: var(--bg-raised); }
 .reset-clip figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; max-width: 46rem; }
+
+/* The setup: photos and a clip of different shapes, in balanced columns */
+#setup > p { max-width: 46rem; color: var(--ink); }
+.setup-grid { columns: 3 9.5rem; column-gap: 1rem; max-width: 60rem; }
+.setup-grid figure { break-inside: avoid; margin: 0 0 1rem; }
+.setup-grid img, .setup-grid video { display: block; width: 100%; height: auto; border-radius: 2px; background: var(--bg-raised); }
+.setup-grid figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; }
+
+/* The trial panel fits the window: on a wide screen it is never taller than the window and scrolls inside
+   itself if it has to; the video gives way first on a short window. */
+@media (min-width: 62rem) {
+  .panel { max-height: calc(100vh - 2rem); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+}
+.panel-head { flex-wrap: nowrap; }
+.panel-tools { margin-left: auto; display: flex; gap: 0.3rem; flex: none; }
+.icon-btn {
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.icon-btn:hover { border-color: var(--ink); }
+.panel .who { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.2rem 1rem; margin: 0 0 0.7rem; }
+.panel .who .where { font-size: 0.82rem; }
+.panel .clip { margin: 0 0 0.8rem; }
+.panel .clip video { width: auto; max-width: 100%; max-height: 24vh; margin: 0 auto; }
+.panel h2 { white-space: nowrap; }
+.panel .facts {
+  grid-template-columns: 4.6rem minmax(0, 1fr);
+  gap: 0.35rem 0.8rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  margin-bottom: 0.7rem;
+}
+.panel .facts div { display: contents; }
+.panel .facts dt { font-size: 0.7rem; padding-top: 0.2rem; }
+.panel .note { font-size: 0.86rem; line-height: 1.45; margin-bottom: 0.7rem; padding: 0.45rem 0.7rem; }
+.panel .pair .pick { font-size: 0.85rem; margin: 0; }
+.panel { padding: 0.9rem 1rem 1rem; }
+.panel .pair { margin: 0; }
+
+/* The grid over a trial's video. Fixed colors: the picture is a light table in either theme. */
+.clip-stage { position: relative; width: fit-content; max-width: 100%; margin: 0 auto; }
+.clip-stage video { display: block; }
+.video-grid { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.vg-cell { fill: none; stroke: rgba(14, 19, 24, 0.5); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.vg-held { fill: rgba(14, 19, 24, 0.17); }
+.vg-outline { fill: none; stroke: rgba(14, 19, 24, 0.8); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.vg-label { fill: rgba(14, 19, 24, 0.75); font-family: inherit; font-weight: 600; }
+.vg-label.is-held { fill: #0e1318; font-weight: 800; }
+.vg-demo { stroke: #0e1318; stroke-width: 1.5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.vg-ring { fill: rgba(14, 19, 24, 0.07); stroke: #0e1318; stroke-width: 1.3; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; }
+.vg-tether { stroke: #0e1318; stroke-width: 1.6; vector-effect: non-scaling-stroke; }
+.vg-dist { fill: #0e1318; font-family: inherit; font-weight: 700; paint-order: stroke; stroke: rgba(255, 255, 255, 0.9); stroke-linejoin: round; }
+.vg-start { vector-effect: non-scaling-stroke; }
+.vg-start.ok { fill: #1e6bd0; stroke: #ffffff; stroke-width: 1.5; }
+.vg-start.miss { fill: #ffffff; stroke: #c8560c; stroke-width: 2.4; }
+.clip-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.3rem 0.5rem; margin-top: 0.4rem; }
+.grid-toggle {
+  font: inherit;
+  font-size: 0.82rem;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem 0.2rem 0.35rem;
+  min-height: 1.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+}
+.grid-toggle:hover { border-color: var(--ink); }
+.grid-toggle .switch { position: relative; flex: none; width: 1.7rem; height: 1rem; border-radius: 999px; background: var(--line-strong); }
+.grid-toggle .switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(1rem - 4px);
+  height: calc(1rem - 4px);
+  border-radius: 50%;
+  background: var(--bg);
+  transition: transform 0.15s;
+}
+.grid-toggle[aria-pressed="true"] .switch { background: var(--accent); }
+.grid-toggle[aria-pressed="true"] .switch::after { transform: translateX(0.7rem); }
+.clip-note { font-size: 0.75rem; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .grid-toggle .switch::after { transition: none; } }
+
+/* The larger view of a trial's video */
+.panel .clip.is-large {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  margin: 0;
+  padding: 1rem;
+  background: rgba(5, 8, 11, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.panel .clip.is-large .clip-stage { margin: 0; }
+.panel .clip.is-large video { width: min(calc(100vw - 2rem), calc((100vh - 6rem) * 4 / 3)); height: auto; max-width: none; max-height: none; }
+.panel .clip.is-large .clip-bar { color: #e6ecf1; }
+.panel .clip.is-large .grid-toggle { color: #e6ecf1; border-color: #4a5663; }
+.panel .clip.is-large .clip-note { color: #8d99a5; }
+html.video-large-open { overflow: hidden; }
+.grid-toggle.large-toggle { padding: 0.2rem 0.8rem; justify-content: center; text-align: center; }
+
+/* Lighter lines over the video at the panel's size; the larger view keeps the weights above. */
+.panel .clip:not(.is-large) .vg-cell { stroke-width: 0.6; stroke: rgba(14, 19, 24, 0.4); }
+.panel .clip:not(.is-large) .vg-outline { stroke-width: 0.8; stroke: rgba(14, 19, 24, 0.6); }
+.panel .clip:not(.is-large) .vg-demo { stroke-width: 0.8; }
+.panel .clip:not(.is-large) .vg-ring { stroke-width: 0.9; stroke-dasharray: 3 2; }
+.panel .clip:not(.is-large) .vg-tether { stroke-width: 1; }
+.panel .clip:not(.is-large) .vg-start.ok { stroke-width: 1; }
+.panel .clip:not(.is-large) .vg-start.miss { stroke-width: 1.6; }

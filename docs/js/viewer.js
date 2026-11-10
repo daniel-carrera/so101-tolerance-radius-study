@@ -91,6 +91,7 @@
     outcome: { success: true, failure: true },
     selected: null,
     hover: null,
+    videoGrid: (() => { try { return localStorage.getItem("trialmap.videoGrid") !== "off"; } catch (e) { return true; } })(),
   };
   // Map geometry of the last draw: millimetres per screen pixel, and the marks drawn.
   let mapK = 0.5;
@@ -131,7 +132,6 @@
       const s = 6.2 * k;
       svg("path", { d: `M${cx},${cy - s}L${cx + s},${cy}L${cx},${cy + s}L${cx - s},${cy}Z`, class: cls, "stroke-width": strokePx }, g);
     }
-    if (extra && t.clip) svg("circle", { cx, cy, r: 10 * k, class: "clip-mark", "stroke-width": 1.2 }, g);
     return g;
   }
 
@@ -401,25 +401,64 @@
     panel.textContent = "";
     const t = state.selected && BY_ID[state.selected];
     if (!t || !inSet(t)) { drawEmptyPanel(panel); return; }
+    const list = visible().sort(byId);
+    const i = list.findIndex((u) => u.id === t.id);
 
+    // The trial, its outcome, and the buttons to move on, all on the first line so they stay in reach.
     const head = html("div", { class: "panel-head" }, panel);
     html("h2", {}, head, t.id);
     const ok = t.outcome === "success";
     const badge = html("span", { class: "badge " + (ok ? "ok" : "miss") }, head);
     badge.appendChild(iconSvg(t.outcome, 12));
     html("span", {}, badge, OUTCOMES[t.outcome]);
-    html("p", { class: "who" }, panel, who(t));
+    const tools = html("div", { class: "panel-tools" }, head);
+    html("button", { type: "button", class: "icon-btn", "data-step": "-1", "aria-label": "Previous trial", title: "Previous trial" }, tools, "\u2190");
+    html("button", { type: "button", class: "icon-btn", "data-step": "1", "aria-label": "Next trial", title: "Next trial" }, tools, "\u2192");
+    html("button", { type: "button", class: "icon-btn", "data-clear": "", "aria-label": "Close", title: "Close" }, tools, "\u00d7");
+
+    const whoLine = html("p", { class: "who" }, panel);
+    html("span", {}, whoLine, who(t));
+    html("span", { class: "where" }, whoLine, `Block ${t.block} \u00b7 ` + (i >= 0 ? `${i + 1} of ${list.length} shown` : "hidden by the filters"));
+
+    if (t.clip) {
+      const fig = html("figure", { class: "clip" }, panel);
+      const stage = html("div", { class: "clip-stage" }, fig);
+      const video = html("video", {
+        controls: "", muted: "", playsinline: "", loop: "", preload: "metadata",
+        poster: `assets/${t.clip}.jpg`, width: "640", height: "480",
+        "aria-label": `Front camera video of trial ${t.id}: ${who(t).toLowerCase()}, ${shortDistance(t)}, ${OUTCOMES[t.outcome].toLowerCase()}.`,
+      }, stage);
+      video.muted = true;
+      html("source", { src: `assets/${t.clip}.mp4`, type: "video/mp4" }, video);
+      const view = D.camera_views && D.camera_views[t.session];
+      if (view) {
+        const [fw, fh] = view.frame_px;
+        const overlay = svg("svg", { class: "video-grid", viewBox: `0 0 ${fw} ${fh}`, preserveAspectRatio: "none", "aria-hidden": "true", "data-trial": t.id }, stage);
+        overlay.style.display = state.videoGrid ? "" : "none";
+        const bar = html("div", { class: "clip-bar" }, fig);
+        const note = "The grid, the demonstration starts and this trial's start, drawn on the table's surface through the camera view solved at the start of the session.";
+        const toggle = html("button", { type: "button", class: "grid-toggle", "data-video-grid": "", "aria-pressed": String(state.videoGrid), title: note }, bar);
+        html("span", { class: "switch", "aria-hidden": "true" }, toggle);
+        html("span", {}, toggle, "Grid on video");
+        html("button", { type: "button", class: "grid-toggle large-toggle", "data-video-large": "", "aria-pressed": "false" }, bar, "Larger view");
+        requestAnimationFrame(() => drawVideoGrid(overlay, t));
+      }
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const p = video.play();
+        if (p && p.catch) p.catch(() => { /* the controls are there */ });
+      }
+    } else {
+      html("p", { class: "no-clip" }, panel, "No video of this trial is on this page.");
+    }
 
     const dl = html("dl", { class: "facts" }, panel);
     fact(dl, "Distance", distanceText(t));
-    fact(dl, "Where the cube started", `Cell ${t.cell}${t.held_out ? ", a held-out cell" : ""}, at x\u00a0${fmt(t.x_mm)}, y\u00a0${fmt(t.y_mm)}\u00a0mm`);
-    fact(dl, "Reset", `Placed with the overlay ${fmt(resetError(t))}\u00a0mm from its planned target.`);
-    fact(dl, "How the start was chosen", startText(t));
+    fact(dl, "Start", `Cell ${t.cell}${t.held_out ? " (held out)" : ""} at x\u00a0${fmt(t.x_mm)}, y\u00a0${fmt(t.y_mm)}\u00a0mm, placed ${fmt(resetError(t))}\u00a0mm from its target.`);
+    fact(dl, "Target", startText(t));
     fact(dl, "Outcome", outcomeText(t));
-    fact(dl, "Block", `${t.block}: ${D.blocks[t.block] || ""}`);
 
     const note = html("p", { class: "note" }, panel);
-    html("small", {}, note, "Scorer's note from the rig, spelling corrected");
+    html("small", {}, note, "Scorer's note at the rig" + ((t.notes_spelling_fixed || []).length ? ", spelling corrected" : ""));
     note.appendChild(document.createTextNode(t.notes ? t.notes : "No note."));
 
     if (t.pair_id) {
@@ -431,38 +470,88 @@
         html("span", {}, b, `Same placement, ${CONDITIONS[twin.condition].label.toLowerCase()}: ${twin.id}, ${OUTCOMES[twin.outcome].toLowerCase()}`);
       }
     }
+    panel.scrollTop = 0;
+  }
 
-    if (t.clip) {
-      const fig = html("figure", { class: "clip" }, panel);
-      const video = html("video", {
-        controls: "", muted: "", playsinline: "", loop: "", preload: "metadata",
-        poster: `assets/${t.clip}.jpg`, width: "640", height: "480",
-        "aria-label": `Front camera video of trial ${t.id}: ${who(t).toLowerCase()}, ${shortDistance(t)}, ${OUTCOMES[t.outcome].toLowerCase()}.`,
-      }, fig);
-      video.muted = true;
-      html("source", { src: `assets/${t.clip}.mp4`, type: "video/mp4" }, video);
-      html("figcaption", {}, fig, "Front camera.");
-    } else {
-      html("p", { class: "no-clip" }, panel, "No video of this trial is on this page.");
+  // The grid, the demonstrations and this trial's start, drawn over its front-camera video through the camera view
+  // of the trial's session (table millimetres to pixels of the 640 x 480 picture). No labels or numbers: it shows where
+  // the cube sat on the grid and which demonstration it was nearest. Lines keep their width whatever the video's size;
+  // marks are sized for the size it is shown at.
+  function drawVideoGrid(overlay, t) {
+    if (!overlay || !overlay.isConnected) return;
+    overlay.textContent = "";
+    const M = D.camera_views[t.session].mm_to_px;
+    const P = (x, y) => {
+      const w = M[2][0] * x + M[2][1] * y + M[2][2];
+      return [(M[0][0] * x + M[0][1] * y + M[0][2]) / w, (M[1][0] * x + M[1][1] * y + M[1][2]) / w];
+    };
+    const pts = (list) => list.map((q) => q[0].toFixed(1) + "," + q[1].toFixed(1)).join(" ");
+    const shown = overlay.getBoundingClientRect().width || 300;
+    const u = D.camera_views[t.session].frame_px[0] / shown;  // picture pixels per screen pixel
+    const c = TABLE.cell_mm;
+    // Smaller marks in the panel than in the larger view.
+    const large = Boolean(overlay.closest(".clip.is-large"));
+
+    const g = svg("g", {}, overlay);
+    for (let i = 0; i < TABLE.cols; i++) {
+      for (let j = 0; j < TABLE.rows; j++) {
+        const label = String.fromCharCode(65 + i) + (j + 1);
+        const held = TABLE.held_out_cells.includes(label);
+        const x0 = i * c, y0 = j * c;
+        svg("polygon", { points: pts([P(x0, y0), P(x0 + c, y0), P(x0 + c, y0 + c), P(x0, y0 + c)]), class: held ? "vg-cell vg-held" : "vg-cell" }, g);
+      }
+    }
+    svg("polygon", { points: pts([P(0, 0), P(W, 0), P(W, H), P(0, H)]), class: "vg-outline" }, g);
+
+    // Demonstration starts of the trial's own set, one cross per point.
+    for (const d of POINTS[t.demo_set]) {
+      const [x, y] = P(d.x_mm, d.y_mm), a = (large ? 2.2 : 1.1) * u;
+      svg("path", { d: `M${x - a},${y}H${x + a}M${x},${y - a}V${y + a}`, class: "vg-demo" }, g);
     }
 
-    const list = visible().sort(byId);
-    const i = list.findIndex((u) => u.id === t.id);
-    const nav = html("div", { class: "panel-nav" }, panel);
-    html("span", { class: "where" }, nav, i >= 0 ? `${i + 1} of ${list.length} shown` : "Hidden by the filters");
-    html("button", { type: "button", class: "step", "data-step": "-1", "aria-label": "Previous trial" }, nav, "\u2190 Previous");
-    html("button", { type: "button", class: "step", "data-step": "1", "aria-label": "Next trial" }, nav, "Next \u2192");
-    html("button", { type: "button", class: "step", "data-clear": "" }, nav, "Close");
+    // The 20 mm around the nearest demonstration, the line to it, and where the cube started.
+    const near = t.nearest_xy_mm;
+    const ring = [];
+    for (let k = 0; k < 72; k++) {
+      const a = (k / 72) * 2 * Math.PI;
+      ring.push(P(near[0] + RING_MM * Math.cos(a), near[1] + RING_MM * Math.sin(a)));
+    }
+    svg("polygon", { points: pts(ring), class: "vg-ring" }, g);
+    const s0 = P(t.x_mm, t.y_mm), n0 = P(near[0], near[1]);
+    svg("line", { x1: s0[0], y1: s0[1], x2: n0[0], y2: n0[1], class: "vg-tether" }, g);
+    svg("circle", { cx: s0[0], cy: s0[1], r: (large ? 4.2 : 3) * u, class: t.outcome === "success" ? "vg-start ok" : "vg-start miss" }, g);
+  }
+
+  // The trial's video, with its grid, near full screen: the same video element, so it keeps playing where it was.
+  function setLargeVideo(on) {
+    const fig = document.querySelector("#panel .clip");
+    if (!fig) return;
+    fig.classList.toggle("is-large", on);
+    document.documentElement.classList.toggle("video-large-open", on);
+    const button = fig.querySelector("button[data-video-large]");
+    if (button) {
+      button.setAttribute("aria-pressed", String(on));
+      button.textContent = on ? "Close the larger view" : "Larger view";
+      if (on) button.focus();
+    }
+    requestAnimationFrame(redrawVideoGrid);
+  }
+
+  function redrawVideoGrid() {
+    const overlay = document.querySelector("#panel .video-grid");
+    if (overlay && state.selected) drawVideoGrid(overlay, BY_ID[state.selected]);
   }
 
   function drawEmptyPanel(panel) {
     const box = html("div", { class: "empty" }, panel);
     html("h2", {}, box, "Pick a trial");
-    html("p", { class: "lead" }, box, "Hover over a dot or tap it to see where the cube started, how far that was from a demonstration, and how the trial ended.");
-    const clips = TRIALS.filter((t) => t.clip).sort(byId);
-    if (!clips.length) return;
-    html("p", {}, box, clips.length === 1 ? "One trial has a video:" : `${clips.length} trials have a video:`);
-    for (const t of clips) {
+    const withClip = TRIALS.filter((t) => t.clip).length;
+    html("p", { class: "lead" }, box, "Hover over a dot or tap it to see where the cube started, how far that was from a demonstration, and how the trial ended." +
+      (withClip === TRIALS.length ? " Every trial has its front-camera video." : ""));
+    const picks = TRIALS.filter((t) => t.featured).sort(byId);
+    if (!picks.length) return;
+    html("p", {}, box, picks.length === 1 ? "One to start with:" : "Three to start with:".replace("Three", ["", "One", "Two", "Three", "Four", "Five"][picks.length] || String(picks.length)));
+    for (const t of picks) {
       const b = html("button", { type: "button", class: "pick", "data-go": t.id }, box);
       b.appendChild(iconSvg(t.outcome, 12));
       const label = html("span", {}, b);
@@ -734,6 +823,9 @@
       if (go) { e.preventDefault(); step(go); }
       else if (e.key === "Escape") select(null);
     });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && document.querySelector("#panel .clip.is-large")) { e.stopPropagation(); setLargeVideo(false); }
+    }, true);
 
     $("strip").addEventListener("pointermove", (e) => {
       const lane = e.target.closest("svg.lane");
@@ -761,6 +853,20 @@
         $("map-wrap").scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       }
+      const largeButton = e.target.closest("button[data-video-large]");
+      if (largeButton) { setLargeVideo(largeButton.getAttribute("aria-pressed") !== "true"); return; }
+      const backdrop = e.target.closest("#panel .clip.is-large");
+      if (backdrop && !e.target.closest(".clip-stage, .clip-bar")) { setLargeVideo(false); return; }
+      const gridButton = e.target.closest("button[data-video-grid]");
+      if (gridButton) {
+        state.videoGrid = !state.videoGrid;
+        try { localStorage.setItem("trialmap.videoGrid", state.videoGrid ? "on" : "off"); } catch (err) { /* not kept */ }
+        gridButton.setAttribute("aria-pressed", String(state.videoGrid));
+        const overlay = document.querySelector("#panel .video-grid");
+        if (overlay) overlay.style.display = state.videoGrid ? "" : "none";
+        if (state.videoGrid) redrawVideoGrid();
+        return;
+      }
       const st = e.target.closest("button[data-step]");
       if (st) { step(Number(st.dataset.step)); return; }
       if (e.target.closest("button[data-clear]")) select(null);
@@ -776,7 +882,7 @@
     let pending = 0;
     const onResize = () => {
       cancelAnimationFrame(pending);
-      pending = requestAnimationFrame(() => { setHover(null); drawMap(); drawStrip(); });
+      pending = requestAnimationFrame(() => { setHover(null); drawMap(); drawStrip(); redrawVideoGrid(); });
     };
     if ("ResizeObserver" in window) {
       let lastW = 0;
@@ -890,14 +996,13 @@
     POINTS = Object.fromEntries(Object.entries(DEMOS).map(([name, list]) => [name, demoPoints(list)]));
 
     fillText();
-    for (const id of ["controls", "explore", "distance", "resets", "where", "list"]) $(id).hidden = false;
+    for (const id of ["controls", "explore", "distance", "resets", "where", "setup", "list"]) $(id).hidden = false;
 
     const key = $("key");
     const items = [
       ["demo", "Where a demonstration started"],
       ["ring", `Within ${RING_MM}\u00a0mm of a demonstration (shaded)`],
       ["held", "Held-out cell: no demonstration started there"],
-      ["clip", "Trial with a video"],
     ];
     for (const [kind, text] of items) {
       const li = html("li", {}, key);
