@@ -4,8 +4,8 @@
 %   1. No result is typed into a section. Results are macros from generated/numbers.tex, protocol constants are
 %      macros from generated/protocol.tex, and settings copied by hand are macros in numbers_by_hand.tex.
 %      A quantity that is already measured, or quoted from a cited paper, is typed with "% src: ..." on its line.
-%   2. Double blind: no names, institutions, usernames, repository or hub names, home paths, thanks.
-%   3. python3 check_paper.py passes before every upload, and with --final before the submission.
+%   2. No home paths, usernames or hub names in the sources or the PDF.
+%   3. python3 check_paper.py passes before every build.
 %
 % Built with tectonic 0.17.0 since 2026-10-08 (README.md, "Building"). Standard packages only.
 
@@ -32,7 +32,7 @@
 \usepackage{xspace}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xurl} % lets a long link in the references break at any character: one ran into the next column
-\hypersetup{pdfauthor={Anonymous}, pdftitle={}, pdfsubject={}, pdfkeywords={}}
+\hypersetup{pdfauthor={Daniel Carrera, Georgia Institute of Technology}, pdftitle={Measuring the Reset Distribution: A Tolerance Radius, Referenced to Open-Loop Replay}, pdfsubject={}, pdfkeywords={}}
 
 % --- Draft marks ------------------------------------------------------------------------------------------------------
 % \pending{...} printed a bold tag in front of a sentence whose wording still depended on a result. Every IF block was
@@ -58,8 +58,9 @@
 
 \title{Measuring the Reset Distribution: A Tolerance Radius, Referenced to Open-Loop Replay}
 
-\author{\IEEEauthorblockN{Anonymous Authors}
-\IEEEauthorblockA{Affiliation withheld for double-blind review}}
+\author{\IEEEauthorblockN{Daniel Carrera}
+\IEEEauthorblockA{Georgia Institute of Technology\\
+dcarrer1@ucsc.edu}}
 
 \begin{document}
 \maketitle

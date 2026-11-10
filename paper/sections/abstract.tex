@@ -4,7 +4,6 @@
 % Rewritten on 2026-10-08 after five blind reads of the paper (docs/journal.md): the replay's radius leads, the
 % policy's counts by distance follow, and the policy's fitted radius is given as not established, which is what the
 % pre-specified robustness check says (protocol/protocol.md, section 10).
-% The same text goes into the submission form: python3 check_paper.py --abstract.
 Two choices beneath a robot policy are rarely reported: where an evaluation places the object at reset relative to the demonstrations, and how a fixed budget of demonstrations is distributed.
 On a low-cost arm with one imitation-learning method (ACT), we place every reset within \placementTolerance~mm of a target (median error \resetErrorMedian~mm), log it, and report success against the distance to the nearest demonstration, summarised by a \emph{tolerance radius}: the distance at which success is halfway between its levels near and far from the demonstrations.
 An open-loop replay of demonstrations has a radius of \radiusReplay~mm (\intervalLevel~\% interval \radiusReplayLow to \radiusReplayHigh); resets placed by eye from a reference image miss by a median of \byEyeErrorMedian~mm.

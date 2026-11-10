@@ -29,7 +29,7 @@ framed box of the planned height in its place (`\figureorbox`), so the page budg
 - **File names** use letters, digits and hyphens only. `check_paper.py` refuses anything else.
 - **Readable without colour.** Two colours at most for the two conditions, checked as a pair for colour-blind
   readers, and a marker shape or line style that repeats what the colour says.
-- **Anonymous.** No file path, user name, hub name, window title or date in the picture or in the file's metadata.
+- **Clean.** No file path, user name, hub name, window title or date in the picture or in the file's metadata.
   `check_paper.py` searches the bytes of every file in this folder for the forbidden strings; that catches plain-text
   metadata, not text inside compressed streams, so look at the file's properties as well. The figures are saved
   with an empty information dictionary (no creator, no producer, no date), their fonts embedded as TrueType, and are

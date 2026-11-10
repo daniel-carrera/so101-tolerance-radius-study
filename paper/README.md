@@ -4,10 +4,10 @@ A four-page workshop paper in IEEEtran conference mode, with references and an a
 (`docs/venue.md` has the call and its rules). This folder holds its sources and the checks that stand in for a
 compiler.
 
-**State on 2026-10-05: a skeleton, written before the experiment has run, and never compiled.** No TeX engine was
-installed on the machine it was written on. The introduction, related work, method and limits are written in full.
-The abstract, the results and the discussion are complete sentences with a macro wherever a number will go; every
-such macro prints a bold **??** today. Build it once on Overleaf before relying on anything below.
+**State:** the paper was submitted to the CoRL 2026 workshop *Everything Beneath the Policy* on 2026-10-09 and was
+not accepted. `paper.pdf` is that paper with its author named (2026-11-10). Every result macro holds its value from
+the counted report. The notes below were written while the paper was being drafted, and some describe that earlier
+state.
 
 **The text follows `protocol/protocol.md`, draft 0.3** (the decisions of 2026-10-05: a workspace test of 26 placements,
 half of them in held-out cells; a replayed demonstration from every trained cell). When the protocol
@@ -27,9 +27,8 @@ method, the results' IF lines, the limits and the appendix's section "The protoc
 | `numbers_by_hand.tex` | Settings copied from the rig, the training configuration and the earlier project's records | the author, each with its source on the line |
 | `make_numbers_stub.py` | Owns the list of macro names; writes `generated/` | |
 | `check_paper.py` | The checks below | |
-| `forbidden.txt` | Generic strings that must not appear (paths, e-mail addresses, thanks) | shipped; the author's own strings go in a private list |
+| `forbidden.txt` | Generic strings that must not appear (paths, e-mail addresses other than the author's, hub links) | shipped |
 | `figures/README.md` | The four figures: what each shows and from which data. `scripts/make_figures.py` draws them; Figure 1 is drawn, the others wait for the audits and the results | |
-| `submission.md` | Drafts for the OpenReview form, and the anonymity checklist | by hand |
 
 ## The rule about numbers
 
@@ -124,14 +123,13 @@ the table, run the script, use the macro.
 ## Checks
 
 ```bash
-python3 paper/check_paper.py              # must pass before every upload
+python3 paper/check_paper.py              # must pass before every build
 python3 paper/check_paper.py -v           # with the notes: unknown commands, caption lengths
-python3 paper/check_paper.py --final --forbidden PRIVATE_LIST   # must pass before the submission
+python3 paper/check_paper.py --final      # fails on anything still open
 ```
 
 It fails on: a `\cite` key missing from the bibliography; a number macro that is not defined; a forbidden string;
-a section more than 20 % over its word target; a field of `submission.md` over its character limit, or its
-abstract out of step with `sections/abstract.tex`; and on what a
+a section more than 20 % over its word target; and on what a
 compiler would have caught or what would print wrongly (an open environment or brace, a `\ref` without its
 `\label`, a missing `\input`, a character outside ASCII, a `<`, `>` or `|` in running text, a macro defined twice,
 `generated/` out of step with its lists or with `config/protocol.toml`).
@@ -205,15 +203,14 @@ If it runs over, cut in this order:
 `main.tex` writes the page on which the main text ends to the build log (`MAIN TEXT ENDS ON PAGE`). Check it by eye
 as well: the Limits section must end on page 4 or before.
 
-## Before submitting
+## Before a build
 
 1. The protocol is frozen and `make_numbers_stub.py` has been run since.
 2. The analysis has written every result (`--values`); `numbers_by_hand.tex` has no `??` left.
 3. Every IF block is settled and every CONFIRM mark is checked and deleted.
 4. `\draftmarksfalse` in `main.tex`.
-5. `python3 paper/check_paper.py --final --forbidden PRIVATE_LIST` passes.
+5. `python3 paper/check_paper.py --final` passes.
 6. The PDF is four pages of main text or fewer, and has been read once from the first line to the last.
-7. The anonymity checklist in `submission.md`, on the files that are uploaded.
 
 ## Known gaps
 
