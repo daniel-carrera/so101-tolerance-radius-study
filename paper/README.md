@@ -5,8 +5,8 @@ A four-page workshop paper in IEEEtran conference mode, with references and an a
 compiler.
 
 **State:** the paper was submitted to the CoRL 2026 workshop *Everything Beneath the Policy* on 2026-10-09 and was
-not accepted. `paper.pdf` is that paper with its author named (2026-11-10). Every result macro holds its value from
-the counted report. The notes below were written while the paper was being drafted, and some describe that earlier
+not accepted. `paper.pdf` is that paper with its author named and its appendix shortened (2026-11-10); no number changed. Every
+result macro holds its value from the counted report. The notes below were written while the paper was being drafted, and some describe that earlier
 state.
 
 **The text follows `protocol/protocol.md`, draft 0.3** (the decisions of 2026-10-05: a workspace test of 26 placements,

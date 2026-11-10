@@ -9,7 +9,7 @@ are simply played back with no policy.
 
 The paper is in this repository: [paper/paper.pdf](paper/paper.pdf), *Measuring the Reset Distribution: A Tolerance
 Radius, Referenced to Open-Loop Replay*. It was submitted to the CoRL 2026 workshop *Everything Beneath the Policy*
-and was not accepted. The PDF here is that paper with its author named; no number changed.
+and was not accepted. The PDF here is that paper with its author named and its appendix shortened; no number changed.
 
 The [trial map](https://daniel-carrera.github.io/so101-tolerance-radius-study/) shows every counted trial on the table
 grid, with its outcome.
