@@ -106,8 +106,8 @@ with one exception. The count of deviations from the protocol is read from a dec
 that count prints as unknown. The paper's appendix lists the three deviations. The tests need no hardware and no
 network.
 
-The video recordings, the two datasets and the trained checkpoints are not in this repository because of their size.
-They are available on request.
+The full video recordings, the two datasets and the trained checkpoints are not in this repository because of their
+size. They are available on request.
 
 ## Layout
 
@@ -123,14 +123,20 @@ They are available on request.
 | `training/` | The Colab training notebook, its tests, and the training settings |
 | `analysis/` | The procedure's simulations, the analysis of an earlier evaluation in August, and the counted report |
 | `data/` | The trial logs, the start-state audits, the placement logs, the instrument checks and the second scoring |
-| `docs/` | The trial-map page, served by GitHub Pages |
+| `docs/` | The trial-map page and its data and clips, served by GitHub Pages |
 
 Comments in the code and in the paper's sources sometimes refer to a lab journal, a decision log and runbooks for the
 rig. Those notes are not part of this repository.
 
 ## Trial map
 
-An interactive map of every trial on the grid will be linked here once it is published.
+The trial map is an interactive page that draws every counted trial where the cube started on the grid. It also shows
+where the demonstrations started and whether each trial succeeded. It lives in `docs/` and will be served by GitHub
+Pages; its link goes here once Pages is on. It also works offline: open `docs/index.html` in a browser.
+
+The page reads `docs/data/trials.json`. [scripts/export_data.py](scripts/export_data.py) writes that file from the
+trial log, the demonstration audits, the protocol and the table's tag positions. The three trial clips and the reset
+clip in `docs/assets/` are the only videos published.
 
 ## License
 

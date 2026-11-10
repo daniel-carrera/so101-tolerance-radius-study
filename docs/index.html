@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0e1318">
+<meta name="description" content="Every counted trial of Daniel Carrera's SO-101 arm evaluation, drawn where the cube started on the table grid, with where the demonstrations started and whether each trial succeeded.">
+<title>SO-101 trial map, Daniel Carrera</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='3' y='3' width='10' height='10' rx='1.5' fill='%23ff7a1a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/viewer.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="topline">
+    <p class="kicker">SO-101 arm evaluation, October 2026</p>
+    <button class="theme-toggle" type="button" hidden>Light mode</button>
+  </div>
+  <h1>Trial map</h1>
+  <p class="caption">Each square is a <span data-fill="cell-mm">50</span>&nbsp;mm cell of a grid fixed on the table by two AprilTags, drawn the way the arm's front camera sees it, and each small cross is where the cube started in a demonstration. Each dot is one counted trial, drawn where the cube started: a filled blue dot means the cube ended in the basket, and a hollow orange dot means the arm missed it.</p>
+  <p class="context">I built both arms, recorded the demonstrations, and placed and scored all <span data-fill="n-trials">108</span> trials. Each trial's condition was hidden from me behind a code.</p>
+</header>
+
+<main>
+  <noscript><p class="load-error">This page draws the trials with JavaScript. The data are in <a href="data/trials.json">data/trials.json</a>.</p></noscript>
+
+  <div class="controls" id="controls" hidden>
+    <div class="control">
+      <span class="control-label" id="set-label">Demonstrations</span>
+      <div class="seg" id="sets" role="group" aria-labelledby="set-label"></div>
+    </div>
+    <div class="control">
+      <span class="control-label optional" id="cond-label">Who ran the trial</span>
+      <div class="chips" id="conditions" role="group" aria-labelledby="cond-label"></div>
+    </div>
+    <div class="control">
+      <span class="control-label optional" id="out-label">Outcome</span>
+      <div class="chips" id="outcomes" role="group" aria-labelledby="out-label"></div>
+    </div>
+  </div>
+
+  <div class="explore" id="explore" hidden>
+    <div>
+      <div class="map-wrap" id="map-wrap">
+        <div class="frame">
+          <svg id="map" role="img" tabindex="0" aria-labelledby="map-title" aria-describedby="map-desc">
+            <title id="map-title">The table grid seen from above, with demonstration starts and trials</title>
+            <desc id="map-desc">Use the table under the map for the same trials as text. With the map focused, the arrow keys step from trial to trial.</desc>
+          </svg>
+        </div>
+        <div class="tip" id="tip" hidden></div>
+      </div>
+      <p class="set-note" id="set-note"></p>
+      <ul class="key" id="key"></ul>
+      <p class="orient" id="orient"></p>
+    </div>
+
+    <aside class="panel" id="panel" aria-live="polite" aria-label="The selected trial"></aside>
+  </div>
+
+  <section class="band" id="distance" aria-labelledby="distance-h" hidden>
+    <h2 id="distance-h">Success by distance from the nearest demonstration</h2>
+    <p id="distance-note"></p>
+    <div class="strip" id="strip"></div>
+  </section>
+
+  <section class="band" id="resets" aria-labelledby="resets-h" hidden>
+    <h2 id="resets-h">How each reset was placed</h2>
+    <p>Before every demonstration and every trial, I put the cube back with a camera overlay. It drew the target on the front camera's picture and showed how far the cube was from it. A placement counted only when the cube sat within <span data-fill="tolerance-mm">2</span>&nbsp;mm of its target, steady, with my hands clear, and I pressed the go key.</p>
+    <figure class="reset-clip">
+      <div class="frame">
+        <video id="reset-video" data-autoplay muted loop playsinline preload="none" poster="assets/reset-overlay-2x.jpg" width="1120" height="480" aria-label="Three resets with the overlay, each followed by the arm picking up the cube and dropping it in the basket, at twice real speed.">
+          <source src="assets/reset-overlay-2x.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption>Three demonstrations being recorded on October 7, 2026 (episodes 6, 15 and 17 of the clustered set), at twice real speed. Each starts in the overlay, with the camera picture on the left and a close view of the target on the right. Then the front and wrist cameras show the pick while I drive the arm through the leader arm. The same overlay placed every evaluation trial the next day.</figcaption>
+    </figure>
+    <p id="reset-numbers"></p>
+    <p id="reset-band"></p>
+  </section>
+
+  <section class="band" id="where" aria-labelledby="where-h" hidden>
+    <h2 id="where-h">Where the grid sits on the table</h2>
+    <div class="where-grid">
+      <figure>
+        <svg id="overview" role="img" aria-labelledby="overview-title">
+          <title id="overview-title">The two AprilTags on the table and the grid between them, as the front camera sees them</title>
+        </svg>
+        <figcaption>Nothing is drawn on the table. The camera finds the two AprilTags and measures the cube's position on the grid from them.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/arm-policy-far.jpg" width="640" height="480" alt="The front camera's view: the orange arm at the top, a basket at the top right, an orange cube on the white table, and the two AprilTags at the left and the bottom right.">
+        <figcaption>A frame from the front camera's video of trial <a href="#T1a-025" data-trial="T1a-025">T1a-025</a>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" id="list" aria-labelledby="list-h" hidden>
+    <h2 id="list-h" class="visually-hidden">The trials as a table</h2>
+    <details id="table-details">
+      <summary id="table-summary">The same trials as a table</summary>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Trial</th>
+              <th scope="col">Who ran it</th>
+              <th scope="col">Cell</th>
+              <th scope="col" class="num">From the nearest demonstration</th>
+              <th scope="col">Outcome</th>
+              <th scope="col">Scorer's note, as typed at the rig</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <div class="load-error" id="load-error" hidden></div>
+</main>
+
+<footer class="site-footer">
+  <p>The page reads <a href="data/trials.json">data/trials.json</a>, written by <code>export_data.py</code> from the study's trial log, the measured demonstration starts, the protocol and the table's tag positions. Every count on this page is made from that file when the page opens.</p>
+  <p>Positions are the center of the cube as the front camera measured it, in millimeters on the grid. A replay's distance is to the start of the demonstration it plays back, and a policy's is to the nearest demonstration it was trained on.</p>
+</footer>
+
+<script src="js/viewer.js"></script>
+</body>
+</html>

@@ -37,3 +37,6 @@ analysis/report-draft/
 
 # for the author only
 AUDIT.md
+
+# the trial map's clips are published with the page
+!docs/assets/*.mp4
